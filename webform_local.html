@@ -1,0 +1,2030 @@
+<!-- saved from url=(0313)https://ips.lamassucrm.com/lamassu_leadcapture.php?&address=8%20Juniper%20Ave&city=Westerville&state=OH&zip=43081&email=AMBER.MOORE%40BELLSOUTH.NET&first_name=Delores%20L&last_name=Thomas&number1=6143133569&sd_marketing_source=SynergyData_CN_Probate&sd_partition=UNIFIED&sd_origin_file=UNIFIED%20OH%20Raw%20073123 -->
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <script language="JavaScript" type="text/JavaScript">
+// VALIDATE FORM ---------------------------------------------------------------
+function validate_form()
+{
+
+
+        if (document.getElementById('fname').value == "")  {alert('First Name Required'); return false;}
+        if (document.getElementById('lname').value == "")  {alert('Last Name Required'); return false;}
+
+        document.getElementById('ClientName').value = document.getElementById('fname').value + " " + document.getElementById('lname').value;
+
+        if (document.getElementById('ClientName').value == "")  {alert('ClientName Required'); return false;}
+        if (document.getElementById('HomePhone').value == "")  	{alert('Phone 01 Required'); return false;}
+
+        if (document.getElementById('StreetAddress').value == "")  	{alert('StreetAddress Required'); return false;}
+        if (document.getElementById('City').value == "")  	{alert('City Required'); return false;}
+        if (document.getElementById('State').options[document.getElementById('State').selectedIndex].value == "") 	{alert('State Required'); return false;}
+        if (document.getElementById('ZipCode').value == "")  	{alert('ZipCode'); return false;}
+        
+        
+        if (document.getElementById('reason').value == "")  	{alert('Motive/Reason for Selling Required'); return false;}
+        if (document.getElementById('bottom_line').value == "")  	{alert('Bottom Line Price US$ Required'); return false;}
+
+        if (buttonIndex == 'QUALIFIED')
+        {
+                if (document.getElementById('utm_source').options[document.getElementById('utm_source').selectedIndex].value == "") 	{alert('LeadSource Required'); return false;}
+                 if (document.getElementById('matrix').options[document.getElementById('matrix').selectedIndex].value == "") 	{alert('Matrix Required'); return false;}
+                if (document.getElementById('disc_price').options[document.getElementById('disc_price').selectedIndex].value == "") 	{alert('Asking Price % Required'); return false;}
+        }
+
+        
+        if (buttonIndex == 'QUALIFIED')
+        {
+               if (document.getElementById('reason').value == "")  	{alert('Motive/Reason for Selling Required'); return false;}
+               if (document.getElementById('mleadsource').value == "")  	{alert('Marketing Lead Source Required'); return false;}
+               if (document.getElementById('from_userid').options[document.getElementById('from_userid').selectedIndex].value == "") 	{alert('Agent Required'); return false;}
+               if (document.getElementById('manager_approving').options[document.getElementById('manager_approving').selectedIndex].value == "") 	{alert('Approving Manager Required'); return false;}
+        }
+
+        Note = document.getElementById('note').value;
+
+        document.getElementById('note').value = Note.replaceAll(':', '');
+
+
+}
+</script>
+
+
+  <link href="./webform_local_files/css" rel="stylesheet">
+
+  <style type="text/css">
+    body {
+      /* background-color: #7FB3D5; */
+      margin-left: 0px;
+      margin-top: 0px;
+      margin-right: 0px;
+      margin-bottom: 0px;
+      font-family: 'Roboto', sans-serif;
+      font-size: 14px;
+      color: #000000;
+    }
+
+    input[type=text],
+    select,
+    input[type=password],
+    textarea {
+      background-color: #f6f7ff;
+      height: auto;
+      margin: 0 12px 0 auto;
+      padding: 4px 4px 4px 4px;
+      border: 1px solid #a8b8d6;
+      -moz-border-radius: 5px;
+      -webkit-border-radius: 5px;
+      border-radius: 5px;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 12px;
+      color: #000000;
+      background: #DEDEDE;
+      border: none;
+      min-width: 400px;
+      min-height: 28px;
+    }
+
+    /* tr:hover {
+
+      background: #CCCCCC;
+
+    } */
+
+
+    .btnm1, 
+    .formatPhoneButton, 
+    .addressButton, 
+    button.not-interested\?\?.miniTemplatesBtn,
+    button.home-details.miniTemplatesBtn,
+    button.land-details.miniTemplatesBtn,
+    button.dropbtn,
+    button.miniTemplatesDropDwnbtn,
+    button.realtor.miniTemplatesBtn,
+    button.spanish-lead.miniTemplatesBtn,
+    button.owner\'s-name.miniTemplatesBtn,
+    button.mortgage.Yes,
+    button.mortgage.No  {
+      background: #26AAB9;
+      -webkit-border-radius: 10px;
+      -moz-border-radius: 10px;
+      border-radius: 6px;
+      font-size: 12px;
+      color: #FFFFFF;
+      text-decoration: none;
+      border: 0;
+      padding-top: 6px;
+      padding-bottom: 6px;
+      padding-right: 12px;
+      padding-left: 12px;
+      text-decoration: none;
+      cursor: pointer;
+      box-shadow: rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px;
+      transition: 0.3s;
+    }
+    .addressButton, 
+    button.not-interested\?\?.miniTemplatesBtn,
+    button.home-details.miniTemplatesBtn,
+    button.land-details.miniTemplatesBtn,
+    button.dropbtn,
+    button.miniTemplatesDropDwnbtn,
+    button.realtor.miniTemplatesBtn,
+    button.spanish-lead.miniTemplatesBtn,
+    button.owner\'s-name.miniTemplatesBtn
+    {
+      background: #363636;
+      padding: 8px 30px;
+   }
+   button.mortgage.No{
+    background: #363636;
+   }
+  .customAddressToggle.addressButton{
+      margin-right: 0 !important;
+  }
+
+    .btnm1:hover,
+    .formatPhoneButton:hover,
+    .spanish.Yes:hover,
+    .addressButton:hover,
+    button.mortgage.Yes:hover{
+      background: #363636 !important;
+    }
+    .spanish.No:hover, 
+    .addressButton:hover,
+    button.not-interested\?\?.miniTemplatesBtn:hover,
+    button.home-details.miniTemplatesBtn:hover,
+    button.land-details.miniTemplatesBtn:hover,
+    button.dropbtn:hover,
+    button.miniTemplatesDropDwnbtn:hover,
+    button.realtor.miniTemplatesBtn:hover,
+    button.spanish-lead.miniTemplatesBtn:hover,
+    button.owner\'s-name.miniTemplatesBtn:hover,
+    button.mortgage.No:hover{
+      background: #26AAB9 !important;
+    }
+
+    table#Table_1,
+    table#Table_2,
+    table#Table_3,
+    table#Table_4,
+    table#Table_5,
+    table#Table_5_1,
+    table#Table_6{
+      max-width: 98%;
+      margin-bottom: 20px;
+    }
+    table#Table_2,
+    table#Table_3,
+    table#Table_4,
+    table#Table_5,
+    table#Table_5_1,
+    table#Table_6 {
+      box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+      border-radius: 16px;
+      display: block;
+      padding-block: 12px;
+      margin-top: 24px;
+      position: relative;
+      overflow: hidden;
+      padding-bottom: 80px;
+  }
+    table#Table_2 tbody,
+    table#Table_3 tbody,
+    table#Table_4 tbody,
+    table#Table_5 tbody,
+    table#Table_5_1 tbody,
+    table#Table_6 tbody{
+      display: grid;
+      gap: 16px;
+    }    
+    table#Table_2 tr,
+    table#Table_3 tr,
+    table#Table_4 tr,
+    table#Table_5 tr,
+    table#Table_5_1 tr,
+    table#Table_6 tr{
+      max-width: 90%;
+      margin: auto;
+      min-width: 1190px;
+      display: flex;
+      justify-content: space-between;
+  }
+    input#lname,
+    input#SecondaryPhone {
+        margin: 0;
+    }
+    table#Table_2 input[type=text] {
+        min-width: 480px;
+    }
+    td#homePhoneTR {
+      position: relative;
+    }
+    .formatPhoneButton {
+      box-shadow: none;
+      border-radius: 0 6px 6px 0;
+      position: absolute;
+      right: 17px;
+      padding: 7.5px 12px;
+  }
+  div#addressFunctionToDOM, #emailIntDOM {
+    display: grid;
+    grid-template-columns: repeat(4,auto);
+    gap:40px;
+}
+    div#addressFunctionToDOM span, #emailIntDOM span {
+      color: red;
+      text-decoration: underline;
+      text-underline-offset: 4px;
+      text-decoration-color: #656565;
+  }
+  input#HomePhone {
+      margin-right: 28px;
+  }
+  input#SecondaryPhone {
+      margin-left: 6px;
+  }
+  select#State {
+      width: 480px;
+      min-height: 28px;
+  }
+  td.note {
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 16px;
+}
+.btn-arrow-wht {
+    fill: #fff;
+    stroke: #fff;
+    vertical-align: bottom;
+    width: 16px;
+    height: 16px;
+    margin-left: 12px;
+}
+.dropbtn {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    height: fit-content;
+}
+.marketing-lead-source {
+    color: #fff;
+    margin: auto;
+    position: absolute;
+    width: 100%;
+    background: #26AAB9;
+    left: 0;
+    bottom: 0;
+    font-weight: 600;
+}
+.property-details-row{
+  padding-block: 24px;
+}
+.property-details-row input[type=text], 
+.property-details-row select{
+    min-width: inherit;
+}
+td.conditions, 
+td.occupied {
+    gap: 20px;
+    display: grid;
+}
+tr.conditions, tr.occupied {
+    justify-content: normal !important;
+}
+tr.conditions textarea,
+tr.occupied textarea{
+    min-width: 140px;
+}
+tr.tenant_details {
+    padding-top: 40px;
+}
+.tenant_details li::marker {
+    content: '- ';
+}
+td.tenant_details {
+    display: grid;
+    gap: 20px;
+}
+input#year_ac,
+select#year_roof {
+    min-width: inherit;
+}
+td.repairs {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: auto auto;
+}
+a.mortgage-calculator-link {
+    color: #26aab9;
+    text-decoration: none;
+    font-size: 14px;
+    margin-left: 8px;
+}
+#Table_5 input {
+    min-width: 300px;
+}
+tr.forRefTr {
+    justify-content: normal !important;
+}
+td#emailIntDOM {
+    width: 75%;
+}
+td#emailIntDOM button {
+    justify-content: center;
+}
+#reason, 
+#closing_time{
+    min-width: 180px;
+}
+td.reason,
+td.closing_time {
+    display: grid;
+    gap: 20px;
+}
+span.unknown-blank {
+    color: red;
+    font-size: 14px;
+    margin-top: 8px;
+    display: inline-block;
+}
+button.dropbtn.commonEmails {
+    width: 80%;
+    margin: 12px 11px auto auto;
+}
+tr#priceAverageTitle {
+    border-top: 2px solid #C9CACC;
+    padding-top: 24px;
+}
+.circle-symbol {
+    display: none;
+}
+#zestimateAverage td {
+    display: flex;
+    gap:20px;
+    align-items:center;
+}
+#zestimateAverage input {
+    min-width: 200px;
+}
+#priceAverageTitle span, 
+#totalAverageTR td{
+    color: #25A9B6;
+    margin: auto;
+}
+#totalAverageTR td{
+  font-size: 32px;
+}
+button#sendAveragesButton, 
+.otherCostsBtn {
+    background: #012B64;
+    color: #fff;
+    box-shadow: rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px;
+    transition: 0.3s;
+    margin-bottom: 24px;
+}
+.notes-btn-wrpr{
+    border-bottom: 2px solid #C9CACC;
+}
+button#sendAveragesButton:hover,
+.otherCostsBtn:hover{
+    background-color: #363636;
+}
+input#zestimateInput, #askingPriceInput {
+    min-width: 200px;
+}
+tbody#matrixTbody {
+    gap: 0 !important;
+    border-bottom: 2px solid #BFC3C2;
+    padding-bottom: 20px !important;
+}
+#matrixTbody tr td {
+    width: 100%;
+}
+.matrixHeadings th {
+    margin: auto 0;
+}
+th.matrix-csm,
+th.investor,
+th.foreclosure,
+th.terms {
+    background: #26AAB9;
+    width: 25%;
+    color: #ffff;
+    padding: 16px;
+    font-weight: 500;
+}
+th.investor{
+  background: #0695A6;
+}
+th.foreclosure{
+  background: #027D8C;
+}
+th.terms{
+  background: #005E68;
+}
+#matrixTbody tr {
+    background: #415F61;
+    color: #fff;
+    text-align: center;
+}
+td.m-h-campaign.blink,
+td.m-h-multifamily.m-standard.m-header,
+td.m-h-multifamily.m-standard.m-header {
+    width: 100%;
+    padding: 10px;
+    font-weight: 600;
+}
+select#matrixAffiliates {
+    min-width: 200px;
+}
+td.calc-ir-h1, td.calc-ar-h1, td.calc-fr-h1 {
+    background: #26AAB9;
+    padding-block: 4px;
+    margin-block: 4px;
+    margin-inline: 56px;
+    margin-top: 20px;
+}
+td.calc-ar-h1 {
+    background: #CE9B01;
+    position: relative;
+}
+td.calc-ar-h1:after {
+    content: '';
+    position: absolute;
+    width: 1px;
+    height: 180px;
+    background: #fff;
+    right: -57px;
+    top: -70px;
+}
+td.calc-ar-h1:before {
+    content: '';
+    position: absolute;
+    width: 1px;
+    height: 180px;
+    background: #fff;
+    left: -57px;
+    top: -70px;
+}
+td.calc-fr-h1{
+    background: #A52D2E;
+}
+.m-r-ir span.read,
+.m-r-ar span.read,
+.m-r-fr span.read{
+    background: #26aab9;
+    padding: 8px 28px;
+    margin: 4px;
+    display: inline-block;
+}
+.m-r-ar span.read{
+  background:#CE9B01;
+}
+
+.m-r-fr span.read{
+  background: #A52D2E;
+}
+
+.calculations td.calc-ir-h3 {
+    max-width: 82px !important;
+    margin-inline: auto;
+    margin-bottom: 20px;
+    border: 1px solid #26aab9;
+    padding-block: 10px;
+}
+button.otherCostsBtn {
+    padding: 10px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+th.costs_header_1 {
+    text-align: center;
+    background: #26AAB9;
+    color: #fff;
+    font-weight: 400;
+    padding: 8px 120px;
+    width: 355px;
+}
+tbody#otherCostsTbody {
+    background: #415F61;
+    color: #fff;
+    width: 50%;
+}
+td.orange2 {
+    background: #26AAB9;
+    padding: 4px 20px;
+    min-width: 153px;
+    text-align: center;
+}
+#otherCostsTbody tr {
+    justify-content: normal !important;
+    gap: 8px;
+}
+.orange2 input[type='number'] {
+    width: 40px;
+}
+td#total_repairs_result {
+    width: 392px;
+    background: #26aab9;
+    text-align: center;
+    line-height: 25px;
+}
+.centralAc td.orange2 {
+    background: transparent;
+}
+.totalRepairs td#grand_total_contractors_result {
+    width: 247px;
+}
+td.pink1.taxes_header_1 {
+    background: #A52D2E;
+    width: 100%;
+    text-align: center;
+    line-height: 27px;
+}
+.es-price {
+    width: 216px;
+}
+th.costs_header_3 {
+    background: #D09A01;
+    width: 50%;
+    line-height: 33px;
+    font-weight: 400;
+}
+td.total_deductions {
+    background: #8500ED;
+    width: 50%;
+    text-align: center;
+    line-height: 25px;
+}
+input#totalRepairsAndContractorsOption,
+input#totalRealtorCostsOption,
+input#totalTaxesOption {
+    accent-color: #415F61 !important;
+}
+td.lead-source {
+    display: flex;
+}
+
+.lead-source div {
+    display: grid;
+    grid-template-columns: repeat(3,auto);
+    gap: 4px;
+}
+button.utm_source {
+    font-size: 11px;
+    padding-inline: 10px;
+}
+td.asking_price {
+    display: flex;
+}
+.asking_price div {
+    display: grid;
+    grid-template-columns: repeat(5,auto);
+    gap: 4px;
+}
+.disc_price{
+  padding-inline: 20px !important;
+}
+textarea#manager_notes {
+  margin-bottom: 8px;
+}
+button#takeOverCallBtn {
+    width: fit-content;
+    margin: 0 10px 0 auto;
+}
+td#slackSellersLink {
+    border-block: 2px solid #C0C1C3;
+}
+.qualified-lead-btn{
+    background: #24C400;
+    padding-inline: 32px !important; 
+    box-shadow: rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px;
+    transition: 0.3s;
+    cursor: pointer;
+}
+.qualified-lead-btn:hover{
+    background: #A52D2E !important;
+}
+.abandon-btn {
+    background: #A52D2E;
+    color: #fff;
+    border: none;
+    padding: 8px 24px;
+    transition: 0.3s;
+    cursor: pointer;
+}
+.abandon-btn:hover{
+  background: #363636;
+}
+  </style>
+
+
+
+
+  <title>LMSU| IPS | Delores L Thomas</title>
+  <style id="blinkerCSS">
+    @keyframes blinker {
+      50% {
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+
+<body style="margin-top: 110px; backface-visibility: hidden;">
+  <div id="zipWeather"
+    style="position: fixed; top: 40px; left: 50%; transform: translateX(-58%); width: 130%; z-index: 500; font-family: Arial, sans-serif; text-align: center; background-color: #4B4B4B; padding: 10px; border-radius: 8px;">
+    <span style="color: white; font-size: 18px;">Hamden:</span>
+    <span style="color: white; margin-left: 10px; font-size: 16px;">Temp 15°C / 59°F</span>
+    <span style="color: white;  margin-left: 10px; font-size: 16px;">Partly cloudy</span>
+    <img src="./webform_local_files/116.png" alt="Partly cloudy"
+      style="height: 50px; width: 50px; vertical-align: middle; margin-left: 10px;">
+  </div>
+  <div id="timeZoneBar"
+    style="position: fixed; top: 65px; left: 61%; transform: translateX(-50%); width: inherit; z-index: 550; color: white; font-family: Arial, sans-serif; text-align: center;">
+    Seller's Local Time: 12:11 PM</div>
+  <table style="width: 100%;" bgcolor="#F7F7F7" border="0" cellpadding="5" cellspacing="3" align="center" id="Table_1">
+    <tbody>
+      <tr  align="left">
+        <td align="left" bgcolor="#F7F7F7" width="30%"><img src="./webform_local_files/lamassu_logo3.png" width="300px">
+        </td>
+        <td align="left" bgcolor="#F7F7F7" width="70%">
+          <h2>New Lead Form</h2>
+        </td>
+      </tr>
+      <tr align="left">
+        <td class="m-notes" colspan="6">
+          <p class="m-p" id="notesValue"><span
+              style="color: green; display:block; text-align: center; margin:12px auto 24px;">IR: GOOD REASON TO SELL +
+              CTF 6 MONTHS OR LESS talk with the CSM</span>
+
+            <span style="display: block; text-align: center;"><small>*Marketing Source = Hillsborough8yearsFinal <br>
+                AND its HIGHLY MOTIVATED: IR 50-100%, AR: 101-105%, FR 106-120%* </small></span>
+            <span style="display: block; text-align: center; margin-bottom: 24px;"><small>*Marketing Source =
+                NHMobiles20percentq - campaing_prospect-export-10_20_2022 <br>
+                AND its Highly Motivated, and the seller is asking up to 100% Approved To Send IR!*</small></span>
+
+
+            <span
+              style="color: green; animation: blinker 0.8s linear infinite; display: block; text-align:center; margin-bottom:24px;">PROPERTY
+              IN NASHUA COUNTY + HIGHLY MOTIVATED, and the seller is asking up to 100% APPROVED TO SEND IR!</span>
+            <span
+              style="color: red; animation: blinker 0.8s linear infinite; font-size: 12px; display: block; text-align: center;">MOBILE
+              HOME, DOESN'T own the land = IR 40- 70%</span>
+            <span
+              style="color: red; animation: blinker 0.8s linear infinite; display: block; font-size: 12px; text-align:center; margin-bottom:24px;">MOBILE
+              HOME, DOES own the land AND HIGHLY MOTIVATED = IR up to 100%</span>
+
+            <span
+              style="color: green; animation: blinker 0.8s linear infinite; font-size: 12px; display: block; text-align: center; padding-bottom: 24px;">AR
+              AND REASON TO SELL IS CASH OFFER = CAN'T SEND IT OVER!</span>
+          </p>
+        </td>
+      </tr>
+
+      <tr bgcolor="#F7F7F7" style="box-shadow:rgba(0, 0, 0, 0.35) 0px 5px 15px; border-radius: 16px;">
+        <td align="right" style="width:40%; padding-block:16px;  border-radius: 16px 0 0 16px;" ><span
+            style="font-size:32px; text-transform:uppercase;color:#071030; text-decoration:underline; text-decoration-color:#C4C9C9; text-underline-offset: 8px;">Abandon Lead Finder</span></td>
+        <td style="padding-block:22px; border-radius: 0 16px 16px 0;">
+          Enter Phone Number:
+          <form action="https://ips.lamassucrm.com/lamassu_leadcapture.php" method="post" style="margin:0; margin-left: 16px; display:inline;"><input
+              class="textbox" name="abandon_phone" id="abandon_phone" type="text" size="20" maxlength="100"
+              value="">&nbsp;<input type="submit" class="btnm1" value="Find"></form>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <form method="post" name="main" action="https://ips.lamassucrm.com/lamassu_leadpost.php"
+    onsubmit=" return validate_form(); ">
+    <input type="hidden" name="utm_medium" value="Cold Call">
+    <input type="hidden" name="utm_source1" value="">
+    <input type="hidden" name="utm_referer" value="">
+    <table bgcolor="#F7F7F7" border="0" cellpadding="5" cellspacing="3" align="center" id="Table_2">
+      <tbody>
+        <tr align="left">
+          <td colspan="4" bgcolor="#F7F7F7">&nbsp;</td>
+        </tr>
+        <tr align="center" style="justify-content: center;">
+          <td  colspan="4"><span style="text-transform: uppercase; font-size:32px; text-transform:uppercase;color:#071030; text-decoration:underline; text-decoration-color:#C4C9C9; text-underline-offset: 8px;">Seller's Information</span>
+          </td>
+        </tr>
+        <tr align="center">
+          <td colspan="4"  style="width: 100%; text-align: center;">SPANISH Speaker:
+            <select name="spanish" id="spanish" style="display: none;">
+              <option value=""></option>
+              <option value="Yes">Yes</option>
+              <option value="No">No</option>
+            </select>
+
+            <button class="spanish " value="" style="margin-left: 5px; margin-right: 5px; display: none;"
+              tabindex="-1"></button><button class="spanish Yes" value="Yes"
+              style="margin-left: 5px; margin-right: 5px; background: #26AAB9; border:none; border:0;padding:6px 16px;border-radius:6px; color:#fff; cursor:pointer; box-shadow: rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px;" tabindex="-1">Yes</button><button class="spanish No"
+              value="No" style="margin-left: 5px; margin-right: 5px; background: #363636; border:none; border:0;padding:6px 16px;border-radius:6px; color:#fff; cursor:pointer; box-shadow: rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px;" tabindex="-1">No</button>
+          </td>
+        </tr>
+        <tr align="left" bgcolor="#F7F7F7" style="display: none;">
+          <td>Client Name:</td>
+          <td><input class="textbox" name="ClientName" id="ClientName" type="text" size="40" maxlength="100" value="">
+          </td>
+        </tr>
+        <tr  bgcolor="#F7F7F7">
+          <td>First Name:</td>
+          <td><input class="textbox" name="fname" id="fname" type="text" size="30" maxlength="100" value=""></td>
+          <td>Last Name:</td>
+          <td><input class="textbox" name="lname" id="lname" type="text" size="30" maxlength="100" value=""></td>
+        </tr>
+        <tr  bgcolor="#F7F7F7">
+            <td align="left" valign="top">Phone 01:</td>
+            <td align="left" id="homePhoneTR"><input class="textbox" name="HomePhone" id="HomePhone" type="text" size="30"
+                maxlength="20" value=""><button class="formatPhoneButton" tabindex="-1">Format Phone</button></td>
+            <td align="left" valign="top">Phone 02:</td>
+            <td align="left"><input class="textbox" name="SecondaryPhone" id="SecondaryPhone" type="text" size="30"
+                maxlength="20" value=""></td>
+        </tr>
+        <tr align="center" style="display: flex;">
+          <td align="left" style="width: 20%;">For reference only, please verify:</td>
+          <td align="left" style="width: 80%;">
+            <div id="addressFunctionToDOM"><span> Juniper Ave, Westerville, OH 43081</span><button class="addressButton"
+                tabindex="-1">Fill Address</button><button class="addressButton" tabindex="-1">Clear
+                Address</button><button class="customAddressToggle addressButton" tabindex="-1">New Address from
+                Zillow</button><input type="text" class="customAddressText textbox" size="35"
+                placeholder="Paste the new Zillow address here..." style="display: none;"><button
+                class="setCustomAddressBtn textbox addressButton" style="display: none;" tabindex="-1">Set
+                Address</button></div>
+          </td>
+        </tr>
+        <tr align="left" id="blankAddressTR">
+          <td colspan="2" bgcolor="#F7F7F7"></td>
+        </tr>
+        <tr align="left" bgcolor="#F7F7F7">
+          <td align="left" valign="top">Street</td>
+          <td align="left"><input class="textbox" name="StreetAddress" id="StreetAddress" type="text" size="30"
+              maxlength="100" value=""></td>
+          <td align="left" valign="top">City</td>
+          <td align="left"><input class="textbox" name="City" id="City" type="text" size="30" maxlength="30" value="">
+          </td>
+        </tr>
+        <tr align="left" bgcolor="#F7F7F7">
+          <td align="left" valign="top">State</td>
+          <td align="left"><select name="State" id="State">
+              <option value="" selected=""></option>
+              <option value="AL">Alabama</option>
+              <option value="AK">Alaska</option>
+              <option value="AZ">Arizona</option>
+              <option value="AR">Arkansas</option>
+              <option value="CA">California</option>
+              <option value="CO">Colorado</option>
+              <option value="CT">Connecticut</option>
+              <option value="DE">Delaware</option>
+              <option value="DC">District of Columbia</option>
+              <option value="FL">Florida</option>
+              <option value="GA">Georgia</option>
+              <option value="HI">Hawaii</option>
+              <option value="ID">Idaho</option>
+              <option value="IL">Illinois</option>
+              <option value="IN">Indiana</option>
+              <option value="IA">Iowa</option>
+              <option value="KS">Kansas</option>
+              <option value="KY">Kentucky</option>
+              <option value="LA">Louisiana</option>
+              <option value="ME">Maine</option>
+              <option value="MD">Maryland</option>
+              <option value="MA">Massachusetts</option>
+              <option value="MI">Michigan</option>
+              <option value="MN">Minnesota</option>
+              <option value="MS">Mississippi</option>
+              <option value="MO">Missouri</option>
+              <option value="MT">Montana</option>
+              <option value="NE">Nebraska</option>
+              <option value="NV">Nevada</option>
+              <option value="NH">New Hampshire</option>
+              <option value="NJ">New Jersey</option>
+              <option value="NM">New Mexico</option>
+              <option value="NY">New York</option>
+              <option value="NC">North Carolina</option>
+              <option value="ND">North Dakota</option>
+              <option value="OH">Ohio</option>
+              <option value="OK">Oklahoma</option>
+              <option value="OR">Oregon</option>
+              <option value="PA">Pennsylvania</option>
+              <option value="RI">Rhode Island</option>
+              <option value="SC">South Carolina</option>
+              <option value="SD">South Dakota</option>
+              <option value="TN">Tennessee</option>
+              <option value="TX">Texas</option>
+              <option value="UT">Utah</option>
+              <option value="VT">Vermont</option>
+              <option value="VA">Virginia</option>
+              <option value="WA">Washington</option>
+              <option value="WV">West Virginia</option>
+              <option value="WI">Wisconsin</option>
+              <option value="WY">Wyoming</option>
+
+            </select></td>
+          <td align="left" valign="top">Zip</td>
+          <td><input class="textbox" name="ZipCode" id="ZipCode" type="text" size="30" maxlength="10" value=""></td>
+        </tr>
+        <tr align="left" bgcolor="#F7F7F7" class="note" style="cursor: pointer;">
+          <td align="left" style="background-color: rgb(247, 247, 247);">Note:</td>
+          <td align="left" colspan="1"><textarea name="note" id="note" rows="4" cols="39"
+              style="height: 100%; width: 480px; margin-left: 32px; resize: none; border-radius: 16px; padding:16px;"></textarea></td>
+          <td class="note" colspan="2" style="vertical-align: top; cursor: pointer;"><button
+              class="not-interested?? miniTemplatesBtn" tabindex="-1">NOT INTERESTED?? <svg class="btn-arrow-wht" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M5.536 21.886C5.69777 21.9701 5.87939 22.0086 6.06138 21.9974C6.24337 21.9861 6.41886 21.9255 6.569 21.822L19.569 12.822C19.7018 12.73 19.8104 12.6071 19.8854 12.464C19.9603 12.3208 19.9995 12.1616 19.9995 12C19.9995 11.8384 19.9603 11.6792 19.8854 11.536C19.8104 11.3929 19.7018 11.27 19.569 11.178L6.569 2.178C6.41897 2.07419 6.24341 2.01341 6.06131 2.00222C5.87922 1.99103 5.69753 2.02988 5.53593 2.11454C5.37433 2.1992 5.23896 2.32646 5.1445 2.48254C5.05003 2.63862 5.00006 2.81756 5 3V21C4.99997 21.1825 5.0499 21.3616 5.14439 21.5178C5.23887 21.674 5.3743 21.8013 5.536 21.886Z" />
+                </svg>
+                </button><button
+              class="home-details miniTemplatesBtn" tabindex="-1">HOME DETAILS <svg class="btn-arrow-wht" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M5.536 21.886C5.69777 21.9701 5.87939 22.0086 6.06138 21.9974C6.24337 21.9861 6.41886 21.9255 6.569 21.822L19.569 12.822C19.7018 12.73 19.8104 12.6071 19.8854 12.464C19.9603 12.3208 19.9995 12.1616 19.9995 12C19.9995 11.8384 19.9603 11.6792 19.8854 11.536C19.8104 11.3929 19.7018 11.27 19.569 11.178L6.569 2.178C6.41897 2.07419 6.24341 2.01341 6.06131 2.00222C5.87922 1.99103 5.69753 2.02988 5.53593 2.11454C5.37433 2.1992 5.23896 2.32646 5.1445 2.48254C5.05003 2.63862 5.00006 2.81756 5 3V21C4.99997 21.1825 5.0499 21.3616 5.14439 21.5178C5.23887 21.674 5.3743 21.8013 5.536 21.886Z" />
+                </svg></button><button
+              class="land-details miniTemplatesBtn" tabindex="-1">LAND DETAILS <svg class="btn-arrow-wht" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M5.536 21.886C5.69777 21.9701 5.87939 22.0086 6.06138 21.9974C6.24337 21.9861 6.41886 21.9255 6.569 21.822L19.569 12.822C19.7018 12.73 19.8104 12.6071 19.8854 12.464C19.9603 12.3208 19.9995 12.1616 19.9995 12C19.9995 11.8384 19.9603 11.6792 19.8854 11.536C19.8104 11.3929 19.7018 11.27 19.569 11.178L6.569 2.178C6.41897 2.07419 6.24341 2.01341 6.06131 2.00222C5.87922 1.99103 5.69753 2.02988 5.53593 2.11454C5.37433 2.1992 5.23896 2.32646 5.1445 2.48254C5.05003 2.63862 5.00006 2.81756 5 3V21C4.99997 21.1825 5.0499 21.3616 5.14439 21.5178C5.23887 21.674 5.3743 21.8013 5.536 21.886Z" />
+                </svg></button>
+            <div class="dropdown"><button class="dropbtn" tabindex="-1">PERSONALITY <svg class="btn-arrow-wht" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M5.536 21.886C5.69777 21.9701 5.87939 22.0086 6.06138 21.9974C6.24337 21.9861 6.41886 21.9255 6.569 21.822L19.569 12.822C19.7018 12.73 19.8104 12.6071 19.8854 12.464C19.9603 12.3208 19.9995 12.1616 19.9995 12C19.9995 11.8384 19.9603 11.6792 19.8854 11.536C19.8104 11.3929 19.7018 11.27 19.569 11.178L6.569 2.178C6.41897 2.07419 6.24341 2.01341 6.06131 2.00222C5.87922 1.99103 5.69753 2.02988 5.53593 2.11454C5.37433 2.1992 5.23896 2.32646 5.1445 2.48254C5.05003 2.63862 5.00006 2.81756 5 3V21C4.99997 21.1825 5.0499 21.3616 5.14439 21.5178C5.23887 21.674 5.3743 21.8013 5.536 21.886Z" />
+              </svg></button>
+              <div class="dropdown-content" style="display: none;"><button class="miniTemplatesDropDwnbtn" tabindex="-1">Seller is a very nice
+                  person</button><button class="miniTemplatesDropDwnbtn" tabindex="-1">Seller is an old
+                  person</button><button class="miniTemplatesDropDwnbtn" tabindex="-1">Seller is very
+                  talkative</button><button class="miniTemplatesDropDwnbtn" tabindex="-1">Reluctant to answer some
+                  questions</button></div>
+            </div>
+            <div class="dropdown"><button class="dropbtn" tabindex="-1">MATRIX <svg class="btn-arrow-wht" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M5.536 21.886C5.69777 21.9701 5.87939 22.0086 6.06138 21.9974C6.24337 21.9861 6.41886 21.9255 6.569 21.822L19.569 12.822C19.7018 12.73 19.8104 12.6071 19.8854 12.464C19.9603 12.3208 19.9995 12.1616 19.9995 12C19.9995 11.8384 19.9603 11.6792 19.8854 11.536C19.8104 11.3929 19.7018 11.27 19.569 11.178L6.569 2.178C6.41897 2.07419 6.24341 2.01341 6.06131 2.00222C5.87922 1.99103 5.69753 2.02988 5.53593 2.11454C5.37433 2.1992 5.23896 2.32646 5.1445 2.48254C5.05003 2.63862 5.00006 2.81756 5 3V21C4.99997 21.1825 5.0499 21.3616 5.14439 21.5178C5.23887 21.674 5.3743 21.8013 5.536 21.886Z" />
+              </svg></button>
+              <div class="dropdown-content" style="display: none;"><button class="miniTemplatesDropDwnbtn" tabindex="-1">Matrix Approval:
+                  Rent</button><button class="miniTemplatesDropDwnbtn" tabindex="-1">Matrix Approval: Working with an
+                  investor</button><button class="miniTemplatesDropDwnbtn" tabindex="-1">Matrix Approval:
+                  Multifamily</button><button class="miniTemplatesDropDwnbtn" tabindex="-1">Matrix Approval:
+                  Pre-Foreclosure</button><button class="miniTemplatesDropDwnbtn" tabindex="-1">Matrix Approval:
+                  Terms</button></div>
+            </div>
+            <div class="dropdown"><button class="dropbtn" tabindex="-1">FORECLOSURE <svg class="btn-arrow-wht" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M5.536 21.886C5.69777 21.9701 5.87939 22.0086 6.06138 21.9974C6.24337 21.9861 6.41886 21.9255 6.569 21.822L19.569 12.822C19.7018 12.73 19.8104 12.6071 19.8854 12.464C19.9603 12.3208 19.9995 12.1616 19.9995 12C19.9995 11.8384 19.9603 11.6792 19.8854 11.536C19.8104 11.3929 19.7018 11.27 19.569 11.178L6.569 2.178C6.41897 2.07419 6.24341 2.01341 6.06131 2.00222C5.87922 1.99103 5.69753 2.02988 5.53593 2.11454C5.37433 2.1992 5.23896 2.32646 5.1445 2.48254C5.05003 2.63862 5.00006 2.81756 5 3V21C4.99997 21.1825 5.0499 21.3616 5.14439 21.5178C5.23887 21.674 5.3743 21.8013 5.536 21.886Z" />
+              </svg></button>
+              <div class="dropdown-content" style="display: none;"><button class="miniTemplatesDropDwnbtn" tabindex="-1">Have you received a
+                  letter with a final warning? IF so, when did you receive it.</button><button
+                  class="miniTemplatesDropDwnbtn" tabindex="-1">When is the auction date?</button><button
+                  class="miniTemplatesDropDwnbtn" tabindex="-1">How much do you we on the mortgage? </button><button
+                  class="miniTemplatesDropDwnbtn" tabindex="-1">How much is the outstanding balance that you owe to the
+                  bank?</button><button class="miniTemplatesDropDwnbtn" tabindex="-1">How much do you want for the
+                  property?</button><button class="miniTemplatesDropDwnbtn" tabindex="-1">ATTENTION: Very important to
+                  ask the reason WHY the property is foreclosed.</button></div>
+            </div><button class="realtor miniTemplatesBtn" tabindex="-1">REALTOR <svg class="btn-arrow-wht" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M5.536 21.886C5.69777 21.9701 5.87939 22.0086 6.06138 21.9974C6.24337 21.9861 6.41886 21.9255 6.569 21.822L19.569 12.822C19.7018 12.73 19.8104 12.6071 19.8854 12.464C19.9603 12.3208 19.9995 12.1616 19.9995 12C19.9995 11.8384 19.9603 11.6792 19.8854 11.536C19.8104 11.3929 19.7018 11.27 19.569 11.178L6.569 2.178C6.41897 2.07419 6.24341 2.01341 6.06131 2.00222C5.87922 1.99103 5.69753 2.02988 5.53593 2.11454C5.37433 2.1992 5.23896 2.32646 5.1445 2.48254C5.05003 2.63862 5.00006 2.81756 5 3V21C4.99997 21.1825 5.0499 21.3616 5.14439 21.5178C5.23887 21.674 5.3743 21.8013 5.536 21.886Z" />
+              </svg></button><button
+              class="spanish-lead miniTemplatesBtn" tabindex="-1">SPANISH LEAD <svg class="btn-arrow-wht" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M5.536 21.886C5.69777 21.9701 5.87939 22.0086 6.06138 21.9974C6.24337 21.9861 6.41886 21.9255 6.569 21.822L19.569 12.822C19.7018 12.73 19.8104 12.6071 19.8854 12.464C19.9603 12.3208 19.9995 12.1616 19.9995 12C19.9995 11.8384 19.9603 11.6792 19.8854 11.536C19.8104 11.3929 19.7018 11.27 19.569 11.178L6.569 2.178C6.41897 2.07419 6.24341 2.01341 6.06131 2.00222C5.87922 1.99103 5.69753 2.02988 5.53593 2.11454C5.37433 2.1992 5.23896 2.32646 5.1445 2.48254C5.05003 2.63862 5.00006 2.81756 5 3V21C4.99997 21.1825 5.0499 21.3616 5.14439 21.5178C5.23887 21.674 5.3743 21.8013 5.536 21.886Z" />
+                </svg></button>
+            <div class="dropdown"><button class="dropbtn" tabindex="-1">COMMERCIAL PROPERTY <svg class="btn-arrow-wht" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M5.536 21.886C5.69777 21.9701 5.87939 22.0086 6.06138 21.9974C6.24337 21.9861 6.41886 21.9255 6.569 21.822L19.569 12.822C19.7018 12.73 19.8104 12.6071 19.8854 12.464C19.9603 12.3208 19.9995 12.1616 19.9995 12C19.9995 11.8384 19.9603 11.6792 19.8854 11.536C19.8104 11.3929 19.7018 11.27 19.569 11.178L6.569 2.178C6.41897 2.07419 6.24341 2.01341 6.06131 2.00222C5.87922 1.99103 5.69753 2.02988 5.53593 2.11454C5.37433 2.1992 5.23896 2.32646 5.1445 2.48254C5.05003 2.63862 5.00006 2.81756 5 3V21C4.99997 21.1825 5.0499 21.3616 5.14439 21.5178C5.23887 21.674 5.3743 21.8013 5.536 21.886Z" />
+              </svg></button>
+              <div class="dropdown-content" style="display: none;"><button class="miniTemplatesDropDwnbtn" tabindex="-1">What's the
+                  squarefootage of the property?</button><button class="miniTemplatesDropDwnbtn" tabindex="-1">Is it
+                  rented now or do you have a business yourself?</button><button class="miniTemplatesDropDwnbtn"
+                  tabindex="-1">How much is the current rent?</button><button class="miniTemplatesDropDwnbtn"
+                  tabindex="-1">Do you remember how much was the total income last year?</button><button
+                  class="miniTemplatesDropDwnbtn" tabindex="-1">Is it free and clear?</button></div>
+            </div><button class="owner&#39;s-name miniTemplatesBtn" tabindex="-1">OWNER'S NAME <svg class="btn-arrow-wht" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M5.536 21.886C5.69777 21.9701 5.87939 22.0086 6.06138 21.9974C6.24337 21.9861 6.41886 21.9255 6.569 21.822L19.569 12.822C19.7018 12.73 19.8104 12.6071 19.8854 12.464C19.9603 12.3208 19.9995 12.1616 19.9995 12C19.9995 11.8384 19.9603 11.6792 19.8854 11.536C19.8104 11.3929 19.7018 11.27 19.569 11.178L6.569 2.178C6.41897 2.07419 6.24341 2.01341 6.06131 2.00222C5.87922 1.99103 5.69753 2.02988 5.53593 2.11454C5.37433 2.1992 5.23896 2.32646 5.1445 2.48254C5.05003 2.63862 5.00006 2.81756 5 3V21C4.99997 21.1825 5.0499 21.3616 5.14439 21.5178C5.23887 21.674 5.3743 21.8013 5.536 21.886Z" />
+              </svg></button>
+            <div class="dropdown"><button class="dropbtn" tabindex="-1" style="display: none;">ZILLOW-REDF-PROPS <svg class="btn-arrow-wht" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M5.536 21.886C5.69777 21.9701 5.87939 22.0086 6.06138 21.9974C6.24337 21.9861 6.41886 21.9255 6.569 21.822L19.569 12.822C19.7018 12.73 19.8104 12.6071 19.8854 12.464C19.9603 12.3208 19.9995 12.1616 19.9995 12C19.9995 11.8384 19.9603 11.6792 19.8854 11.536C19.8104 11.3929 19.7018 11.27 19.569 11.178L6.569 2.178C6.41897 2.07419 6.24341 2.01341 6.06131 2.00222C5.87922 1.99103 5.69753 2.02988 5.53593 2.11454C5.37433 2.1992 5.23896 2.32646 5.1445 2.48254C5.05003 2.63862 5.00006 2.81756 5 3V21C4.99997 21.1825 5.0499 21.3616 5.14439 21.5178C5.23887 21.674 5.3743 21.8013 5.536 21.886Z" />
+              </svg></button>
+              <div class="dropdown-content" style="display: none;"><button class="miniTemplatesDropDwnbtn" tabindex="-1"> Zillow has been
+                  used</button><button class="miniTemplatesDropDwnbtn" tabindex="-1"> Redfin has been
+                  used</button><button class="miniTemplatesDropDwnbtn" tabindex="-1">Propstream has been used</button>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr style="background: #26AAB9;">
+
+          <td class="marketing-lead-source" colspan="6" style="text-align: center;">
+            <p>
+              <span>MARKETING LEAD SOURCE: SynergyData_CN_Probate</span>
+            </p>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <table bgcolor="#F7F7F7" border="0" cellpadding="5" cellspacing="3" align="center" id="Table_3">
+      <tbody>
+        <tr align="center" style="justify-content: center;">
+
+
+          <td colspan="4"><span style="text-transform: uppercase; font-size:32px; text-transform:uppercase;color:#071030; text-decoration:underline; text-decoration-color:#C4C9C9; text-underline-offset: 8px;">Property Details</span></td>
+        </tr>
+        <tr align="left" class="property-details-row">
+          <td>Bedrooms:&nbsp;&nbsp;
+            <select name="bedroom" id="bedroom">
+              <option value="" selected=""></option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+            </select>
+          </td>
+          <td>Bath:&nbsp;&nbsp;
+            <select name="bath" id="bath">
+              <option value="" selected=""></option>
+              <option value="1">1</option>
+              <option value="1.5">1.5</option>
+              <option value="2">2</option>
+              <option value="2.5">2.5</option>
+              <option value="3">3</option>
+              <option value="3.5">3.5</option>
+              <option value="4">4</option>
+            </select>
+          </td>
+
+          <td style="display:;">Garage:&nbsp;&nbsp;
+            <select name="garage" id="garage">
+              <option value="" selected=""></option>
+              <option value="None">None</option>
+              <option value="1 car">1 car</option>
+              <option value="2 car">2 car</option>
+            </select>
+          </td>
+          <td>Pool:&nbsp;&nbsp;
+            <input type="text" name="pool" id="pool" size="10" maxlenght="100" value="">
+          </td>
+
+          <td style="display:;" colspan="0">Solar Panels:&nbsp;&nbsp;
+            <select name="solar_panels" id="solar_panels">
+              <option value="" selected=""></option>
+              <option value="Yes">Yes</option>
+              <option value="No">No</option>
+            </select>
+          </td>
+          <td style="display:;">Solar Loan:&nbsp;&nbsp;
+            <select name="solar_loan" id="solar_loan">
+              <option value="" selected=""></option>
+              <option value="Yes">Yes</option>
+              <option value="No">No</option>
+            </select>
+          </td>
+        </tr>
+          <tr align="left" class="conditions">
+            <td colspan="0">GENERAL CONDITION OF THE PROPERTY: <br><textarea name="conditions" id="conditions" rows="3" cols="39"
+              style="height: 100%; resize:none"></textarea></td>
+            <td class="conditions" colspan="2" style="vertical-align: top;">
+              <div class="dropdown"><button class="dropbtn" tabindex="-1">DISCOVERY QUESTIONS CONDITIONS <svg class="btn-arrow-wht" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M5.536 21.886C5.69777 21.9701 5.87939 22.0086 6.06138 21.9974C6.24337 21.9861 6.41886 21.9255 6.569 21.822L19.569 12.822C19.7018 12.73 19.8104 12.6071 19.8854 12.464C19.9603 12.3208 19.9995 12.1616 19.9995 12C19.9995 11.8384 19.9603 11.6792 19.8854 11.536C19.8104 11.3929 19.7018 11.27 19.569 11.178L6.569 2.178C6.41897 2.07419 6.24341 2.01341 6.06131 2.00222C5.87922 1.99103 5.69753 2.02988 5.53593 2.11454C5.37433 2.1992 5.23896 2.32646 5.1445 2.48254C5.05003 2.63862 5.00006 2.81756 5 3V21C4.99997 21.1825 5.0499 21.3616 5.14439 21.5178C5.23887 21.674 5.3743 21.8013 5.536 21.886Z"></path>
+                </svg></button>
+                <div class="dropdown-content" style="display: none;"><button class="miniTemplatesDropDwnbtn" tabindex="-1">What type of updates
+                    have you made to the property?<br></button><button class="miniTemplatesDropDwnbtn" tabindex="-1">When
+                    was the last time you did something to the house?</button></div>
+              </div>
+              <div class="dropdown"><button class="dropbtn" tabindex="-1">GENERAL CONDITIONS <svg class="btn-arrow-wht" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M5.536 21.886C5.69777 21.9701 5.87939 22.0086 6.06138 21.9974C6.24337 21.9861 6.41886 21.9255 6.569 21.822L19.569 12.822C19.7018 12.73 19.8104 12.6071 19.8854 12.464C19.9603 12.3208 19.9995 12.1616 19.9995 12C19.9995 11.8384 19.9603 11.6792 19.8854 11.536C19.8104 11.3929 19.7018 11.27 19.569 11.178L6.569 2.178C6.41897 2.07419 6.24341 2.01341 6.06131 2.00222C5.87922 1.99103 5.69753 2.02988 5.53593 2.11454C5.37433 2.1992 5.23896 2.32646 5.1445 2.48254C5.05003 2.63862 5.00006 2.81756 5 3V21C4.99997 21.1825 5.0499 21.3616 5.14439 21.5178C5.23887 21.674 5.3743 21.8013 5.536 21.886Z"></path>
+                </svg></button>
+                <div class="dropdown-content" style="display: none;"><button class="miniTemplatesDropDwnbtn" tabindex="-1">Property fully
+                    remodelled</button><button class="miniTemplatesDropDwnbtn" tabindex="-1">Property is being
+                    updated</button><button class="miniTemplatesDropDwnbtn" tabindex="-1">Property is in good
+                    conditions</button><button class="miniTemplatesDropDwnbtn" tabindex="-1">Property needs moderate
+                    repairs </button><button class="miniTemplatesDropDwnbtn" tabindex="-1">Property needs heavy
+                    repairs</button></div>
+              </div>
+              <div class="dropdown"><button class="dropbtn" tabindex="-1">NOT LIVABLE <svg class="btn-arrow-wht" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M5.536 21.886C5.69777 21.9701 5.87939 22.0086 6.06138 21.9974C6.24337 21.9861 6.41886 21.9255 6.569 21.822L19.569 12.822C19.7018 12.73 19.8104 12.6071 19.8854 12.464C19.9603 12.3208 19.9995 12.1616 19.9995 12C19.9995 11.8384 19.9603 11.6792 19.8854 11.536C19.8104 11.3929 19.7018 11.27 19.569 11.178L6.569 2.178C6.41897 2.07419 6.24341 2.01341 6.06131 2.00222C5.87922 1.99103 5.69753 2.02988 5.53593 2.11454C5.37433 2.1992 5.23896 2.32646 5.1445 2.48254C5.05003 2.63862 5.00006 2.81756 5 3V21C4.99997 21.1825 5.0499 21.3616 5.14439 21.5178C5.23887 21.674 5.3743 21.8013 5.536 21.886Z"></path>
+                </svg></button>
+                <div class="dropdown-content" style="display: none;"><button class="miniTemplatesDropDwnbtn" tabindex="-1">Property is NOT
+                    livable, it is a teardown.</button><button class="miniTemplatesDropDwnbtn" tabindex="-1">Property is
+                    NOT livable, it can be rehabbed.</button></div>
+              </div><button class="dropbtn heavy miniTemplatesBtn" tabindex="-1">HEAVY <svg class="btn-arrow-wht" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M5.536 21.886C5.69777 21.9701 5.87939 22.0086 6.06138 21.9974C6.24337 21.9861 6.41886 21.9255 6.569 21.822L19.569 12.822C19.7018 12.73 19.8104 12.6071 19.8854 12.464C19.9603 12.3208 19.9995 12.1616 19.9995 12C19.9995 11.8384 19.9603 11.6792 19.8854 11.536C19.8104 11.3929 19.7018 11.27 19.569 11.178L6.569 2.178C6.41897 2.07419 6.24341 2.01341 6.06131 2.00222C5.87922 1.99103 5.69753 2.02988 5.53593 2.11454C5.37433 2.1992 5.23896 2.32646 5.1445 2.48254C5.05003 2.63862 5.00006 2.81756 5 3V21C4.99997 21.1825 5.0499 21.3616 5.14439 21.5178C5.23887 21.674 5.3743 21.8013 5.536 21.886Z"></path>
+                </svg></button>                
+            </td>
+            <td colspan="0">CURRENTLY OCCUPIED BY (if occupied, include Rent Amount): <br> <textarea name="occupied" id="occupied" rows="3" cols="39" style="height: 100%; resize:none"></textarea></td>
+            <td class="occupied" colspan="2" style="vertical-align: top;">
+              <div class="dropdown"><button class="dropbtn" tabindex="-1">DISCOVERY QUESTIONS OCCUPANCY <svg class="btn-arrow-wht" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M5.536 21.886C5.69777 21.9701 5.87939 22.0086 6.06138 21.9974C6.24337 21.9861 6.41886 21.9255 6.569 21.822L19.569 12.822C19.7018 12.73 19.8104 12.6071 19.8854 12.464C19.9603 12.3208 19.9995 12.1616 19.9995 12C19.9995 11.8384 19.9603 11.6792 19.8854 11.536C19.8104 11.3929 19.7018 11.27 19.569 11.178L6.569 2.178C6.41897 2.07419 6.24341 2.01341 6.06131 2.00222C5.87922 1.99103 5.69753 2.02988 5.53593 2.11454C5.37433 2.1992 5.23896 2.32646 5.1445 2.48254C5.05003 2.63862 5.00006 2.81756 5 3V21C4.99997 21.1825 5.0499 21.3616 5.14439 21.5178C5.23887 21.674 5.3743 21.8013 5.536 21.886Z"></path>
+                </svg></button>
+                <div class="dropdown-content" style="display: none;"><button class="miniTemplatesDropDwnbtn" tabindex="-1">IF OCCUPIED BY OWNER:
+                  </button><button class="miniTemplatesDropDwnbtn" tabindex="-1">For how long have you been living in the
+                    property?</button><button class="miniTemplatesDropDwnbtn" tabindex="-1">What can you tell me about the
+                    neighborhood?</button><button class="miniTemplatesDropDwnbtn" tabindex="-1">IF OCCUPIED BY TENANTS:
+                  </button><button class="miniTemplatesDropDwnbtn" tabindex="-1">For how long have the tenants been in the
+                    property?</button><button class="miniTemplatesDropDwnbtn" tabindex="-1">Do they take good care of the
+                    house?</button><button class="miniTemplatesDropDwnbtn" tabindex="-1">When was the last time that you
+                    visited the house?</button><button class="miniTemplatesDropDwnbtn" tabindex="-1">Are they good
+                    tenants?</button><button class="miniTemplatesDropDwnbtn" tabindex="-1">Do they always pay on
+                    time?</button><button class="miniTemplatesDropDwnbtn" tabindex="-1">IF THE HOUSE IS
+                    VACANT</button><button class="miniTemplatesDropDwnbtn" tabindex="-1">For how long has it been
+                    vacant?</button><button class="miniTemplatesDropDwnbtn" tabindex="-1">When has the last time you
+                    visited the house?</button><button class="miniTemplatesDropDwnbtn" tabindex="-1">Why is the house
+                    vacant now?</button></div>
+              </div><button class="by-owner miniTemplatesBtn dropbtn" tabindex="-1">BY OWNER <svg class="btn-arrow-wht" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M5.536 21.886C5.69777 21.9701 5.87939 22.0086 6.06138 21.9974C6.24337 21.9861 6.41886 21.9255 6.569 21.822L19.569 12.822C19.7018 12.73 19.8104 12.6071 19.8854 12.464C19.9603 12.3208 19.9995 12.1616 19.9995 12C19.9995 11.8384 19.9603 11.6792 19.8854 11.536C19.8104 11.3929 19.7018 11.27 19.569 11.178L6.569 2.178C6.41897 2.07419 6.24341 2.01341 6.06131 2.00222C5.87922 1.99103 5.69753 2.02988 5.53593 2.11454C5.37433 2.1992 5.23896 2.32646 5.1445 2.48254C5.05003 2.63862 5.00006 2.81756 5 3V21C4.99997 21.1825 5.0499 21.3616 5.14439 21.5178C5.23887 21.674 5.3743 21.8013 5.536 21.886Z"></path>
+                </svg></button><button
+                class="by-tenants miniTemplatesBtn dropbtn" tabindex="-1">BY TENANTS <svg class="btn-arrow-wht" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M5.536 21.886C5.69777 21.9701 5.87939 22.0086 6.06138 21.9974C6.24337 21.9861 6.41886 21.9255 6.569 21.822L19.569 12.822C19.7018 12.73 19.8104 12.6071 19.8854 12.464C19.9603 12.3208 19.9995 12.1616 19.9995 12C19.9995 11.8384 19.9603 11.6792 19.8854 11.536C19.8104 11.3929 19.7018 11.27 19.569 11.178L6.569 2.178C6.41897 2.07419 6.24341 2.01341 6.06131 2.00222C5.87922 1.99103 5.69753 2.02988 5.53593 2.11454C5.37433 2.1992 5.23896 2.32646 5.1445 2.48254C5.05003 2.63862 5.00006 2.81756 5 3V21C4.99997 21.1825 5.0499 21.3616 5.14439 21.5178C5.23887 21.674 5.3743 21.8013 5.536 21.886Z"></path>
+                  </svg></button><button
+                class="vacant miniTemplatesBtn dropbtn" tabindex="-1">VACANT <svg class="btn-arrow-wht" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M5.536 21.886C5.69777 21.9701 5.87939 22.0086 6.06138 21.9974C6.24337 21.9861 6.41886 21.9255 6.569 21.822L19.569 12.822C19.7018 12.73 19.8104 12.6071 19.8854 12.464C19.9603 12.3208 19.9995 12.1616 19.9995 12C19.9995 11.8384 19.9603 11.6792 19.8854 11.536C19.8104 11.3929 19.7018 11.27 19.569 11.178L6.569 2.178C6.41897 2.07419 6.24341 2.01341 6.06131 2.00222C5.87922 1.99103 5.69753 2.02988 5.53593 2.11454C5.37433 2.1992 5.23896 2.32646 5.1445 2.48254C5.05003 2.63862 5.00006 2.81756 5 3V21C4.99997 21.1825 5.0499 21.3616 5.14439 21.5178C5.23887 21.674 5.3743 21.8013 5.536 21.886Z"></path>
+                  </svg></button>
+            </td>
+          </tr>
+          <!-- <tr align="left" class="occupied">
+            <td colspan="0">CURRENTLY OCCUPIED BY (if occupied, include Rent Amount): <br> <textarea name="occupied" id="occupied" rows="3" cols="39" style="height: 100%; resize:none"></textarea></td>
+            <td class="occupied" colspan="2" style="vertical-align: top;">
+              <div class="dropdown"><button class="dropbtn" tabindex="-1">DISCOVERY QUESTIONS OCCUPANCY <svg class="btn-arrow-wht" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M5.536 21.886C5.69777 21.9701 5.87939 22.0086 6.06138 21.9974C6.24337 21.9861 6.41886 21.9255 6.569 21.822L19.569 12.822C19.7018 12.73 19.8104 12.6071 19.8854 12.464C19.9603 12.3208 19.9995 12.1616 19.9995 12C19.9995 11.8384 19.9603 11.6792 19.8854 11.536C19.8104 11.3929 19.7018 11.27 19.569 11.178L6.569 2.178C6.41897 2.07419 6.24341 2.01341 6.06131 2.00222C5.87922 1.99103 5.69753 2.02988 5.53593 2.11454C5.37433 2.1992 5.23896 2.32646 5.1445 2.48254C5.05003 2.63862 5.00006 2.81756 5 3V21C4.99997 21.1825 5.0499 21.3616 5.14439 21.5178C5.23887 21.674 5.3743 21.8013 5.536 21.886Z"></path>
+                </svg></button>
+                <div class="dropdown-content" style="display: none;"><button class="miniTemplatesDropDwnbtn" tabindex="-1">IF OCCUPIED BY OWNER:
+                  </button><button class="miniTemplatesDropDwnbtn" tabindex="-1">For how long have you been living in the
+                    property?</button><button class="miniTemplatesDropDwnbtn" tabindex="-1">What can you tell me about the
+                    neighborhood?</button><button class="miniTemplatesDropDwnbtn" tabindex="-1">IF OCCUPIED BY TENANTS:
+                  </button><button class="miniTemplatesDropDwnbtn" tabindex="-1">For how long have the tenants been in the
+                    property?</button><button class="miniTemplatesDropDwnbtn" tabindex="-1">Do they take good care of the
+                    house?</button><button class="miniTemplatesDropDwnbtn" tabindex="-1">When was the last time that you
+                    visited the house?</button><button class="miniTemplatesDropDwnbtn" tabindex="-1">Are they good
+                    tenants?</button><button class="miniTemplatesDropDwnbtn" tabindex="-1">Do they always pay on
+                    time?</button><button class="miniTemplatesDropDwnbtn" tabindex="-1">IF THE HOUSE IS
+                    VACANT</button><button class="miniTemplatesDropDwnbtn" tabindex="-1">For how long has it been
+                    vacant?</button><button class="miniTemplatesDropDwnbtn" tabindex="-1">When has the last time you
+                    visited the house?</button><button class="miniTemplatesDropDwnbtn" tabindex="-1">Why is the house
+                    vacant now?</button></div>
+              </div><button class="by-owner miniTemplatesBtn dropbtn" tabindex="-1">BY OWNER <svg class="btn-arrow-wht" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M5.536 21.886C5.69777 21.9701 5.87939 22.0086 6.06138 21.9974C6.24337 21.9861 6.41886 21.9255 6.569 21.822L19.569 12.822C19.7018 12.73 19.8104 12.6071 19.8854 12.464C19.9603 12.3208 19.9995 12.1616 19.9995 12C19.9995 11.8384 19.9603 11.6792 19.8854 11.536C19.8104 11.3929 19.7018 11.27 19.569 11.178L6.569 2.178C6.41897 2.07419 6.24341 2.01341 6.06131 2.00222C5.87922 1.99103 5.69753 2.02988 5.53593 2.11454C5.37433 2.1992 5.23896 2.32646 5.1445 2.48254C5.05003 2.63862 5.00006 2.81756 5 3V21C4.99997 21.1825 5.0499 21.3616 5.14439 21.5178C5.23887 21.674 5.3743 21.8013 5.536 21.886Z"></path>
+                </svg></button><button
+                class="by-tenants miniTemplatesBtn dropbtn" tabindex="-1">BY TENANTS <svg class="btn-arrow-wht" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M5.536 21.886C5.69777 21.9701 5.87939 22.0086 6.06138 21.9974C6.24337 21.9861 6.41886 21.9255 6.569 21.822L19.569 12.822C19.7018 12.73 19.8104 12.6071 19.8854 12.464C19.9603 12.3208 19.9995 12.1616 19.9995 12C19.9995 11.8384 19.9603 11.6792 19.8854 11.536C19.8104 11.3929 19.7018 11.27 19.569 11.178L6.569 2.178C6.41897 2.07419 6.24341 2.01341 6.06131 2.00222C5.87922 1.99103 5.69753 2.02988 5.53593 2.11454C5.37433 2.1992 5.23896 2.32646 5.1445 2.48254C5.05003 2.63862 5.00006 2.81756 5 3V21C4.99997 21.1825 5.0499 21.3616 5.14439 21.5178C5.23887 21.674 5.3743 21.8013 5.536 21.886Z"></path>
+                  </svg></button><button
+                class="vacant miniTemplatesBtn dropbtn" tabindex="-1">VACANT <svg class="btn-arrow-wht" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M5.536 21.886C5.69777 21.9701 5.87939 22.0086 6.06138 21.9974C6.24337 21.9861 6.41886 21.9255 6.569 21.822L19.569 12.822C19.7018 12.73 19.8104 12.6071 19.8854 12.464C19.9603 12.3208 19.9995 12.1616 19.9995 12C19.9995 11.8384 19.9603 11.6792 19.8854 11.536C19.8104 11.3929 19.7018 11.27 19.569 11.178L6.569 2.178C6.41897 2.07419 6.24341 2.01341 6.06131 2.00222C5.87922 1.99103 5.69753 2.02988 5.53593 2.11454C5.37433 2.1992 5.23896 2.32646 5.1445 2.48254C5.05003 2.63862 5.00006 2.81756 5 3V21C4.99997 21.1825 5.0499 21.3616 5.14439 21.5178C5.23887 21.674 5.3743 21.8013 5.536 21.886Z"></path>
+                  </svg></button>
+            </td>
+          </tr> -->
+        <tr align="left" style="display:none;">
+          <td colspan="2">Total Rent Amount (if Occupied):</td>
+          <td colspan="2"><textarea name="occupied1" id="occupied1" rows="3" cols="60"></textarea></td>
+        </tr>
+        <tr align="left" class="tenant_details">
+          <td colspan="2">IF TENANT,
+            <ul>
+
+              <li>When Lease Signed</li>
+              <li>When Lease Expires</li>
+              <li>When Last Increase</li>
+              <li>Missed Payments W/COVID</li>
+              <li>Rent Roll Amount</li>
+            </ul>
+          </td>
+          <td colspan="1"><textarea name="tenant_details" id="tenant_details" rows="15" cols="25"
+              style="height: 100%; resize: none;"></textarea></td>
+          <td class="tenant_details" colspan="2" style="vertical-align: middle;"><button
+              class="yearly-lease- miniTemplatesBtn dropbtn" tabindex="-1">YEARLY LEASE <svg class="btn-arrow-wht" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M5.536 21.886C5.69777 21.9701 5.87939 22.0086 6.06138 21.9974C6.24337 21.9861 6.41886 21.9255 6.569 21.822L19.569 12.822C19.7018 12.73 19.8104 12.6071 19.8854 12.464C19.9603 12.3208 19.9995 12.1616 19.9995 12C19.9995 11.8384 19.9603 11.6792 19.8854 11.536C19.8104 11.3929 19.7018 11.27 19.569 11.178L6.569 2.178C6.41897 2.07419 6.24341 2.01341 6.06131 2.00222C5.87922 1.99103 5.69753 2.02988 5.53593 2.11454C5.37433 2.1992 5.23896 2.32646 5.1445 2.48254C5.05003 2.63862 5.00006 2.81756 5 3V21C4.99997 21.1825 5.0499 21.3616 5.14439 21.5178C5.23887 21.674 5.3743 21.8013 5.536 21.886Z"></path>
+                </svg></button><button
+              class="month-to-month- miniTemplatesBtn dropbtn" tabindex="-1">MONTH TO MONTH <svg class="btn-arrow-wht" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M5.536 21.886C5.69777 21.9701 5.87939 22.0086 6.06138 21.9974C6.24337 21.9861 6.41886 21.9255 6.569 21.822L19.569 12.822C19.7018 12.73 19.8104 12.6071 19.8854 12.464C19.9603 12.3208 19.9995 12.1616 19.9995 12C19.9995 11.8384 19.9603 11.6792 19.8854 11.536C19.8104 11.3929 19.7018 11.27 19.569 11.178L6.569 2.178C6.41897 2.07419 6.24341 2.01341 6.06131 2.00222C5.87922 1.99103 5.69753 2.02988 5.53593 2.11454C5.37433 2.1992 5.23896 2.32646 5.1445 2.48254C5.05003 2.63862 5.00006 2.81756 5 3V21C4.99997 21.1825 5.0499 21.3616 5.14439 21.5178C5.23887 21.674 5.3743 21.8013 5.536 21.886Z"></path>
+                </svg></button><button
+              class="n/a miniTemplatesBtn dropbtn" tabindex="-1">N/A <svg class="btn-arrow-wht" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M5.536 21.886C5.69777 21.9701 5.87939 22.0086 6.06138 21.9974C6.24337 21.9861 6.41886 21.9255 6.569 21.822L19.569 12.822C19.7018 12.73 19.8104 12.6071 19.8854 12.464C19.9603 12.3208 19.9995 12.1616 19.9995 12C19.9995 11.8384 19.9603 11.6792 19.8854 11.536C19.8104 11.3929 19.7018 11.27 19.569 11.178L6.569 2.178C6.41897 2.07419 6.24341 2.01341 6.06131 2.00222C5.87922 1.99103 5.69753 2.02988 5.53593 2.11454C5.37433 2.1992 5.23896 2.32646 5.1445 2.48254C5.05003 2.63862 5.00006 2.81756 5 3V21C4.99997 21.1825 5.0499 21.3616 5.14439 21.5178C5.23887 21.674 5.3743 21.8013 5.536 21.886Z"></path>
+                </svg></button></td>
+        </tr>
+        <tr align="left" style="display:;">
+          <td>LAST TIME THE A/C WAS REPLACED (Year A/C)</td>
+          <td><input type="text" name="year_ac" id="year_ac" size="10" maxlenght="100" value=""></td>
+          <td>LAST TIME THE ROOF WAS REPLACED (Year Roof)</td>
+          <td>
+            <select name="year_roof" id="year_roof">
+              <option value="" selected=""></option>
+              <option value="0-5 years">0-5 years</option>
+              <option value="6-10 years">6-10 years</option>
+              <option value="11-15 years">11-15 years</option>
+              <option value="16+ years">16+ years</option>
+            </select>
+          </td>
+        </tr>
+
+
+        <tr>
+
+          <td class="marketing-lead-source" colspan="6" style="text-align: center;">
+            <p>
+              <span>MARKETING LEAD SOURCE: SynergyData_CN_Probate</span>
+            </p>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <table bgcolor="#F7F7F7" border="0" cellpadding="5" cellspacing="3" align="center" id="Table_4">
+      <tbody>
+        <tr align="center" style="justify-content: center;">
+          <td  colspan="4"><span style="text-transform: uppercase; font-size:32px; text-transform:uppercase;color:#071030; text-decoration:underline; text-decoration-color:#C4C9C9; text-underline-offset: 8px;">Repairs</span></td>
+        </tr>
+        <tr align="left" style="display:;" class="repairs">
+          <td colspan="1">REPAIRS NEEDED:</td>
+          <td colspan="1"><textarea name="repairs" id="repairs" rows="3" cols="39" style="height: 100%; resize: none;"></textarea>
+          </td>
+          <td class="repairs" colspan="2" style="vertical-align: top;">
+            <div class="dropdown"><button class="dropbtn" tabindex="-1">KITCHEN <svg class="btn-arrow-wht" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M5.536 21.886C5.69777 21.9701 5.87939 22.0086 6.06138 21.9974C6.24337 21.9861 6.41886 21.9255 6.569 21.822L19.569 12.822C19.7018 12.73 19.8104 12.6071 19.8854 12.464C19.9603 12.3208 19.9995 12.1616 19.9995 12C19.9995 11.8384 19.9603 11.6792 19.8854 11.536C19.8104 11.3929 19.7018 11.27 19.569 11.178L6.569 2.178C6.41897 2.07419 6.24341 2.01341 6.06131 2.00222C5.87922 1.99103 5.69753 2.02988 5.53593 2.11454C5.37433 2.1992 5.23896 2.32646 5.1445 2.48254C5.05003 2.63862 5.00006 2.81756 5 3V21C4.99997 21.1825 5.0499 21.3616 5.14439 21.5178C5.23887 21.674 5.3743 21.8013 5.536 21.886Z"></path>
+              </svg></button>
+              <div class="dropdown-content" style="display: none;"><button class="miniTemplatesDropDwnbtn" tabindex="-1">Kitchen was updated X
+                  years ago</button><button class="miniTemplatesDropDwnbtn" tabindex="-1">Kitchen needs to be
+                  updated</button><button class="miniTemplatesDropDwnbtn" tabindex="-1">Kitchen needs new flooring
+                </button><button class="miniTemplatesDropDwnbtn" tabindex="-1">Kitchen needs new cabinets
+                </button><button class="miniTemplatesDropDwnbtn" tabindex="-1">Kitchen needs new
+                  countertop</button><button class="miniTemplatesDropDwnbtn" tabindex="-1">Kitchen needs new
+                  appliances</button></div>
+            </div>
+            <div class="dropdown"><button class="dropbtn" tabindex="-1">BATHROOM <svg class="btn-arrow-wht" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M5.536 21.886C5.69777 21.9701 5.87939 22.0086 6.06138 21.9974C6.24337 21.9861 6.41886 21.9255 6.569 21.822L19.569 12.822C19.7018 12.73 19.8104 12.6071 19.8854 12.464C19.9603 12.3208 19.9995 12.1616 19.9995 12C19.9995 11.8384 19.9603 11.6792 19.8854 11.536C19.8104 11.3929 19.7018 11.27 19.569 11.178L6.569 2.178C6.41897 2.07419 6.24341 2.01341 6.06131 2.00222C5.87922 1.99103 5.69753 2.02988 5.53593 2.11454C5.37433 2.1992 5.23896 2.32646 5.1445 2.48254C5.05003 2.63862 5.00006 2.81756 5 3V21C4.99997 21.1825 5.0499 21.3616 5.14439 21.5178C5.23887 21.674 5.3743 21.8013 5.536 21.886Z"></path>
+              </svg></button>
+              <div class="dropdown-content" style="display: none;"><button class="miniTemplatesDropDwnbtn" tabindex="-1">Bathroom was updated X
+                  years ago </button><button class="miniTemplatesDropDwnbtn" tabindex="-1">Bathroom needs to be updated
+                </button><button class="miniTemplatesDropDwnbtn" tabindex="-1">Bathroom needs new
+                  vanities</button><button class="miniTemplatesDropDwnbtn" tabindex="-1">Bathrom needs new
+                  flooring</button></div>
+            </div>
+            <div class="dropdown"><button class="dropbtn" tabindex="-1">PAINTING <svg class="btn-arrow-wht" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M5.536 21.886C5.69777 21.9701 5.87939 22.0086 6.06138 21.9974C6.24337 21.9861 6.41886 21.9255 6.569 21.822L19.569 12.822C19.7018 12.73 19.8104 12.6071 19.8854 12.464C19.9603 12.3208 19.9995 12.1616 19.9995 12C19.9995 11.8384 19.9603 11.6792 19.8854 11.536C19.8104 11.3929 19.7018 11.27 19.569 11.178L6.569 2.178C6.41897 2.07419 6.24341 2.01341 6.06131 2.00222C5.87922 1.99103 5.69753 2.02988 5.53593 2.11454C5.37433 2.1992 5.23896 2.32646 5.1445 2.48254C5.05003 2.63862 5.00006 2.81756 5 3V21C4.99997 21.1825 5.0499 21.3616 5.14439 21.5178C5.23887 21.674 5.3743 21.8013 5.536 21.886Z"></path>
+              </svg></button>
+              <div class="dropdown-content" style="display: none;"><button class="miniTemplatesDropDwnbtn" tabindex="-1">Property needs
+                  painting inside</button><button class="miniTemplatesDropDwnbtn" tabindex="-1">Property needs painting
+                  outside</button><button class="miniTemplatesDropDwnbtn" tabindex="-1">Property was recently
+                  painted</button></div>
+            </div><button class="roof miniTemplatesBtn dropbtn" tabindex="-1">ROOF <svg class="btn-arrow-wht" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M5.536 21.886C5.69777 21.9701 5.87939 22.0086 6.06138 21.9974C6.24337 21.9861 6.41886 21.9255 6.569 21.822L19.569 12.822C19.7018 12.73 19.8104 12.6071 19.8854 12.464C19.9603 12.3208 19.9995 12.1616 19.9995 12C19.9995 11.8384 19.9603 11.6792 19.8854 11.536C19.8104 11.3929 19.7018 11.27 19.569 11.178L6.569 2.178C6.41897 2.07419 6.24341 2.01341 6.06131 2.00222C5.87922 1.99103 5.69753 2.02988 5.53593 2.11454C5.37433 2.1992 5.23896 2.32646 5.1445 2.48254C5.05003 2.63862 5.00006 2.81756 5 3V21C4.99997 21.1825 5.0499 21.3616 5.14439 21.5178C5.23887 21.674 5.3743 21.8013 5.536 21.886Z"></path>
+              </svg></button>
+            <div class="dropdown"><button class="dropbtn" tabindex="-1">FLOORING <svg class="btn-arrow-wht" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M5.536 21.886C5.69777 21.9701 5.87939 22.0086 6.06138 21.9974C6.24337 21.9861 6.41886 21.9255 6.569 21.822L19.569 12.822C19.7018 12.73 19.8104 12.6071 19.8854 12.464C19.9603 12.3208 19.9995 12.1616 19.9995 12C19.9995 11.8384 19.9603 11.6792 19.8854 11.536C19.8104 11.3929 19.7018 11.27 19.569 11.178L6.569 2.178C6.41897 2.07419 6.24341 2.01341 6.06131 2.00222C5.87922 1.99103 5.69753 2.02988 5.53593 2.11454C5.37433 2.1992 5.23896 2.32646 5.1445 2.48254C5.05003 2.63862 5.00006 2.81756 5 3V21C4.99997 21.1825 5.0499 21.3616 5.14439 21.5178C5.23887 21.674 5.3743 21.8013 5.536 21.886Z"></path>
+              </svg></button>
+              <div class="dropdown-content" style="display: none;"><button class="miniTemplatesDropDwnbtn" tabindex="-1">Property needs new
+                  flooring</button><button class="miniTemplatesDropDwnbtn" tabindex="-1">It has tile</button><button
+                  class="miniTemplatesDropDwnbtn" tabindex="-1">It has hardwood</button></div>
+            </div>
+            <div class="dropdown"><button class="dropbtn" tabindex="-1">ELECTRICITY <svg class="btn-arrow-wht" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M5.536 21.886C5.69777 21.9701 5.87939 22.0086 6.06138 21.9974C6.24337 21.9861 6.41886 21.9255 6.569 21.822L19.569 12.822C19.7018 12.73 19.8104 12.6071 19.8854 12.464C19.9603 12.3208 19.9995 12.1616 19.9995 12C19.9995 11.8384 19.9603 11.6792 19.8854 11.536C19.8104 11.3929 19.7018 11.27 19.569 11.178L6.569 2.178C6.41897 2.07419 6.24341 2.01341 6.06131 2.00222C5.87922 1.99103 5.69753 2.02988 5.53593 2.11454C5.37433 2.1992 5.23896 2.32646 5.1445 2.48254C5.05003 2.63862 5.00006 2.81756 5 3V21C4.99997 21.1825 5.0499 21.3616 5.14439 21.5178C5.23887 21.674 5.3743 21.8013 5.536 21.886Z"></path>
+              </svg></button>
+              <div class="dropdown-content" style="display: none;"><button class="miniTemplatesDropDwnbtn" tabindex="-1">Electricity is up to
+                  code </button><button class="miniTemplatesDropDwnbtn" tabindex="-1">Electricity is outdated</button>
+              </div>
+            </div>
+            <div class="dropdown"><button class="dropbtn" tabindex="-1">PLUMBING <svg class="btn-arrow-wht" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M5.536 21.886C5.69777 21.9701 5.87939 22.0086 6.06138 21.9974C6.24337 21.9861 6.41886 21.9255 6.569 21.822L19.569 12.822C19.7018 12.73 19.8104 12.6071 19.8854 12.464C19.9603 12.3208 19.9995 12.1616 19.9995 12C19.9995 11.8384 19.9603 11.6792 19.8854 11.536C19.8104 11.3929 19.7018 11.27 19.569 11.178L6.569 2.178C6.41897 2.07419 6.24341 2.01341 6.06131 2.00222C5.87922 1.99103 5.69753 2.02988 5.53593 2.11454C5.37433 2.1992 5.23896 2.32646 5.1445 2.48254C5.05003 2.63862 5.00006 2.81756 5 3V21C4.99997 21.1825 5.0499 21.3616 5.14439 21.5178C5.23887 21.674 5.3743 21.8013 5.536 21.886Z"></path>
+              </svg></button>
+              <div class="dropdown-content" style="display: none;"><button class="miniTemplatesDropDwnbtn" tabindex="-1">Plumbing is up to
+                  code</button><button class="miniTemplatesDropDwnbtn" tabindex="-1">Plumbing is outdated</button></div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+
+          <td class="marketing-lead-source" colspan="6" style="text-align: center;">
+            <p>
+              <span>MARKETING LEAD SOURCE: SynergyData_CN_Probate</span>
+            </p>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <table bgcolor="#F7F7F7" border="0" cellpadding="5" cellspacing="3" align="center" id="Table_5">
+      <tbody>
+        <tr align="center" style="justify-content: center;">
+          <td  colspan="4">
+            <span style="text-transform: uppercase; font-size:32px; text-transform:uppercase;color:#071030; text-decoration:underline; text-decoration-color:#C4C9C9; text-underline-offset: 8px;">Mortgage Information</span>
+          </td>
+        </tr>
+
+        <tr align="left">
+          <td width="20%">Mortgage:</td>
+          <td width="30%"><select name="has_mortgage" id="has_mortgage" style="display: none;">
+              <option value=""></option>
+              <option value="Yes">Yes</option>
+              <option  value="No">No</option>
+            </select>
+            <button class="mortgage " value="" style="margin-left: 5px; margin-right: 5px; display: none;"
+              tabindex="-1"></button><button class="mortgage Yes" value="Yes"
+              style="margin-left: 5px; margin-right: 5px;" tabindex="-1">Yes</button><button
+              class="mortgage No" value="No" style="margin-left: 5px; margin-right: 5px;"
+              tabindex="-1">No</button><a
+              href="https://ips.lamassucrm.com/lamassu_leadcapture.php?&amp;address=8%20Juniper%20Ave&amp;city=Westerville&amp;state=OH&amp;zip=43081&amp;email=AMBER.MOORE%40BELLSOUTH.NET&amp;first_name=Delores%20L&amp;last_name=Thomas&amp;number1=6143133569&amp;sd_marketing_source=SynergyData_CN_Probate&amp;sd_partition=UNIFIED&amp;sd_origin_file=UNIFIED%20OH%20Raw%20073123#"
+              class="mortgage-calculator-link">Current Mortgage Rates</a>
+          </td>
+          <td width="20%">Approx Balance:</td>
+          <td width="30%"><input type="text" name="mortgage_balance" id="mortgage_balance" size="30" maxlenght="100"
+              value=""></td>
+        </tr>
+
+        <tr align="left">
+          <td width="20%">Payment Amt:</td>
+          <td width="30%"><input type="text" name="mortgage_payment_amount" id="mortgage_payment_amount" size="30"
+              maxlenght="100" value=""></td>
+          <td width="20%">Tax Ins Amt:</td>
+          <td width="30%"><input type="text" name="mortgage_tax_ins_amount" id="mortgage_tax_ins_amount" size="30"
+              maxlenght="100" value=""></td>
+        </tr>
+
+        <tr class="forRefTr">
+          <td align="left">For reference only, please verify:</td>
+          <td align="left" id="emailIntDOM"><span>amber.moore@bellsouth.net</span> <button class="emailButton dropbtn" tabindex="-1">Fill
+              Email</button><button class="emailButton dropbtn" tabindex="-1">Clear Email</button><button class="phoneticAlphabetButton dropbtn" tabindex="-1">Phonetic Alphabet</button></td>
+        </tr>
+
+
+        <tr align="left">
+          <td width="20%">Fixed or Adjustable:</td>
+          <td width="30%"><input type="text" name="mortgage_fixed_adjustable" id="mortgage_fixed_adjustable" size="30"
+              maxlenght="100" value=""></td>
+          <td width="20%"># Payments Left:</td>
+          <td width="30%"><input type="text" name="mortgage_payments_left" id="mortgage_payments_left" size="30"
+              maxlenght="100" value=""></td>
+        </tr>
+        <tr align="left" id="blankAlphabetTR">
+          <td colspan="3" bgcolor="#F7F7F7"><img
+              src="chrome-extension://ifbmnmmnjenkipdooahkbamikgfbgigp/img/lamassucrm/phonetic-alphabet.png"
+              id="phonetic-alphabet" class="phonetic-alphabet" style="display: none;"></td>
+        </tr>
+
+        <tr>
+
+          <td class="marketing-lead-source" colspan="6" style="text-align: center;">
+            <p>
+              <span>MARKETING LEAD SOURCE: SynergyData_CN_Probate</span>
+            </p>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <table  bgcolor="#F7F7F7" border="0" cellpadding="5" cellspacing="3" align="center" id="Table_5_1">
+      <tbody>
+        <tr align="center" style="justify-content: center;">
+          <td  colspan="2"><span style="text-transform: uppercase; font-size:32px; text-transform:uppercase;color:#071030; text-decoration:underline; text-decoration-color:#C4C9C9; text-underline-offset: 8px;">Marketing Information</span>
+          </td>
+        </tr>
+
+        <tr align="left" class="reason">
+          <td width="30%"> Seller “WHY” / Reason: <textarea name="reason" id="reason" rows="3" cols="39"
+            style="height: 100%; resize: none;"></textarea></td>
+          <td class="reason" colspan="2" style="vertical-align: top;">
+            <div class="dropdown"><button class="dropbtn" tabindex="-1">REASON WHY SCRIPTS <svg class="btn-arrow-wht" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M5.536 21.886C5.69777 21.9701 5.87939 22.0086 6.06138 21.9974C6.24337 21.9861 6.41886 21.9255 6.569 21.822L19.569 12.822C19.7018 12.73 19.8104 12.6071 19.8854 12.464C19.9603 12.3208 19.9995 12.1616 19.9995 12C19.9995 11.8384 19.9603 11.6792 19.8854 11.536C19.8104 11.3929 19.7018 11.27 19.569 11.178L6.569 2.178C6.41897 2.07419 6.24341 2.01341 6.06131 2.00222C5.87922 1.99103 5.69753 2.02988 5.53593 2.11454C5.37433 2.1992 5.23896 2.32646 5.1445 2.48254C5.05003 2.63862 5.00006 2.81756 5 3V21C4.99997 21.1825 5.0499 21.3616 5.14439 21.5178C5.23887 21.674 5.3743 21.8013 5.536 21.886Z"></path>
+              </svg></button>
+              <div class="dropdown-content" style="display: none;"><button class="miniTemplatesDropDwnbtn" tabindex="-1"> I know I was the one
+                  who call you, but in case you actually sell, what would the money do for you?</button><button
+                  class="miniTemplatesDropDwnbtn" tabindex="-1"> If my investor would be able to maximize the offer just
+                  because you have really strong reason, what would that reason be?</button><button
+                  class="miniTemplatesDropDwnbtn" tabindex="-1"> If you decide to go ahead and sell the house what would
+                  be the next step for you?</button><button class="miniTemplatesDropDwnbtn" tabindex="-1"> I just want
+                  to make sure that we're not wasting each others times, so let me ask you, if the offer is good enough,
+                  are you willing to go on and sell the house?</button></div>
+            </div>
+            <div class="dropdown"><button class="dropbtn" tabindex="-1">COMMON REASONS <svg class="btn-arrow-wht" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M5.536 21.886C5.69777 21.9701 5.87939 22.0086 6.06138 21.9974C6.24337 21.9861 6.41886 21.9255 6.569 21.822L19.569 12.822C19.7018 12.73 19.8104 12.6071 19.8854 12.464C19.9603 12.3208 19.9995 12.1616 19.9995 12C19.9995 11.8384 19.9603 11.6792 19.8854 11.536C19.8104 11.3929 19.7018 11.27 19.569 11.178L6.569 2.178C6.41897 2.07419 6.24341 2.01341 6.06131 2.00222C5.87922 1.99103 5.69753 2.02988 5.53593 2.11454C5.37433 2.1992 5.23896 2.32646 5.1445 2.48254C5.05003 2.63862 5.00006 2.81756 5 3V21C4.99997 21.1825 5.0499 21.3616 5.14439 21.5178C5.23887 21.674 5.3743 21.8013 5.536 21.886Z"></path>
+              </svg></button>
+              <div class="dropdown-content" style="display: none;"><button class="miniTemplatesDropDwnbtn" tabindex="-1"> Seller has health
+                  issues<br></button><button class="miniTemplatesDropDwnbtn" tabindex="-1"> Seller is getting
+                  older<br></button><button class="miniTemplatesDropDwnbtn" tabindex="-1"> Seller is going a senior
+                  living facility<br></button><button class="miniTemplatesDropDwnbtn" tabindex="-1"> Seller has to pay
+                  medical bills<br></button><button class="miniTemplatesDropDwnbtn" tabindex="-1"> Seller is having a
+                  hard time keeping up with the property<br></button><button class="miniTemplatesDropDwnbtn"
+                  tabindex="-1"> Seller is going through a divorce<br></button><button class="miniTemplatesDropDwnbtn"
+                  tabindex="-1"> Seller is going through probate<br></button><button class="miniTemplatesDropDwnbtn"
+                  tabindex="-1"> Seller wants move to another state<br></button><button class="miniTemplatesDropDwnbtn"
+                  tabindex="-1"> Seller wants to downsize<br></button><button class="miniTemplatesDropDwnbtn"
+                  tabindex="-1"> Seller wants a bigger house<br></button><button class="miniTemplatesDropDwnbtn"
+                  tabindex="-1"> Seller needs to sell in order to pay off some debt<br></button><button
+                  class="miniTemplatesDropDwnbtn" tabindex="-1"> Seller does not need the property</button></div>
+            </div>
+          </td>
+
+          <td>Closing Time Frame: <br> <textarea name="closing_time" id="closing_time" rows="3" cols="39"
+            style="height: 100%; resize: none;"></textarea></td>
+          <td class="closing_time" colspan="2" style="vertical-align: top;">
+            <div class="dropdown"><button class="dropbtn" tabindex="-1">CLOSING TIMEFRAME <svg class="btn-arrow-wht" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M5.536 21.886C5.69777 21.9701 5.87939 22.0086 6.06138 21.9974C6.24337 21.9861 6.41886 21.9255 6.569 21.822L19.569 12.822C19.7018 12.73 19.8104 12.6071 19.8854 12.464C19.9603 12.3208 19.9995 12.1616 19.9995 12C19.9995 11.8384 19.9603 11.6792 19.8854 11.536C19.8104 11.3929 19.7018 11.27 19.569 11.178L6.569 2.178C6.41897 2.07419 6.24341 2.01341 6.06131 2.00222C5.87922 1.99103 5.69753 2.02988 5.53593 2.11454C5.37433 2.1992 5.23896 2.32646 5.1445 2.48254C5.05003 2.63862 5.00006 2.81756 5 3V21C4.99997 21.1825 5.0499 21.3616 5.14439 21.5178C5.23887 21.674 5.3743 21.8013 5.536 21.886Z"></path>
+              </svg></button>
+              <div class="dropdown-content" style="display: none;"><button class="miniTemplatesDropDwnbtn" tabindex="-1">30
+                  Days</button><button class="miniTemplatesDropDwnbtn" tabindex="-1">60 Days</button><button
+                  class="miniTemplatesDropDwnbtn" tabindex="-1">90 Days</button><button class="miniTemplatesDropDwnbtn"
+                  tabindex="-1">As soon as possible</button><button class="miniTemplatesDropDwnbtn" tabindex="-1"> 1-4
+                  months</button></div>
+            </div>
+            <div class="dropdown"><button class="dropbtn" tabindex="-1">CLOSING TIMEFRAME SCRIPTS <svg class="btn-arrow-wht" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M5.536 21.886C5.69777 21.9701 5.87939 22.0086 6.06138 21.9974C6.24337 21.9861 6.41886 21.9255 6.569 21.822L19.569 12.822C19.7018 12.73 19.8104 12.6071 19.8854 12.464C19.9603 12.3208 19.9995 12.1616 19.9995 12C19.9995 11.8384 19.9603 11.6792 19.8854 11.536C19.8104 11.3929 19.7018 11.27 19.569 11.178L6.569 2.178C6.41897 2.07419 6.24341 2.01341 6.06131 2.00222C5.87922 1.99103 5.69753 2.02988 5.53593 2.11454C5.37433 2.1992 5.23896 2.32646 5.1445 2.48254C5.05003 2.63862 5.00006 2.81756 5 3V21C4.99997 21.1825 5.0499 21.3616 5.14439 21.5178C5.23887 21.674 5.3743 21.8013 5.536 21.886Z"></path>
+              </svg></button>
+              <div class="dropdown-content" style="display: none;"><button class="miniTemplatesDropDwnbtn" tabindex="-1">Usually my investors
+                  work with a closing time frame from 30 to 90 days. Do you think that time can work for
+                  you?</button><button class="miniTemplatesDropDwnbtn" tabindex="-1">My investors work with a closing
+                  time frame of 1 to 4 months, would that work for you?</button><button class="miniTemplatesDropDwnbtn"
+                  tabindex="-1">If the offer is good enough can you close as soon as possible?</button></div>
+            </div>
+          </td>
+        </tr>
+
+        <!-- <tr align="left" class="closing_time">
+          <td>Closing Time Frame: <br> <textarea name="closing_time" id="closing_time" rows="3" cols="39"
+            style="height: 100%; resize: none;"></textarea></td>
+          <td class="closing_time" colspan="2" style="vertical-align: top;">
+            <div class="dropdown"><button class="dropbtn" tabindex="-1">CLOSING TIMEFRAME <svg class="btn-arrow-wht" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M5.536 21.886C5.69777 21.9701 5.87939 22.0086 6.06138 21.9974C6.24337 21.9861 6.41886 21.9255 6.569 21.822L19.569 12.822C19.7018 12.73 19.8104 12.6071 19.8854 12.464C19.9603 12.3208 19.9995 12.1616 19.9995 12C19.9995 11.8384 19.9603 11.6792 19.8854 11.536C19.8104 11.3929 19.7018 11.27 19.569 11.178L6.569 2.178C6.41897 2.07419 6.24341 2.01341 6.06131 2.00222C5.87922 1.99103 5.69753 2.02988 5.53593 2.11454C5.37433 2.1992 5.23896 2.32646 5.1445 2.48254C5.05003 2.63862 5.00006 2.81756 5 3V21C4.99997 21.1825 5.0499 21.3616 5.14439 21.5178C5.23887 21.674 5.3743 21.8013 5.536 21.886Z"></path>
+              </svg></button>
+              <div class="dropdown-content" style="display: none;"><button class="miniTemplatesDropDwnbtn" tabindex="-1">30
+                  Days</button><button class="miniTemplatesDropDwnbtn" tabindex="-1">60 Days</button><button
+                  class="miniTemplatesDropDwnbtn" tabindex="-1">90 Days</button><button class="miniTemplatesDropDwnbtn"
+                  tabindex="-1">As soon as possible</button><button class="miniTemplatesDropDwnbtn" tabindex="-1"> 1-4
+                  months</button></div>
+            </div>
+            <div class="dropdown"><button class="dropbtn" tabindex="-1">CLOSING TIMEFRAME SCRIPTS <svg class="btn-arrow-wht" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M5.536 21.886C5.69777 21.9701 5.87939 22.0086 6.06138 21.9974C6.24337 21.9861 6.41886 21.9255 6.569 21.822L19.569 12.822C19.7018 12.73 19.8104 12.6071 19.8854 12.464C19.9603 12.3208 19.9995 12.1616 19.9995 12C19.9995 11.8384 19.9603 11.6792 19.8854 11.536C19.8104 11.3929 19.7018 11.27 19.569 11.178L6.569 2.178C6.41897 2.07419 6.24341 2.01341 6.06131 2.00222C5.87922 1.99103 5.69753 2.02988 5.53593 2.11454C5.37433 2.1992 5.23896 2.32646 5.1445 2.48254C5.05003 2.63862 5.00006 2.81756 5 3V21C4.99997 21.1825 5.0499 21.3616 5.14439 21.5178C5.23887 21.674 5.3743 21.8013 5.536 21.886Z"></path>
+              </svg></button>
+              <div class="dropdown-content" style="display: none;"><button class="miniTemplatesDropDwnbtn" tabindex="-1">Usually my investors
+                  work with a closing time frame from 30 to 90 days. Do you think that time can work for
+                  you?</button><button class="miniTemplatesDropDwnbtn" tabindex="-1">My investors work with a closing
+                  time frame of 1 to 4 months, would that work for you?</button><button class="miniTemplatesDropDwnbtn"
+                  tabindex="-1">If the offer is good enough can you close as soon as possible?</button></div>
+            </div>
+          </td>
+        </tr> -->
+
+        
+        <tr align="left" id="blankTREmail">
+          <td colspan="3" bgcolor="#F7F7F7"></td>
+        </tr>
+        <tr align="left" bgcolor="#F7F7F7">
+          <td align="left">Email:<br> <span class="unknown-blank">If Unknown Leave Blank </span></td>
+          <td align="left"><input class="textbox" name="EmailAddress" id="EmailAddress" type="text" size="25"
+              maxlength="150" value="">
+              <div class="dropdown"><button class="dropbtn commonEmails" tabindex="-1">COMMON EMAILS <svg class="btn-arrow-wht" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M5.536 21.886C5.69777 21.9701 5.87939 22.0086 6.06138 21.9974C6.24337 21.9861 6.41886 21.9255 6.569 21.822L19.569 12.822C19.7018 12.73 19.8104 12.6071 19.8854 12.464C19.9603 12.3208 19.9995 12.1616 19.9995 12C19.9995 11.8384 19.9603 11.6792 19.8854 11.536C19.8104 11.3929 19.7018 11.27 19.569 11.178L6.569 2.178C6.41897 2.07419 6.24341 2.01341 6.06131 2.00222C5.87922 1.99103 5.69753 2.02988 5.53593 2.11454C5.37433 2.1992 5.23896 2.32646 5.1445 2.48254C5.05003 2.63862 5.00006 2.81756 5 3V21C4.99997 21.1825 5.0499 21.3616 5.14439 21.5178C5.23887 21.674 5.3743 21.8013 5.536 21.886Z"></path>
+                </svg></button>
+                </td>
+          <td class="EmailAddress" colspan="2" style="vertical-align: top;"></td>
+          <td>Bottom Line Price US$:</td>
+          <td><input type="text" name="bottom_line" id="bottom_line" value="" size="30" maxlenght="100"> </td>
+        </tr>
+
+
+        <!-- <tr align="left">
+          <td>Bottom Line Price US$:</td>
+          <td><input type="text" name="bottom_line" id="bottom_line" value="" size="30" maxlenght="100"></td>
+        </tr> -->
+
+        <tr id="priceAverageTitle" style="justify-content: center;">
+          <td colspan="4"><span style="font-weight: bold;  color: #25A9B6;">PLATFORMS PRICE AVERAGE</span><br></td>
+        </tr>
+        <tr id="zestimateAverage">
+          <td><label for="zillowAverageInput">Zillow:</label><input type="text" id="zillowAverageInput"
+              placeholder="Enter price" class="price-input"><span  id="zillowAverageInputCircle" class="circle-symbol"
+              title="Paste Price">🟠</span></td>
+          <td><label for="redfinAverageInput">Redfin:</label><input type="text" id="redfinAverageInput"
+              placeholder="Enter price" class="price-input"><span id="redfinAverageInputCircle" class="circle-symbol"
+              title="Paste Price">🟠</span></td>
+          <td><label for="propstreamAverageInput">Propstream:</label><input type="text" id="propstreamAverageInput"
+              placeholder="Enter price" class="price-input"><span id="propstreamAverageInputCircle"
+              class="circle-symbol" title="Paste Price">🟠</span></td>
+        </tr>
+        <tr id="totalAverageTR"  style="cursor: pointer;">
+          <td colspan="4" style="text-align: center;">
+            <div style="font-weight:900"><label for="averageTotal">Total Average:
+              </label><span id="averageTotal">$$$</span></div>
+          </td>
+        </tr>
+        <tr class="notes-btn-wrpr">
+          <td colspan="4" style="text-align: center; margin: auto;"><button id="sendAveragesButton"
+              style=" border-radius: 10px; cursor: pointer; padding: 10px 20px;"
+              tabindex="-1">Send Averages to Notes</button></td>
+        </tr>
+        <tr id="matrixTR">
+          <td colspan="4">
+            <table id="matrix-responsive-XL" class="matrix-table">
+              <thead>
+                <!-- <tr style="background: #EAEAEA;">
+                  <td class="m-notes" colspan="6">
+                    <p class="m-p" id="notesValue"><span style="color: green;">IR: GOOD REASON TO SELL + CTF 6 MONTHS OR
+                        LESS talk with the CSM</span>
+
+                      *Marketing Source = Hillsborough8yearsFinal
+                      AND its HIGHLY MOTIVATED: IR 50-100%, AR: 101-105%, FR 106-120%*
+
+                      <span style="color: green;"> DO NOT USE: ¨LAMASSU COLD CALL (LIVE TRANSFER NOT ANSWERED)¨¨ </span>
+
+                      <span style="color: green; animation: blinker 0.8s linear infinite;">PROPERTY IN NASHUA COUNTY +
+                        HIGHLY MOTIVATED, and the seller is asking up to 100% APPROVED TO SEND IR!</span>
+                      -
+                      <span style="color: red; animation: blinker 0.8s linear infinite;">MOBILE HOME, DOESN'T own the
+                        land = IR 40- 70%</span>
+                      <span style="color: red; animation: blinker 0.8s linear infinite;">MOBILE HOME, DOES own the land
+                        AND HIGHLY MOTIVATED = IR up to 100%</span>
+
+                      <span style="color: green; animation: blinker 0.8s linear infinite;">AR AND REASON TO SELL IS CASH
+                        OFFER = CAN'T SEND IT OVER!</span>
+                    </p>
+                  </td>
+                </tr> -->
+                <tr>
+                  <!-- <td class="m-notes" colspan="6">
+                    <p>
+                      <span style="color:#ea432b" font-weigth:'900'="">Marketing Lead Source:
+                        SynergyData_CN_Probate</span>
+                    </p>
+                  </td> -->
+                </tr>
+                <tr style="justify-content: center; padding-block: 24px;">
+                  <th class="zestimate" colspan="6">
+                    <span class="zestimateSpan">
+                      <span id="zestimateTitle" class="zestimateTitle">
+                        ZESTIMATE</span> &nbsp;
+                      <span class="currency">$</span>
+                      <input id="zestimateInput" [keyup]="zestimateTyped" [keypress]="preventDefault" autocomplete="off"
+                        type="text" size="8" tabindex="-1">
+                    </span>
+                    <span class="askingPriceSpan">
+                      <span class="zestimateTitle">ENTER ASKING PRICE</span> &nbsp;
+                      <span class="currency">$</span>
+                      <input id="askingPriceInput" [keyup]="askingPriceTyped" [keypress]="preventDefault"
+                        autocomplete="off" type="text" size="8" tabindex="-1">
+                    </span>
+                  </th>
+                </tr>
+              </thead>
+              <tbody id="matrixTbody">
+                <tr class="matrixHeadings">
+                  <!-- <th colspan="6" class="matrix-csm">
+                    <span class="csmSpan">CSM: &nbsp;<span id="csmValue">MONTOYA</span></span>
+                    <span class="investorsSpan">
+                      INVESTORS: <span id="investorValue">YES</span>&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;
+                      FORECLOSURE: <span id="foreclosureValue">YES</span>
+                      &nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;
+                      TERMS: <span id="termsValue">YES (IN-RANGE 20%): $NaN</span>
+                    </span>
+                  </th> -->
+                  <th colspan="6" class="matrix-csm">
+                    <span class="csmSpan">CSM: &nbsp;<span id="csmValue">MONTOYA</span></span>
+                  </th>
+                  <th class="investor">
+                    <span class="investorsSpan">
+                      INVESTORS: <span id="investorValue">YES</span>
+                  </th>
+                  <th class="foreclosure">FORECLOSURE: <span id="foreclosureValue">YES</span></th>
+                  <th class="terms"> TERMS: <span id="termsValue">YES (IN-RANGE 20%): $NaN</span>
+                  </th>
+                </tr>
+                <tr>
+                  <td class="m-h-campaign blink" colspan="2">CAMPAIGN</td>
+                  <td class="m-h-multifamily m-standard m-header" colspan="2">MULTI FAMILY</td>
+                  <td class="m-h-multifamily m-standard m-header" colspan="2">RENT MATRIX</td>
+                </tr>
+                <tr>
+                  <td id="affiliatesSelection" class="m-r-campaign m-standard" colspan="2">
+                    <select name="options" id="matrixAffiliates" options="affiliateItems" [change]="campaignSelected"
+                      tabindex="-1">
+                      <option value="31">Enter Zestimate</option>
+                    </select>
+                  </td>
+                  <td class="m-r-rent m-standard" colspan="2">
+                    <span class="rentValueSpan"></span><span id="multiValue"></span>
+                    <span class="rentInputSpan" id="multiDollarValue">Enter Zestimate</span>
+                  </td>
+                  <td class="m-r-multifamily m-standard" colspan="2">
+                    <span class="multiValueSpan"><span id="rentValue">1%</span></span>
+                    <span class="multiInputSpan" id="rentDollarValue">Enter Asking Price</span>
+                  </td>
+                </tr>
+                <tr class="calculations">
+                  <td class="calc-ir-h1" colspan="2">IN RANGE</td>
+                  <td class="calc-ar-h1" colspan="2">ABOVE RANGE</td>
+                  <td class="calc-fr-h1" colspan="2">FULL RANGE</td>
+                </tr>
+                <tr class="calculations">
+                  <td class="m-r-ir" [click]="onClickIrBegin">
+                    <span [class]="irBeginReadWrite" class="read">50%</span>
+                    <input [class]="irBeginReadWrite" type="number" style="display: none;" id="editIrBeginValue" [keypress]="irBeginTyped"
+                      out="irBegin" class="read" tabindex="-1">
+                  </td>
+                  <td class="m-r-ir" [click]="onClickIrEnd">
+                    <span [class]="irEndReadWrite" class="read">90%</span>
+                    <input [class]="irEndReadWrite" type="number" style="display: none;" id="editIrEndValue" [keypress]="irEndTyped"
+                      out="irEnd" class="read" tabindex="-1">
+                  </td>
+                  <td class="m-r-ar" [click]="onClickArBegin">
+                    <span [class]="arBeginReadWrite" class="read">91%</span>
+                    <input [class]="arBeginReadWrite" type="number" style="display: none;" id="editArBeginValue" [keypress]="arBeginTyped"
+                      out="arBegin" class="read" tabindex="-1">
+                  </td>
+                  <td class="m-r-ar" [click]="onClickArEnd">
+                    <span [class]="arEndReadWrite" class="read">100%</span>
+                    <input [class]="arEndReadWrite" type="number" style="display: none;" id="editArEndValue" [keypress]="arEndTyped"
+                      out="arEnd" class="read" tabindex="-1">
+                  </td>
+                  <td class="m-r-fr" [click]="onClickFrBegin">
+                    <span [class]="frBeginReadWrite" class="read">101%</span>
+                    <input [class]="frBeginReadWrite" type="number" style="display: none;" id="editFrBeginValue" [keypress]="frBeginTyped"
+                      out="frBegin" class="read" tabindex="-1">
+                  </td>
+                  <td class="m-r-fr" [click]="onClickFrEnd">
+                    <span [class]="frEndReadWrite" class="read">105%</span>
+                    <input [class]="frEndReadWrite" type="number" style="display: none;" id="editFrEndValue" [keypress]="frEndTyped"
+                      out="frEnd" class="read" tabindex="-1">
+                  </td>
+                </tr>
+                <tr class="calculations">
+                  <td class="calc-ir-h3"><span id="irBeginDollarValue">0</span></td>
+                  <td class="calc-ir-h3"><span id="irEndDollarValue">0</span></td>
+                  <td class="calc-ir-h3"><span id="arBeginDollarValue">0</span></td>
+                  <td class="calc-ir-h3"><span id="arEndDollarValue">0</span></td>
+                  <td class="calc-ir-h3"><span id="frBeginDollarValue">0</span></td>
+                  <td class="calc-ir-h3"><span id="frEndDollarValue">0</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+        <tr>
+          <td class="marketing-lead-source" colspan="6" style="text-align: center;">
+            <p>
+              <span>MARKETING LEAD SOURCE: SynergyData_CN_Probate</span>
+            </p>
+          </td>
+        </tr>
+      </tbody>
+      <tr id="otherCostsTR">
+        <td colspan="6">
+          <table class="other_costs_table" id="other-costs-table">
+            <thead>
+              <tr class="otherCosts" style="justify-content: center;">
+                <td colspan="8">
+                  <button class="otherCostsBtn" [click]="onToggleCostBody" tabindex="-1">OTHER SELLING COSTS</button>
+                </td>
+                <td></td>
+              </tr>
+            </thead>
+            <tbody id="otherCostsTbody" [class]="toggleOtherCost">
+              <tr>
+                <th colspan="3" class="costs_header_1">Repairs And Contractors</th>
+                <th colspan="2" class="costs_header_3">REALTOR COSTS</th>
+              </tr>
+              <tr>
+                <td class="orange2">Central AC</td>
+                <td class="orange2">
+                  <input type="number" [change]="centralACChanged" [keyup]="centralACChanged"
+                    [keypress]="stopFormSubmit" out="centralACNumber" placeholder="0" id="central_ac" step="1" tabindex="-1">
+                </td>
+                <td class="orange2" id="central_ac_result">$0</td>
+                <td class="blue2 realtor_comission orange2" style="width:32%;">
+                  Realtor commission
+                  <input type="number" [change]="realtorComissionChanged" [keyup]="realtorComissionChanged"
+                    [keypress]="stopFormSubmit" out="realtorComission" placeholder="0" id="realtor_comission" name="realtor_comission"
+                    step="1" max="6" tabindex="-1"> %
+                </td>
+                <td class="blue2 orange2">$0</td>
+              </tr>
+              <tr>
+                <td class="orange2">Bathrooms</td>
+                <td class="orange2">
+                  <input type="number" [change]="bathroomsChanged" [keyup]="bathroomsChanged"
+                    [keypress]="stopFormSubmit" out="bathroomsNumber" placeholder="0" id="bathrooms" step="1" tabindex="-1">
+                </td>
+                <td class="orange2" id="bathrooms_result">$0</td>
+                <td class="blue2 staging orange2" style="width: 29%;">
+                  Staging and prep work
+                  <input type="number" [change]="stagingPrepChanged" [keyup]="stagingPrepChanged"
+                    [keypress]="stopFormSubmit" out="stagingPrep" placeholder="0" id="realtor_staging_prep" name="realtor_staging_prep"
+                    step="1" max="6" tabindex="-1"> %
+                </td>
+                <td class="blue2 orange2">$0</td>
+              </tr>
+              <tr>
+                <td class="orange2">Kitchen</td>
+                <td class="orange2">
+                  <input type="number" [change]="kitchenChanged" [keyup]="kitchenChanged" [keypress]="stopFormSubmit"
+                    out="kitchenNumber" id="kitchen" step="1" placeholder="0" tabindex="-1">
+                </td>
+                <td class="orange2" id="kitchen_result">$0</td>
+                <td class="blue1 realtor_deductions orange2" style="width: 29%;">Total realtor deductions</td>
+                <td class="blue1 orange2">$0</td>
+              </tr>
+              <tr>
+                <td class="orange2">Flooring</td>
+                <td class="orange2">
+                  <input type="number" [change]="flooringChanged" [keyup]="flooringChanged" [keypress]="stopFormSubmit"
+                    out="flooringNumber" id="flooring" step="1" placeholder="0" tabindex="-1"><span style="color:red;"> (sqft)</span>
+                </td>
+                <td class="orange2" id="flooring_result">$0</td>
+                <td class="empty"></td>
+                <td colspan="2" class="empty"></td>
+              </tr>
+              <tr>
+                <td class="orange2">Copper Plumbing</td>
+                <td class="orange2">
+                  <input type="number" [change]="copperChanged" placeholder="0" [keyup]="copperChanged" [keypress]="stopFormSubmit"
+                    out="copperNumber" id="copper" step="1" tabindex="-1"><span style="color:red;"> (sqft)</span>
+                </td>
+                <td class="orange2" id="copper_result">$0</td>
+                <td class="pink1 taxes_header_1" colspan="2">TAXES</td>
+              </tr>
+              <tr>
+                <td class="orange2">Painting</td>
+                <td class="orange2">
+                  <input type="number" [change]="paintingChanged" placeholder="0" [keyup]="paintingChanged" [keypress]="stopFormSubmit"
+                    out="paintingNumber" id="painting" step="1" tabindex="-1"> <span style="color:red;"> (sqft)</span>
+                </td>
+                <td class="orange2" id="painting_result">$0</td>
+                <td class="pink2 escrow orange2" style="width: 29%;">
+                  Title Escrow and transfer tax
+                  <input type="number" [change]="escrowTransferChanged" placeholder="0" [keyup]="escrowTransferChanged"
+                    [keypress]="stopFormSubmit" out="escrowTransfer" id="escrow_transfer" name="escrow_transfer"
+                    step="1" max="3" tabindex="-1"> %
+                </td>
+                <td class="pink2 orange2 es-price">$0</td>
+              </tr>
+              <tr>
+                <td class="orange2">Roofing</td>
+                <td class="orange2">
+                  <input type="number" [change]="roofingChanged" placeholder="0" [keyup]="roofingChanged" [keypress]="stopFormSubmit"
+                    out="roofingNumber" id="roofing" step="1" tabindex="-1"><span style="color:red;"> (sqft)</span>
+                </td>
+                <td class="orange2" id="roofing_result">$0</td>
+                <td class="pink2 seller_concessions orange2" style="width: 29%;">
+                  Seller concessions
+                  <input type="number" [change]="sellerConsessionsChanged" [keyup]="sellerConsessionsChanged"
+                    [keypress]="stopFormSubmit" out="sellerConsessions" id="seller_consessions"
+                    name="seller_consessions" step="1" max="3" placeholder="0" tabindex="-1"> %
+                </td>
+                <td class="pink2 es-price orange2" id="seller_concessions_result">$0</td>
+              </tr>
+              <tr>
+                <td class="orange2">Wood sidings</td>
+                <td class="orange2">
+                  <input type="number" [change]="woodSidingsChanged" placeholder="0" [keyup]="woodSidingsChanged"
+                    [keypress]="stopFormSubmit" out="woodSidingsNumber" id="wood_sidings" step="1" tabindex="-1"><span
+                    style="color:red;"> (sqft)</span>
+                </td>
+                <td class="orange2" id="wood_sidings_result">$0</td>
+                <td class="pink1 orange2" style="width: 29%;">TOTAL TAXES DEDUCTIONS</td>
+                <td class="pink1 es-price orange2" id="total_taxes_deductions_result">$0</td>
+              </tr>
+              <tr>
+                <td class="orange2">Electrical</td>
+                <td class="orange2">
+                  <input type="number" [change]="electricalChanged" placeholder="0" [keyup]="electricalChanged"
+                    [keypress]="stopFormSubmit" out="electricalNumber" id="electrical" step="1" tabindex="-1"><span
+                    style="color:red;"> (sqft)</span>
+                </td>
+                <td class="orange2" id="electrical_result">$0</td>
+                <td class="empty"></td>
+                <td colspan="2" class="empty"></td>
+                <td class="empty"></td>
+                <td class="empty"></td>
+              </tr>
+              <tr>
+                <td class="orange3 orange2">TOTAL REPAIRS</td>
+                <td colspan="2" class="orange3" id="total_repairs_result">$0</td>
+                <td class="costs_header_2 total_deductions" colspan="2" >TOTAL WITH ALL DEDUCTIONS</td>
+              </tr>
+              <tr class="otherCostsTR">
+                <th class="orange2" style="width: 16%; font-weight: 400;">CONTRACTORS</th>
+                <th class="orange2" style="width: 16%;">
+                  <input type="number" [change]="contractorsChanged" [keyup]="contractorsChanged"
+                    [keypress]="stopFormSubmit" out="contractorsNumber" placeholder="0" id="contractors" step="1" tabindex="-1">
+                </th>
+                <th class="orange2" style="width: 16%; font-weight: 400;" id="contractors_result">$0</th>
+                <td class="costs_header_2 orange2" style="width: 46%;" colspan="2">
+                  <label for="totalRepairsAndContractorsOption">REPAIRS AND CONTRACTORS</label> 
+                  <input type="checkbox" [change]="totalCostOptionsChanged" out="totalRepairsAndContractorsOption"
+                    id="totalRepairsAndContractorsOption" name="totalRepairsAndContractorsOption" binary=""
+                    value="undefined" tabindex="-1">|
+                    <label for="totalRealtorCostsOption">REALTOR COSTS</label>
+                  <input type="checkbox" [change]="totalCostOptionsChanged" out="totalRealtorCostsOption"
+                    id="totalRealtorCostsOption" name="totalRealtorCostsOption" binary="" value="undefined"
+                    tabindex="-1"> |
+                    <label for="totalTaxesOption">TAXES</label>
+                  <input type="checkbox" [change]="totalCostOptionsChanged" out="totalTaxesOption" id="totalTaxesOption"
+                    name="totalTaxesOption" binary="" value="undefined" tabindex="-1">
+                </td>
+              </tr>
+              <tr>
+                <td style="width: 22%;" class="orange3 orange2">TOTAL REPAIRS &nbsp; + &nbsp; CONTRACTORS </td>
+                <td style="width: 245px;" colspan="2" class="orange3 orange2" id="grand_total_contractors_result">
+                  $0
+                </td>
+                <td class="redblack orange2" style="width: 46%;"  colspan="2" id="total_all_deductions">$0</td>
+              </tr>
+            </tbody>
+          </table>
+        </td>
+      </tr>
+    </table>
+    <table   border="0" cellpadding="5" cellspacing="3" align="center" id="Table_6">
+      <tbody>
+        <tr align="center" style="justify-content: center;">
+          <td  colspan="2"><span style="text-transform: uppercase; font-size:32px; text-transform:uppercase;color:#071030; text-decoration:underline; text-decoration-color:#C4C9C9; text-underline-offset: 8px;">Lead Data</span></td>
+        </tr>
+        <!-- <tr align="left" bgcolor="#F7F7F7" >
+          <td align="left">Call Back Date and Time:</td>
+          <td align="left" colspan="3"><input class="textbox" name="call_back_date_time" id="call_back_date_time"
+              type="text" size="60" maxlength="100" value=""></td>
+        </tr> -->
+        <tr align="left" bgcolor="#F7F7F7" style="align-items: center;">
+          <td align="left" style="width: 9%; font-size: 14px;" >Lead Source</td>
+          <td align="left" class="lead-source" ><select name="utm_source" id="utm_source">
+              <option value="">Select</option>
+              <option value="LAMASSU COLD CALL">LAMASSU COLD CALL</option>
+              <option value="LAMASSU COLD CALL (LIVE TRANSFER)">LAMASSU COLD CALL (LIVE TRANSFER)</option>
+              <option value="LAMASSU LEAD (LIVE TRANSFER NO ANSWER)">LAMASSU LEAD (LIVE TRANSFER NO ANSWER)</option>
+              <option value="LAMASSU NURTURE REVIVAL">LAMASSU NURTURE REVIVAL</option>
+              <option value="LAMASSU TEXT (QUALIFIED VIA PHONE)">LAMASSU TEXT (QUALIFIED VIA PHONE)</option>
+              <option value="LAMASSU TEXT (QUALIFIED VIA TEXT ONLY)">LAMASSU TEXT (QUALIFIED VIA TEXT ONLY)</option>
+              <option value="LAMASSU TEXT (INTERESTED - UNRESPONSIVE)">LAMASSU TEXT (INTERESTED - UNRESPONSIVE)</option>
+              <option value="LAMASSU SELF STORAGE">LAMASSU SELF STORAGE</option>
+              <option value="LAMASSU SPANISH LEAD (QCO ONLY)">LAMASSU SPANISH LEAD (QCO ONLY)</option>
+              <option value="LAMASSU SNIPE CALL">LAMASSU SNIPE CALL</option>
+              <option value="REALTOR - OutBound Agent">REALTOR - OutBound Agent</option>
+              <option value="LAMASSU - QCO TERMINATED REVIVAL">LAMASSU - QCO TERMINATED REVIVAL</option>
+              <option value="LAMASSU - QCO CASH OFFER OPTION -">LAMASSU - QCO CASH OFFER OPTION -</option>
+            </select>
+            <div><button class="utm_source LAMASSUCOLDCALL dropbtn" value="LAMASSU COLD CALL"
+                style="display: inline; margin-left: 10px; margin-right: 10px;" tabindex="-1">LAMASSU COLD
+                CALL</button><button class="utm_source LAMASSUCOLDCALL(LIVETRANSFER) dropbtn"
+                value="LAMASSU COLD CALL (LIVE TRANSFER)"
+                style="display: inline; margin-left: 10px; margin-right: 10px;" tabindex="-1">LAMASSU COLD CALL (LIVE
+                TRANSFER)</button><button class="utm_source LAMASSUSPANISHLEAD(QCOONLY) dropbtn"
+                value="LAMASSU SPANISH LEAD (QCO ONLY)" style="display: inline; margin-left: 10px; margin-right: 10px;"
+                tabindex="-1">LAMASSU SPANISH LEAD (QCO ONLY)</button></div>
+          </td>
+        </tr>
+        <!-- <tr align="left">
+          <td>Marketing Lead Source:</td>
+          <td><input type="text" name="mleadsource" id="mleadsource" value="" size="30" maxlenght="100"></td>
+        </tr> -->
+        <tr align="left" style="align-items: center;">
+          <td style="width: 10%; font-size: 14px" >Asking Price %:</td>
+          <td class="asking_price">
+            <select name="disc_price" id="disc_price">
+              <option value="" selected="">Select</option>
+              <option value="In Range">0.In Range</option>
+              <option value="Above Range">1.Above Range</option>
+              <option value="Full Retail">2.Full Retail</option>
+              <option value="Creative Terms - IR">3.Creative Terms - IR</option>
+              <option value="Creative Terms - AR">4.Creative Terms - AR</option>
+            </select>
+            <div>
+            <button class="disc_price dropbtn" value="" style="margin-left: 5px; margin-right: 5px; display: none;"
+              tabindex="-1">Select</button><button class="disc_price InRange dropbtn" value="In Range"
+              style="margin-left: 5px; margin-right: 5px;" tabindex="-1">In Range</button><button
+              class="disc_price AboveRange dropbtn" value="Above Range" style="margin-left: 5px; margin-right: 5px;"
+              tabindex="-1">Above Range</button><button class="disc_price FullRetail dropbtn" value="Full Retail"
+              style="margin-left: 5px; margin-right: 5px;" tabindex="-1">Full Retail</button><button
+              class="disc_price CreativeTerms-IR dropbtn" value="Creative Terms - IR"
+              style="margin-left: 5px; margin-right: 5px;" tabindex="-1">Creative Terms - IR</button><button
+              class="disc_price CreativeTerms-AR dropbtn" value="Creative Terms - AR"
+              style="margin-left: 5px; margin-right: 5px;" tabindex="-1">Creative Terms - AR</button>
+            </div>
+          </td>
+        </tr>
+        <!-- <tr style="display:;">
+          <td>APPROVAL MATRIX:</td>
+          <td>
+
+            <select name="matrix" id="matrix">
+              <option value=""></option>
+              <option value="Yes">Yes</option>
+              <option value="No">No</option>
+            </select>
+
+          </td>
+        </tr> -->
+ <tr align="left">
+          <td style="font-size: 14px">Marketing Lead Source:</td>
+          <td><input type="text" name="mleadsource" id="mleadsource" value="" size="30" maxlenght="100"></td>
+
+          <td style="font-size: 14px">Agent Name:</td>
+          <td><select name="from_userid" id="from_userid">
+              <option value="">All Agents</option>
+              <option value="2234">ALEJANDRO LOPEZ</option>
+              <option value="2105">ALEXANDER PEREZ</option>
+              <option value="1502">ALVARO GONZALEZ</option>
+              <option value="1675">ANDERSON CASTRILLON (GARY MILLER)</option>
+              <option value="2051">ANDRES CORRAL (ANDREW)</option>
+              <option value="2174">ANDRES HERRERA (MARK)</option>
+              <option value="1716">ANDRES LOPEZ</option>
+              <option value="1760">ANDRES PINEDA</option>
+              <option value="2182">ANDRES DAVID JARAMILLO (DAVID MARTINEZ)</option>
+              <option value="2175">ANDRES FELIPE PELAEZ (NORMAN)</option>
+              <option value="1316">ANGY (AGENT) ALVAREZ</option>
+              <option value="2107">BRIGITTE ANAYA</option>
+              <option value="2199">CAMILA PALACIO (SARA)</option>
+              <option value="2220">CARLOS AGUDELO (JOHN)</option>
+              <option value="2035">CARLOS SALAZAR (PHILIP)</option>
+              <option value="2215">CESAR RENDON</option>
+              <option value="2179">CHRISTIAN GIRALDO</option>
+              <option value="1389">CONSYS TEST [TEST]</option>
+              <option value="1860">DANIEL FLOREZ</option>
+              <option value="1640">DANIEL MARTINEZ</option>
+              <option value="2168">DANIEL MAYORGA</option>
+              <option value="1949">DAVID TAMAYO (MARK ROGAN)</option>
+              <option value="1715">DIEGO JIMENEZ</option>
+              <option value="2024">DIEGO DIAZ (DAN)</option>
+              <option value="1877">EMILIANA SANCHEZ (EMILY)</option>
+              <option value="1844">EMMANUEL MORILLO</option>
+              <option value="1723">ERIK SANDOVAL</option>
+              <option value="2157">ESTEFANIA GIRALDO (SARA)</option>
+              <option value="2150">FELIPE QUINTERO (JEFFREY SAINT)</option>
+              <option value="1981">GABRIEL LIMA (DAVID MEDINA)</option>
+              <option value="2131">HILLARY ESCALANTE (ASHLEY)</option>
+              <option value="1940">HUMBERTO ECHEVERRI</option>
+              <option value="2110">ISABELA BENITEZ (MARY)</option>
+              <option value="1846">JACOBO GALLEGO (JACOB)</option>
+              <option value="1349">JAMES ORREGO</option>
+              <option value="2192">JENIFER RIVERA</option>
+              <option value="1358">JOHN ORREGO (JOHN REEVES)</option>
+              <option value="1611">JORGE TORO</option>
+              <option value="2191">JORGE GARZON (JOHN)</option>
+              <option value="2161">JORGE ALBERTO TORO (GEORGE)</option>
+              <option value="2060">JOSE FORERO</option>
+              <option value="2078">JOSE BERMUDEZ (BRANDON)</option>
+              <option value="2240">JOSUE DANIEL VINAZCO</option>
+              <option value="2090">JUAN SERNA (JOHN GARCIA)</option>
+              <option value="1882">JUAN CANO</option>
+              <option value="1895">JUAN RAMIREZ</option>
+              <option value="1733">JUAN BONILLA</option>
+              <option value="2231">JUAN CAMILO CIFUENTES</option>
+              <option value="2041">JUAN CAMILO MONTOYA</option>
+              <option value="2079">JUAN CARLOS MORENO (JOHN VEGA)</option>
+              <option value="1911">JUAN DAVID FALLA</option>
+              <option value="1662">JUAN DAVID GRAJALES</option>
+              <option value="2198">JUAN DIEGO RAMOS</option>
+              <option value="2257">JUAN DIEGO SANCHEZ</option>
+              <option value="2200">JUAN ESTEBAN DUQUE (FRANK)</option>
+              <option value="1912">JUAN GUILLERMO GRAJALES (MICHAEL)</option>
+              <option value="1937">JUAN JOSE SILVA</option>
+              <option value="2252">JUAN JOSE HURTADO</option>
+              <option value="1959">JUAN MANUEL PATINO</option>
+              <option value="2221">JUAN MATEO GIL (MATTHEW)</option>
+              <option value="1490">JUAN PABLO ECHEVERRY</option>
+              <option value="2049">JUAN SEBASTIAN PIñEROS</option>
+              <option value="1872">JULIANA ARCILA</option>
+              <option value="1928">KEVIN CORREA</option>
+              <option value="2172">LAURYN RAMIREZ</option>
+              <option value="2217">LUISA ACOSTA (KENDALL)</option>
+              <option value="2218">LUISA GARCIA (LISA)</option>
+              <option value="2093">MALAK MUHIEDDINE (ANN)</option>
+              <option value="1876">MARIA UMAñA (ANA)</option>
+              <option value="2216">MARIA MORALES (KIM)</option>
+              <option value="2223">MARIA MONTOYA (MARY)</option>
+              <option value="1739">MARIA OSPINA</option>
+              <option value="2080">MARIA PAZ SANCHEZ</option>
+              <option value="2233">MARIO SEBASTIAN RODRIGUEZ SAUREZ</option>
+              <option value="1685">MAURICIO HENAO (JOSHUA MENDEZ)</option>
+              <option value="2030">MAXCIMILIANO RUDAS (MAXWELL)</option>
+              <option value="2245">MISAEL DAVID LLANOS</option>
+              <option value="2184">NATHALIA BUITRAGO (NATHALY)</option>
+              <option value="2115">NICOLAS ZAPATA</option>
+              <option value="2183">NICOLAS ALARCON</option>
+              <option value="1756">ORIANA CADENAS</option>
+              <option value="2139">RANDY MANEIRO (JASON TODD)</option>
+              <option value="2155">RICHARD MONTANA</option>
+              <option value="1989">SAMUEL ECHEVERRI</option>
+              <option value="2163">SANTIAGO MONTOYA</option>
+              <option value="2188">SANTIAGO UCHIMA (TONY ANDERSON)</option>
+              <option value="2235">SANTIAGO MONTES</option>
+              <option value="1415">SCOTT MORSE</option>
+              <option value="2166">SEBASTIAN GIRALDO</option>
+              <option value="1451">SEBASTIAN TAMAYO (JHON NAVARRO)</option>
+              <option value="1800">STEFHANY BARRERO</option>
+              <option value="1385">STEVEN TORO</option>
+              <option value="2012">WILLIAN TOBON (DANIEL)</option>
+              <option value="1351">YESENIA ALVAREZ</option>
+            </select></td>
+        </tr>
+        <tr align="left">
+          <td style="font-size: 14px">Approving Manager</td>
+          <td><select name="manager_approving" id="manager_approving">
+              <option value="">Select Manager</option>
+              <option value="Angy">Angy</option>
+              <option value="London">London</option>
+              <option value="Marcus">Marcus</option>
+              <option value="Scott">Scott</option>
+              <option value="Rafael">Rafael</option>
+              <option value="Yesenia">Yesenia</option>
+              <option value="Juan Camilo Montoya">Juan Camilo Montoya</option>
+              <option value="Juan Bonilla">Juan Bonilla</option>
+              <option value="Juan Silva">Juan Silva</option>
+              <option value="Emmanuel">Emmanuel</option>
+              <option value="Daniel Martinez">Daniel Martinez</option>
+              <option value="Andres Lopez">Andres Lopez</option>
+              <option value="Andres Pineda">Andres Pineda</option>
+              <option value="JP Echeverry">JP Echeverry</option>
+              <option value="Erik Sandoval">Erik Sandoval</option>
+              <option value="Alvaro Gonzalez">Alvaro Gonzalez</option>
+              <option value="No Approval Required">No Approval Required</option>
+            </select>
+          </td>
+          <td style="font-size: 14px"> Manager Approval Notes</td>
+          <td><textarea name="manager_notes" style="resize: none;" id="manager_notes" rows3="" cols="40" rows="1"></textarea>
+            <div><button id="takeOverCallBtn" class="dropbtn"  title="Use if this call had a take over by a TL or Manager"
+                style="margin-top: 1px;" tabindex="-1">TAKE OVER CALL</button></div>
+          </td>
+        </tr>
+          <tr style="justify-content: normal;">
+            <td style="font-size: 14px">APPROVAL MATRIX:</td>
+            <td>
+
+              <select name="matrix" id="matrix">
+                <option value=""></option>
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+              </select>
+
+            </td>
+          </tr>
+        <tr align="left" style="display:none;">
+          <td bgcolor="#EAEAEA" colspan="2"><span style="font-size:16px;font-weight:bold;">Zillow Information</span>
+          </td>
+        </tr>
+
+        <tr align="left" style="display:none;">
+          <td>Zillow Property Link:</td>
+          <td><input type="text" name="z_link" id="z_link" value="" size="30" maxlenght="100"></td>
+        </tr>
+
+
+        <tr align="center" style="justify-content: center;">
+          <td colspan="2" id="slackSellersLink" style="color: #30A8BA; font-size: 20px; font-weight: 600;">
+            <p id="slackLinksLabel">CLICK TO OPEN AFFILIATE'S SLACK ROOM  <br>(SELLER'S INFO WILL BE COPIED TO THE CLIPBOARD)
+            </p>
+            <p id="slackA" class="animate"></p>
+            <div id="slackALink" style="color: #0B7683;">Delores L Thomas // // WF Sent!</div>
+            <p></p>
+          </td>
+        </tr>
+        <tr align="left" style="display:none;">
+          <td>Zillow Estimate:</td>
+          <td><input type="text" name="z_estimate" id="z_estimate" value="" size="30" maxlenght="100"></td>
+        </tr>
+
+        <tr align="center" style="justify-content: center;">
+          <td  colspan="2"><br>
+
+            <input class="qualified-lead-btn" type="submit" onclick=" buttonIndex=&#39;QUALIFIED&#39;; " name="QUALIFIED" value="Qualified Lead"
+              style="border-radius:5px; border:none;font-size:16px; text-transform:uppercase; color: #fff;  padding:10px;background:#24C400;">
+            <br><br>
+            <input type="submit" class="abandon-btn" onclick=" buttonIndex=&#39;ABANDON&#39;; " name="ABANDON" value="Abandon Lead"
+              style="border-radius:5px;">
+
+
+            <br><br>
+          </td>
+        </tr>
+        <tr>
+
+          <td class="marketing-lead-source" colspan="6" style="text-align: center;">
+            <p>
+              <span>MARKETING LEAD SOURCE: SynergyData_CN_Probate</span>
+            </p>
+          </td>
+        </tr>
+      </tbody>
+    </table><br>
+    <div style="text-align: center;"><label for="aiNotesToggleCheckbox" style="margin-right: 10px;"><span
+          class="checkboxLabelAINotes" style="color: white; font-weight: 500;">🤖 AI NOTES</span></label><input
+        type="checkbox" id="aiNotesToggleCheckbox" name="aiNotesToggleCheckbox"></div>
+    <div align="center">Lamassu CRM Lead Form</div>
+  </form>
+
+
+  <div class="dots"></div><img src="chrome-extension://ifbmnmmnjenkipdooahkbamikgfbgigp/img/realtorsIcon.png"
+    id="realtorIcon"><img src="chrome-extension://ifbmnmmnjenkipdooahkbamikgfbgigp/img/lamassuSuperCharge.png"
+    id="lamassuSuperCharge">
+  <div id="draggableNotesDiv"
+    style="position: fixed; width: 250px; height: 160px; z-index: 9999; left: 0px; top: 0px; display: none;">
+    <div id="titleLabelNoteDragWindow"
+      style="background-color: rgb(0, 106, 255); color: rgb(255, 255, 255); padding: 1px; cursor: move; touch-action: none;">
+      <h1 style="margin-block: 2px;">Notes: </h1>
+    </div><textarea id="draggableTextareaId" style="width: 100%; height: calc(100% - 40px); resize: none;"></textarea>
+    <div
+      style="width: 10px; height: 10px; background-color: rgb(0, 0, 0); position: absolute; right: 0px; bottom: 0px; cursor: nwse-resize;">
+    </div>
+  </div>
+  <div id="topBarInfo"
+    style="padding-left:80vw; height: 40px; width: 100vw; background-color: rgb(54, 54, 54); color: white; position: fixed; top: 0px; font-size: 13px; display: flex; text-align: center; align-items: center; z-index: 1000; margin-bottom: 100px;">
+    Delores L Thomas - - | All Agents</div>
+  <div id="yt_article_summary_widget_wrapper" class="yt_article_summary_widget_wrapper" style="display: none;">
+    <div id="yt_article_summary_widget" class="yt_article_summary_widget"><svg style="filter: brightness(0.8);"
+        width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <mask id="path-1-outside-1_3606_3145" maskUnits="userSpaceOnUse" x="1" y="1" width="22" height="22"
+          fill="black">
+          <rect fill="white" x="1" y="1" width="22" height="22"></rect>
+          <path
+            d="M20.6816 10.1843C20.9588 9.34066 21.0063 8.4399 20.8192 7.57245C20.6321 6.70499 20.217 5.90134 19.6157 5.24216C19.0143 4.58298 18.2478 4.09146 17.393 3.81692C16.5382 3.54238 15.6253 3.49449 14.7459 3.67805C14.1453 3.01747 13.379 2.52468 12.524 2.24931C11.669 1.97394 10.7555 1.92571 9.87559 2.10947C8.99568 2.29324 8.18039 2.70252 7.51181 3.29608C6.84323 3.88965 6.34499 4.64654 6.06725 5.49055C5.18642 5.67292 4.3699 6.08122 3.70003 6.67426C3.03017 7.26731 2.53064 8.02413 2.25182 8.86842C1.97299 9.71271 1.92474 10.6146 2.11192 11.4832C2.2991 12.3517 2.71509 13.1562 3.31795 13.8155C3.09309 14.4899 3.01633 15.2037 3.09278 15.9095C3.16924 16.6154 3.39716 17.2971 3.76139 17.9093C4.30169 18.8351 5.12567 19.568 6.11483 20.0027C7.104 20.4373 8.20738 20.5512 9.26631 20.328C9.74353 20.8568 10.3291 21.2796 10.9844 21.5684C11.6396 21.8571 12.3495 22.0053 13.0672 22.003C14.1516 22.003 15.2081 21.6635 16.0847 21.0334C16.9612 20.4034 17.6125 19.5152 17.9449 18.4968C18.649 18.3539 19.3141 18.0649 19.8962 17.6489C20.4784 17.233 20.9642 16.6997 21.3214 16.0843C21.8585 15.1598 22.0858 14.0915 21.9709 13.032C21.856 11.9724 21.4048 10.9758 20.6816 10.1843ZM13.0798 20.6968C12.191 20.6968 11.3302 20.3894 10.6473 19.828L10.7677 19.7593L14.8029 17.4593C14.9069 17.4047 14.9935 17.3225 15.0528 17.2221C15.1121 17.1216 15.1418 17.0068 15.1386 16.8905V11.2655L16.8427 12.2405C16.8517 12.2441 16.8594 12.2501 16.865 12.2579C16.8706 12.2656 16.8739 12.2748 16.8744 12.2843V16.9343C16.876 17.4289 16.7785 17.9189 16.5875 18.3761C16.3964 18.8333 16.1156 19.2488 15.7611 19.5985C15.4067 19.9482 14.9856 20.2253 14.5222 20.4138C14.0588 20.6023 13.5621 20.6984 13.0608 20.6968H13.0798ZM4.90165 17.2593C4.46164 16.5029 4.3026 15.6189 4.45188 14.7593L4.57224 14.828L8.60749 17.128C8.70379 17.1829 8.81303 17.2118 8.92423 17.2118C9.03543 17.2118 9.14467 17.1829 9.24097 17.128L14.1758 14.3218V16.253C14.1797 16.2608 14.1817 16.2694 14.1817 16.278C14.1817 16.2867 14.1797 16.2953 14.1758 16.303L10.0962 18.628C9.66403 18.8748 9.18685 19.0352 8.69188 19.0999C8.19692 19.1647 7.69387 19.1326 7.21148 19.0055C6.72909 18.8784 6.27681 18.6587 5.88048 18.3591C5.48415 18.0595 5.15154 17.6858 4.90165 17.2593ZM3.83741 8.5843C4.28764 7.82089 4.99655 7.23878 5.83919 6.94055V11.6718C5.83595 11.7857 5.86434 11.8983 5.92128 11.9975C5.97823 12.0966 6.06156 12.1785 6.16227 12.2343L11.0717 15.028L9.36766 16.003C9.34918 16.0092 9.32914 16.0092 9.31065 16.003L5.23106 13.678C4.36041 13.1812 3.72487 12.3642 3.46364 11.4059C3.20242 10.4476 3.33682 9.42624 3.83741 8.56555V8.5843ZM17.8563 11.7968L12.9278 8.9718L14.6319 8.00305C14.6403 7.99741 14.6502 7.99439 14.6604 7.99439C14.6705 7.99439 14.6805 7.99741 14.6889 8.00305L18.7685 10.328C19.3915 10.684 19.8992 11.2072 20.2325 11.8368C20.5659 12.4664 20.7111 13.1764 20.6514 13.8843C20.5916 14.5921 20.3294 15.2687 19.8951 15.8352C19.4608 16.4017 18.8724 16.8349 18.1983 17.0843V12.353C18.1946 12.2391 18.1612 12.1281 18.1013 12.0306C18.0414 11.9332 17.957 11.8527 17.8563 11.7968ZM19.554 9.2968L19.4336 9.2218L15.4047 6.9093C15.3047 6.84846 15.1896 6.81624 15.0721 6.81624C14.9547 6.81624 14.8395 6.84846 14.7396 6.9093L9.8111 9.71555V7.75305C9.8061 7.7445 9.80346 7.7348 9.80346 7.72492C9.80346 7.71505 9.8061 7.70535 9.8111 7.6968L13.897 5.37805C14.5222 5.02257 15.2371 4.85003 15.958 4.88059C16.6789 4.91115 17.3762 5.14356 17.9682 5.55064C18.5601 5.95772 19.0225 6.52265 19.301 7.17939C19.5796 7.83614 19.663 8.55755 19.5413 9.2593L19.554 9.2968ZM8.87989 12.7218L7.1695 11.753C7.15339 11.7405 7.1422 11.7228 7.13782 11.703V7.06555C7.13785 6.35289 7.34371 5.65499 7.73128 5.0536C8.11885 4.45222 8.67209 3.97224 9.32619 3.6699C9.98029 3.36756 10.7082 3.25537 11.4246 3.34647C12.141 3.43757 12.8162 3.7282 13.3712 4.1843L13.2636 4.25305L9.21563 6.55305C9.11158 6.60765 9.02504 6.68981 8.96573 6.79029C8.90642 6.89076 8.87669 7.00557 8.87989 7.1218V12.7218ZM9.80476 10.753L11.9966 9.50305L14.1948 10.753V13.253L11.9966 14.503L9.79843 13.253L9.80476 10.753Z">
+          </path>
+        </mask>
+        <path
+          d="M20.6816 10.1843C20.9588 9.34066 21.0063 8.4399 20.8192 7.57245C20.6321 6.70499 20.217 5.90134 19.6157 5.24216C19.0143 4.58298 18.2478 4.09146 17.393 3.81692C16.5382 3.54238 15.6253 3.49449 14.7459 3.67805C14.1453 3.01747 13.379 2.52468 12.524 2.24931C11.669 1.97394 10.7555 1.92571 9.87559 2.10947C8.99568 2.29324 8.18039 2.70252 7.51181 3.29608C6.84323 3.88965 6.34499 4.64654 6.06725 5.49055C5.18642 5.67292 4.3699 6.08122 3.70003 6.67426C3.03017 7.26731 2.53064 8.02413 2.25182 8.86842C1.97299 9.71271 1.92474 10.6146 2.11192 11.4832C2.2991 12.3517 2.71509 13.1562 3.31795 13.8155C3.09309 14.4899 3.01633 15.2037 3.09278 15.9095C3.16924 16.6154 3.39716 17.2971 3.76139 17.9093C4.30169 18.8351 5.12567 19.568 6.11483 20.0027C7.104 20.4373 8.20738 20.5512 9.26631 20.328C9.74353 20.8568 10.3291 21.2796 10.9844 21.5684C11.6396 21.8571 12.3495 22.0053 13.0672 22.003C14.1516 22.003 15.2081 21.6635 16.0847 21.0334C16.9612 20.4034 17.6125 19.5152 17.9449 18.4968C18.649 18.3539 19.3141 18.0649 19.8962 17.6489C20.4784 17.233 20.9642 16.6997 21.3214 16.0843C21.8585 15.1598 22.0858 14.0915 21.9709 13.032C21.856 11.9724 21.4048 10.9758 20.6816 10.1843ZM13.0798 20.6968C12.191 20.6968 11.3302 20.3894 10.6473 19.828L10.7677 19.7593L14.8029 17.4593C14.9069 17.4047 14.9935 17.3225 15.0528 17.2221C15.1121 17.1216 15.1418 17.0068 15.1386 16.8905V11.2655L16.8427 12.2405C16.8517 12.2441 16.8594 12.2501 16.865 12.2579C16.8706 12.2656 16.8739 12.2748 16.8744 12.2843V16.9343C16.876 17.4289 16.7785 17.9189 16.5875 18.3761C16.3964 18.8333 16.1156 19.2488 15.7611 19.5985C15.4067 19.9482 14.9856 20.2253 14.5222 20.4138C14.0588 20.6023 13.5621 20.6984 13.0608 20.6968H13.0798ZM4.90165 17.2593C4.46164 16.5029 4.3026 15.6189 4.45188 14.7593L4.57224 14.828L8.60749 17.128C8.70379 17.1829 8.81303 17.2118 8.92423 17.2118C9.03543 17.2118 9.14467 17.1829 9.24097 17.128L14.1758 14.3218V16.253C14.1797 16.2608 14.1817 16.2694 14.1817 16.278C14.1817 16.2867 14.1797 16.2953 14.1758 16.303L10.0962 18.628C9.66403 18.8748 9.18685 19.0352 8.69188 19.0999C8.19692 19.1647 7.69387 19.1326 7.21148 19.0055C6.72909 18.8784 6.27681 18.6587 5.88048 18.3591C5.48415 18.0595 5.15154 17.6858 4.90165 17.2593ZM3.83741 8.5843C4.28764 7.82089 4.99655 7.23878 5.83919 6.94055V11.6718C5.83595 11.7857 5.86434 11.8983 5.92128 11.9975C5.97823 12.0966 6.06156 12.1785 6.16227 12.2343L11.0717 15.028L9.36766 16.003C9.34918 16.0092 9.32914 16.0092 9.31065 16.003L5.23106 13.678C4.36041 13.1812 3.72487 12.3642 3.46364 11.4059C3.20242 10.4476 3.33682 9.42624 3.83741 8.56555V8.5843ZM17.8563 11.7968L12.9278 8.9718L14.6319 8.00305C14.6403 7.99741 14.6502 7.99439 14.6604 7.99439C14.6705 7.99439 14.6805 7.99741 14.6889 8.00305L18.7685 10.328C19.3915 10.684 19.8992 11.2072 20.2325 11.8368C20.5659 12.4664 20.7111 13.1764 20.6514 13.8843C20.5916 14.5921 20.3294 15.2687 19.8951 15.8352C19.4608 16.4017 18.8724 16.8349 18.1983 17.0843V12.353C18.1946 12.2391 18.1612 12.1281 18.1013 12.0306C18.0414 11.9332 17.957 11.8527 17.8563 11.7968ZM19.554 9.2968L19.4336 9.2218L15.4047 6.9093C15.3047 6.84846 15.1896 6.81624 15.0721 6.81624C14.9547 6.81624 14.8395 6.84846 14.7396 6.9093L9.8111 9.71555V7.75305C9.8061 7.7445 9.80346 7.7348 9.80346 7.72492C9.80346 7.71505 9.8061 7.70535 9.8111 7.6968L13.897 5.37805C14.5222 5.02257 15.2371 4.85003 15.958 4.88059C16.6789 4.91115 17.3762 5.14356 17.9682 5.55064C18.5601 5.95772 19.0225 6.52265 19.301 7.17939C19.5796 7.83614 19.663 8.55755 19.5413 9.2593L19.554 9.2968ZM8.87989 12.7218L7.1695 11.753C7.15339 11.7405 7.1422 11.7228 7.13782 11.703V7.06555C7.13785 6.35289 7.34371 5.65499 7.73128 5.0536C8.11885 4.45222 8.67209 3.97224 9.32619 3.6699C9.98029 3.36756 10.7082 3.25537 11.4246 3.34647C12.141 3.43757 12.8162 3.7282 13.3712 4.1843L13.2636 4.25305L9.21563 6.55305C9.11158 6.60765 9.02504 6.68981 8.96573 6.79029C8.90642 6.89076 8.87669 7.00557 8.87989 7.1218V12.7218ZM9.80476 10.753L11.9966 9.50305L14.1948 10.753V13.253L11.9966 14.503L9.79843 13.253L9.80476 10.753Z"
+          fill="#828282"></path>
+        <path
+          d="M20.6816 10.1843C20.9588 9.34066 21.0063 8.4399 20.8192 7.57245C20.6321 6.70499 20.217 5.90134 19.6157 5.24216C19.0143 4.58298 18.2478 4.09146 17.393 3.81692C16.5382 3.54238 15.6253 3.49449 14.7459 3.67805C14.1453 3.01747 13.379 2.52468 12.524 2.24931C11.669 1.97394 10.7555 1.92571 9.87559 2.10947C8.99568 2.29324 8.18039 2.70252 7.51181 3.29608C6.84323 3.88965 6.34499 4.64654 6.06725 5.49055C5.18642 5.67292 4.3699 6.08122 3.70003 6.67426C3.03017 7.26731 2.53064 8.02413 2.25182 8.86842C1.97299 9.71271 1.92474 10.6146 2.11192 11.4832C2.2991 12.3517 2.71509 13.1562 3.31795 13.8155C3.09309 14.4899 3.01633 15.2037 3.09278 15.9095C3.16924 16.6154 3.39716 17.2971 3.76139 17.9093C4.30169 18.8351 5.12567 19.568 6.11483 20.0027C7.104 20.4373 8.20738 20.5512 9.26631 20.328C9.74353 20.8568 10.3291 21.2796 10.9844 21.5684C11.6396 21.8571 12.3495 22.0053 13.0672 22.003C14.1516 22.003 15.2081 21.6635 16.0847 21.0334C16.9612 20.4034 17.6125 19.5152 17.9449 18.4968C18.649 18.3539 19.3141 18.0649 19.8962 17.6489C20.4784 17.233 20.9642 16.6997 21.3214 16.0843C21.8585 15.1598 22.0858 14.0915 21.9709 13.032C21.856 11.9724 21.4048 10.9758 20.6816 10.1843ZM13.0798 20.6968C12.191 20.6968 11.3302 20.3894 10.6473 19.828L10.7677 19.7593L14.8029 17.4593C14.9069 17.4047 14.9935 17.3225 15.0528 17.2221C15.1121 17.1216 15.1418 17.0068 15.1386 16.8905V11.2655L16.8427 12.2405C16.8517 12.2441 16.8594 12.2501 16.865 12.2579C16.8706 12.2656 16.8739 12.2748 16.8744 12.2843V16.9343C16.876 17.4289 16.7785 17.9189 16.5875 18.3761C16.3964 18.8333 16.1156 19.2488 15.7611 19.5985C15.4067 19.9482 14.9856 20.2253 14.5222 20.4138C14.0588 20.6023 13.5621 20.6984 13.0608 20.6968H13.0798ZM4.90165 17.2593C4.46164 16.5029 4.3026 15.6189 4.45188 14.7593L4.57224 14.828L8.60749 17.128C8.70379 17.1829 8.81303 17.2118 8.92423 17.2118C9.03543 17.2118 9.14467 17.1829 9.24097 17.128L14.1758 14.3218V16.253C14.1797 16.2608 14.1817 16.2694 14.1817 16.278C14.1817 16.2867 14.1797 16.2953 14.1758 16.303L10.0962 18.628C9.66403 18.8748 9.18685 19.0352 8.69188 19.0999C8.19692 19.1647 7.69387 19.1326 7.21148 19.0055C6.72909 18.8784 6.27681 18.6587 5.88048 18.3591C5.48415 18.0595 5.15154 17.6858 4.90165 17.2593ZM3.83741 8.5843C4.28764 7.82089 4.99655 7.23878 5.83919 6.94055V11.6718C5.83595 11.7857 5.86434 11.8983 5.92128 11.9975C5.97823 12.0966 6.06156 12.1785 6.16227 12.2343L11.0717 15.028L9.36766 16.003C9.34918 16.0092 9.32914 16.0092 9.31065 16.003L5.23106 13.678C4.36041 13.1812 3.72487 12.3642 3.46364 11.4059C3.20242 10.4476 3.33682 9.42624 3.83741 8.56555V8.5843ZM17.8563 11.7968L12.9278 8.9718L14.6319 8.00305C14.6403 7.99741 14.6502 7.99439 14.6604 7.99439C14.6705 7.99439 14.6805 7.99741 14.6889 8.00305L18.7685 10.328C19.3915 10.684 19.8992 11.2072 20.2325 11.8368C20.5659 12.4664 20.7111 13.1764 20.6514 13.8843C20.5916 14.5921 20.3294 15.2687 19.8951 15.8352C19.4608 16.4017 18.8724 16.8349 18.1983 17.0843V12.353C18.1946 12.2391 18.1612 12.1281 18.1013 12.0306C18.0414 11.9332 17.957 11.8527 17.8563 11.7968ZM19.554 9.2968L19.4336 9.2218L15.4047 6.9093C15.3047 6.84846 15.1896 6.81624 15.0721 6.81624C14.9547 6.81624 14.8395 6.84846 14.7396 6.9093L9.8111 9.71555V7.75305C9.8061 7.7445 9.80346 7.7348 9.80346 7.72492C9.80346 7.71505 9.8061 7.70535 9.8111 7.6968L13.897 5.37805C14.5222 5.02257 15.2371 4.85003 15.958 4.88059C16.6789 4.91115 17.3762 5.14356 17.9682 5.55064C18.5601 5.95772 19.0225 6.52265 19.301 7.17939C19.5796 7.83614 19.663 8.55755 19.5413 9.2593L19.554 9.2968ZM8.87989 12.7218L7.1695 11.753C7.15339 11.7405 7.1422 11.7228 7.13782 11.703V7.06555C7.13785 6.35289 7.34371 5.65499 7.73128 5.0536C8.11885 4.45222 8.67209 3.97224 9.32619 3.6699C9.98029 3.36756 10.7082 3.25537 11.4246 3.34647C12.141 3.43757 12.8162 3.7282 13.3712 4.1843L13.2636 4.25305L9.21563 6.55305C9.11158 6.60765 9.02504 6.68981 8.96573 6.79029C8.90642 6.89076 8.87669 7.00557 8.87989 7.1218V12.7218ZM9.80476 10.753L11.9966 9.50305L14.1948 10.753V13.253L11.9966 14.503L9.79843 13.253L9.80476 10.753Z"
+          stroke="#828282" stroke-width="0.2" mask="url(#path-1-outside-1_3606_3145)"></path>
+      </svg></div>
+    <div id="yt_article_summary_close_button" class="yt_article_summary_close_button">×</div>
+  </div>
+</body>
+
+</html>
