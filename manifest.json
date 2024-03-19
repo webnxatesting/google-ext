@@ -1,4 +1,3 @@
-
 {
   "name": "Lamassu Webtools",
   "manifest_version": 3,
@@ -25,7 +24,6 @@
   },
 
     "action": {
-      // "default_popup": "options.html",
       "default_popup": "local_webform/webform_local.html",
       "default_icon": {
           "128": "zillow-128x128.png",
