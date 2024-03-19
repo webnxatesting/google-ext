@@ -1,0 +1,346 @@
+<html><head><script language="JavaScript" type="text/JavaScript">
+    // VALIDATE FORM ---------------------------------------------------------------
+    function validate_form()
+    {
+    
+    
+            if (document.getElementById('fname').value == "")  {alert('First Name Required'); return false;}
+            if (document.getElementById('lname').value == "")  {alert('Last Name Required'); return false;}
+    
+            document.getElementById('ClientName').value = document.getElementById('fname').value + " " + document.getElementById('lname').value;
+    
+            if (document.getElementById('ClientName').value == "")  {alert('ClientName Required'); return false;}
+            if (document.getElementById('HomePhone').value == "")  	{alert('Phone 01 Required'); return false;}
+    
+            if (document.getElementById('StreetAddress').value == "")  	{alert('StreetAddress Required'); return false;}
+            if (document.getElementById('City').value == "")  	{alert('City Required'); return false;}
+            if (document.getElementById('State').options[document.getElementById('State').selectedIndex].value == "") 	{alert('State Required'); return false;}
+            if (document.getElementById('ZipCode').value == "")  	{alert('ZipCode'); return false;}
+            
+            
+            if (document.getElementById('reason').value == "")  	{alert('Motive/Reason for Selling Required'); return false;}
+            if (document.getElementById('bottom_line').value == "")  	{alert('Bottom Line Price US$ Required'); return false;}
+    
+            if (buttonIndex == 'QUALIFIED')
+            {
+                    if (document.getElementById('utm_source').options[document.getElementById('utm_source').selectedIndex].value == "") 	{alert('LeadSource Required'); return false;}
+                     if (document.getElementById('matrix').options[document.getElementById('matrix').selectedIndex].value == "") 	{alert('Matrix Required'); return false;}
+                    if (document.getElementById('disc_price').options[document.getElementById('disc_price').selectedIndex].value == "") 	{alert('Asking Price % Required'); return false;}
+            }
+    
+            
+            if (buttonIndex == 'QUALIFIED')
+            {
+                   if (document.getElementById('reason').value == "")  	{alert('Motive/Reason for Selling Required'); return false;}
+                   if (document.getElementById('mleadsource').value == "")  	{alert('Marketing Lead Source Required'); return false;}
+                   if (document.getElementById('from_userid').options[document.getElementById('from_userid').selectedIndex].value == "") 	{alert('Agent Required'); return false;}
+                   if (document.getElementById('manager_approving').options[document.getElementById('manager_approving').selectedIndex].value == "") 	{alert('Approving Manager Required'); return false;}
+            }
+    
+            Note = document.getElementById('note').value;
+    
+            document.getElementById('note').value = Note.replaceAll(':', '');
+    
+    
+    }
+    </script>
+    
+    
+    <link href="https://fonts.googleapis.com/css?family=Roboto&amp;display=swap" rel="stylesheet">
+    
+    <style type="text/css">
+        body {
+    background-color: rgb(0, 146, 250); /* Light blue background */
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    color: #333; /* Darker text for better readability */
+    margin: 20px; /* Added margin for overall spacing */
+}
+
+table {
+    width: 900px;
+    background-color: #fff; /* White background for the form */
+    border-collapse: collapse;
+    margin-top: 20px; /* Margin at the top of the table */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.487); /* subtle shadow for depth */
+    border-radius: 15px;
+}
+
+td, th {
+    padding: 10px; /* More padding for table cells */
+    background-color: mintcream;
+}
+
+h2 {
+    color: #0056b3; /* Dark blue for headings */
+}
+
+input[type=text], select, input[type=password], textarea, .textbox {
+    width: 95%; /* Responsive width */
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #0056b3; /* Blue border */
+    border-radius: 5px; /* Rounded corners */
+    box-sizing: border-box; /* Box sizing for consistent sizing */
+}
+
+.btnm1, input[type=submit] {
+    background-color: #0056b3; /* Blue background for buttons */
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 15px; /* Rounded corners */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btnm1:hover, input[type=submit]:hover {
+    background-color: #003d66; /* Darker blue on hover */
+}
+
+textarea {
+    resize: vertical; /* Allowing vertical resize only */
+}
+
+form {
+    margin-top: 20px;
+}
+
+/* Additional styling for specific elements if needed */
+
+    
+    </style>
+    
+
+
+
+<title>DEMO</title><table width='900px' bgcolor='#F7F7F7' border='0' cellpadding='5' cellspacing='3' align=center><tr align='left'   ><td  align=left   bgcolor='#F7F7F7' width='30%' ><img src='media/lamassu_logo3.png' width=300px></td><td  align=left   bgcolor='#F7F7F7' width='70%'><h2>New Lead Form</h2></td></tr><tr align=left><td colspan=2  bgcolor='#F7F7F7'>&nbsp;</td></tr>
+    <tr align=left><td bgcolor=#EAEAEA colspan=2><span style='font-size:16px;font-weight:bold;'>Abandon Lead Finder</span></td></tr>
+
+<tr align=left  bgcolor='#F7F7F7'><td>Enter Phone Number:</td><td><form action='lamassu_leadcapture.php' method=post><input class=textbox  name='abandon_phone' id='abandon_phone' type='text' size='20' maxlength='100'  value=''>&nbsp;<input type=submit class=btnm1 value='Find'></form></td></tr></table><FORM method='post' name=main action='lamassu_leadpost.php' onSubmit=" return validate_form(); ">
+   <input type=hidden name=utm_medium   value='Cold Call'>
+   <input type=hidden name=utm_source1   value=''>
+   <input type=hidden name=utm_referer  value=''>
+   <table width='900px' bgcolor='#F7F7F7' border='0' cellpadding='5' cellspacing='3' align=center><tr align=left><td colspan=4  bgcolor='#F7F7F7'>&nbsp;</td></tr>
+    <tr align=left><td bgcolor=#EAEAEA colspan=4><span style='font-size:16px;font-weight:bold;'>Seller's Information</span></td></tr> <tr><td>SPANISH Speaker:</td><td>
+
+    <select name='spanish' id='spanish'>
+    <option value=''></option>
+    <option value='Yes'>Yes</option>
+    <option value='No'>No</option>
+    </select>
+
+    </td></tr><tr align=left  bgcolor='#F7F7F7' style='display: none;'><td>Client Name:</td><td><input class=textbox  name='ClientName' id='ClientName' type='text' size='40' maxlength='100'  value=''></td></tr><tr align=left  bgcolor='#F7F7F7' ><td>First Name:</td><td><input class=textbox  name='fname' id='fname' type='text' size='30' maxlength='100'  value=''></td><td>Last Name:</td><td><input class=textbox  name='lname' id='lname' type='text' size='30' maxlength='100'  value=''></td></tr><tr align='left'  bgcolor='#F7F7F7' ><td  align=left   valign=top>Phone 01:</td><td  align=left   ><input class=textbox  name='HomePhone' id='HomePhone' type='text' size='30' maxlength='20'  value=''></span></td><td  align=left   valign=top>Phone 02:</td><td  align=left    ><input class=textbox  name='SecondaryPhone' id='SecondaryPhone' type='text' size='30' maxlength='20'  value=''></span></td></tr><tr align='left'  bgcolor='#F7F7F7' ><td  align=left   valign=top>Street</td><td  align=left    ><input class=textbox  name='StreetAddress' id='StreetAddress' type='text' size='30' maxlength='100'  value=''></td><td  align=left   valign=top>City</td><td  align=left    ><input class=textbox  name='City' id='City' type='text' size='30' maxlength='30'  value=''></td></tr><tr align='left'  bgcolor='#F7F7F7' ><td  align=left   valign=top>State</td><td  align=left    ><select  name='State' id='State' >
+    <option value='' selected></option>
+    <option value='AL'>Alabama</option>
+    <option value='AK'>Alaska</option>
+    <option value='AZ'>Arizona</option>
+    <option value='AR'>Arkansas</option>
+    <option value='CA'>California</option>
+    <option value='CO'>Colorado</option>
+    <option value='CT'>Connecticut</option>
+    <option value='DE'>Delaware</option>
+    <option value='DC'>District of Columbia</option>
+    <option value='FL'>Florida</option>
+    <option value='GA'>Georgia</option>
+    <option value='HI'>Hawaii</option>
+    <option value='ID'>Idaho</option>
+    <option value='IL'>Illinois</option>
+    <option value='IN'>Indiana</option>
+    <option value='IA'>Iowa</option>
+    <option value='KS'>Kansas</option>
+    <option value='KY'>Kentucky</option>
+    <option value='LA'>Louisiana</option>
+    <option value='ME'>Maine</option>
+    <option value='MD'>Maryland</option>
+    <option value='MA'>Massachusetts</option>
+    <option value='MI'>Michigan</option>
+    <option value='MN'>Minnesota</option>
+    <option value='MS'>Mississippi</option>
+    <option value='MO'>Missouri</option>
+    <option value='MT'>Montana</option>
+    <option value='NE'>Nebraska</option>
+    <option value='NV'>Nevada</option>
+    <option value='NH'>New Hampshire</option>
+    <option value='NJ'>New Jersey</option>
+    <option value='NM'>New Mexico</option>
+    <option value='NY'>New York</option>
+    <option value='NC'>North Carolina</option>
+    <option value='ND'>North Dakota</option>
+    <option value='OH'>Ohio</option>
+    <option value='OK'>Oklahoma</option>
+    <option value='OR'>Oregon</option>
+    <option value='PA'>Pennsylvania</option>
+    <option value='RI'>Rhode Island</option>
+    <option value='SC'>South Carolina</option>
+    <option value='SD'>South Dakota</option>
+    <option value='TN'>Tennessee</option>
+    <option value='TX'>Texas</option>
+    <option value='UT'>Utah</option>
+    <option value='VT'>Vermont</option>
+    <option value='VA'>Virginia</option>
+    <option value='WA'>Washington</option>
+    <option value='WV'>West Virginia</option>
+    <option value='WI'>Wisconsin</option>
+    <option value='WY'>Wyoming</option>
+
+    </select></td><td  align=left   valign=top>Zip</td><td><input class=textbox  name='ZipCode' id='ZipCode' type='text' size='30' maxlength='10'  value=''></td></tr><tr align='left'  bgcolor='#F7F7F7' ><td  align=left   >Note:</td><td  align=left   colspan=3 ><textarea name='note' id='note' rows=4 cols=60></textarea></td></tr></table><table  width='900px' bgcolor='#F7F7F7' border='0' cellpadding='5' cellspacing='3' align=center><tr align=left>
+
+
+                            <td bgcolor=#EAEAEA colspan=4><span style='font-size:16px;font-weight:bold;'>Property Details</span></td></tr><tr align=left><td >Bedrooms:&nbsp;&nbsp;
+                            <select  name='bedroom' id='bedroom'>
+                            <option value='' selected></option>
+                            <option value='1'>1</option>
+                            <option value='2'>2</option>
+                            <option value='3'>3</option>
+                            <option value='4'>4</option>
+                            <option value='5'>5</option>
+                            <option value='6'>6</option>
+                            </select>
+                            </td>
+                            <td >Bath:&nbsp;&nbsp;
+                            <select  name='bath' id='bath'>
+                            <option value='' selected></option>
+                            <option value='1'>1</option>
+                            <option value='1.5'>1.5</option>
+                            <option value='2'>2</option>
+                            <option value='2.5'>2.5</option>
+                            <option value='3'>3</option>
+                            <option value='3.5'>3.5</option>
+                            <option value='4'>4</option>
+                            </select>
+                            </td>
+
+                            <td style='display:;'>Garage:&nbsp;&nbsp;
+                            <select  name='garage' id='garage'>
+                            <option value='' selected></option>
+                            <option value='None'>None</option>
+                            <option value='1 car'>1 car</option>
+                            <option value='2 car'>2 car</option>
+                            </select>
+                            </td>
+
+
+                            <td >Pool:&nbsp;&nbsp;
+                            <input type=text name=pool id=pool size=10 maxlenght=100  value=''></td></tr><tr align=left   ><td colspan=2>GENERAL CONDITION <br> OF THE PROPERTY:</td>
+                            <td  colspan=2><textarea name=conditions id=conditions rows=3 cols=60></textarea></td></tr><tr align=left><td colspan=2>CURRENTLY OCCUPIED BY (if occupied, include Rent Amount):</td>
+                            <td colspan=2><textarea name=occupied id=occupied rows=3 cols=60></textarea></td></tr><tr align=left style='display:none;'><td colspan=2>Total Rent Amount (if Occupied):</td>
+                            <td colspan=2><textarea name=occupied1 id=occupied1 rows=3 cols=60></textarea></td></tr><tr align=left><td colspan=2>IF TENANT, 
+                            <ul>
+                                                            <li>Rent Roll Amount</li>
+                            <li>When Lease Signed</li>
+                            <li>When Lease Expires</li>
+                            <li>When Last Increase</li>
+                            <li>Missed Payments W/COVID</li>
+                            </ul>
+                            </td>
+                            <td colspan=2><textarea name=tenant_details id=tenant_details rows=3 cols=60></textarea></td></tr><tr align=left style='display:;'>
+                            <td >LAST TIME THE A/C <br> WAS REPLACED (Year A/C)</td>
+                            <td ><input type=text name=year_ac id=year_ac size=10 maxlenght=100  value=''></td>
+                            <td >LAST TIME THE ROOF <br> WAS REPLACED (Year Roof)</td>
+                            <td >
+                            <select  name='year_roof' id='year_roof'>
+                            <option value='' selected></option>
+                            <option value='0-5 years'>0-5 years</option>
+                            <option value='6-10 years'>6-10 years</option>
+                            <option value='11-15 years'>11-15 years</option>
+                            <option value='16+ years'>16+ years</option>
+                            </select>
+                            </td></tr>
+
+                       
+                            <tr align=left style='display:;'><td colspan=1>REPAIRS NEEDED:</td>
+                            <td colspan=3><textarea name=repairs id=repairs rows=3 cols=40></textarea></td></tr></table><table width='900px' bgcolor='#F7F7F7' border='0' cellpadding='5' cellspacing='3' align=center><tr align=left><td bgcolor=#EAEAEA colspan=4>
+    <span style='font-size:16px;font-weight:bold;'>Mortgage Information</span></td></tr>
+
+    <tr align=left>
+    <td  width='20%' >Mortgage:</td>
+    <td  width='30%' ><select name=has_mortgage id=has_mortgage>
+                    <option value=''></option>
+                    <option value='Yes'>Yes</option>
+                    <option value='No'>No</option>
+                    </select>    
+    </td>
+    <td  width='20%' >Approx Balance:</td>
+    <td  width='30%' ><input type=text name=mortgage_balance id=mortgage_balance  size=30 maxlenght=100 value=''></td>       
+    </tr>
+
+    <tr align=left>
+    <td  width='20%' >Payment Amt:</td>
+    <td  width='30%' ><input type=text name=mortgage_payment_amount id=mortgage_payment_amount  size=30 maxlenght=100 value=''></td>
+    <td  width='20%' >Tax Ins Amt:</td>
+    <td  width='30%' ><input type=text name=mortgage_tax_ins_amount id=mortgage_tax_ins_amount  size=30 maxlenght=100 value=''></td>       
+    </tr>
+
+
+    <tr align=left>
+    <td  width='20%' >Fixed or Adjustable:</td>
+    <td  width='30%' ><input type=text name=mortgage_fixed_adjustable id=mortgage_fixed_adjustable  size=30 maxlenght=100 value=''></td>
+    <td  width='20%' ># Payments Left:</td>
+    <td  width='30%' ><input type=text name=mortgage_payments_left id=mortgage_payments_left  size=30 maxlenght=100 value=''></td>       
+    </tr>
+
+    </table><table width='900px' bgcolor='#F7F7F7' border='0' cellpadding='5' cellspacing='3' align=center><tr align=left><td bgcolor=#EAEAEA colspan=2><span style='font-size:16px;font-weight:bold;'>Marketing Information</span></td></tr>
+
+    <tr align=left><td  width='30%' > Seller “WHY” / Reason:</td>
+    <td  width='70%' ><textarea name=reason id=reason rows=3 cols=40></textarea></td></tr>
+
+    <tr align=left><td >Closing Time Frame:</td>
+    <td><textarea name=closing_time id=closing_time rows=3 cols=40></textarea></td></tr>
+     
+    <tr align='left' bgcolor='#F7F7F7' ><td  align=left >Email:</td>
+    <td  align=left><input class=textbox  name='EmailAddress' id='EmailAddress' type='text' size='25' maxlength='150'  value=''> IF UNKNOWN LEAVE BLANK</td></tr>
+
+    
+    <tr align=left><td >Bottom Line Price US$:</td>
+    <td><input type=text name=bottom_line id=bottom_line  value='' size=30 maxlenght=100></td></tr></table><table width='900px' bgcolor='#F7F7F7' border='0' cellpadding='5' cellspacing='3' align=center><tr align=left><td bgcolor=#EAEAEA colspan=2><span style='font-size:16px;font-weight:bold;'>Lead Data</span></td></tr><tr align='left'  bgcolor='#F7F7F7' ><td  align=left    width='30%' >Lead Source</td><td  align=left    width='70%'  ><select  name='utm_source' id='utm_source'>
+    <option value=''>Select</option><option value='LAMASSU COLD CALL'>LAMASSU COLD CALL</option><option value='LAMASSU COLD CALL (LIVE TRANSTER)'>LAMASSU COLD CALL (LIVE TRANSTER)</option><option value='LAMASSU NURTURE REVIVAL'>LAMASSU NURTURE REVIVAL</option><option value='LAMASSU TEXT (QUALIFIED VIA PHONE)'>LAMASSU TEXT (QUALIFIED VIA PHONE)</option><option value='LAMASSU TEXT (QUALIFIED VIA TEXT ONLY)'>LAMASSU TEXT (QUALIFIED VIA TEXT ONLY)</option><option value='LAMASSU TEXT (INTERESTED - UNRESPONSIVE)'>LAMASSU TEXT (INTERESTED - UNRESPONSIVE)</option><option value='LAMASSU SELF STORAGE'>LAMASSU SELF STORAGE</option><option value='LAMASSU SPANISH LEAD (QCO ONLY)'>LAMASSU SPANISH LEAD (QCO ONLY)</option><option value='LAMASSU SNIPE CALL'>LAMASSU SNIPE CALL</option><option value='REALTOR - OutBound Agent'>REALTOR - OutBound Agent</option><option value='LAMASSU - QCO TERMINATED REVIVAL'>LAMASSU - QCO TERMINATED REVIVAL</option><option value='LAMASSU - QCO CASH OFFER OPTION -'>LAMASSU - QCO CASH OFFER OPTION -</option></select></td></tr><tr align=left ><td >Marketing Lead Source:</td>
+    <td><input type=text name=mleadsource id=mleadsource  value='' size=30 maxlenght=100></td></tr><tr align=left><td >Asking Price %:</td><td>
+    <select  name='disc_price' id='disc_price'>
+    <option value='' selected>Select</option>
+    <option value='In Range'>0.In Range</option>
+    <option value='Above Range'>1.Above Range</option>
+    <option value='Full Retail'>2.Full Retail</option>
+    <option value='Creative Terms - IR'>3.Creative Terms - IR</option>
+    <option value='Creative Terms - AR'>4.Creative Terms - AR</option>
+    </select>
+    </td></tr> <tr style='display:;'><td>HEDGE FUND MATRIX:</td><td>
+
+    <select name='matrix' id='matrix'>
+    <option value=''></option>
+    <option value='Yes'>Yes</option>
+    <option value='No'>No</option>
+    </select>
+
+    </td></tr>
+
+
+    <tr align=left><td >Agent Name:</td><td><select name=from_userid id=from_userid ><option value=''>All Agents</option><option value='1916' >ALEJANDRA MOLINA</option><option value='1771' >ALEJANDRO LOPEZ HOLGUIN</option><option value='2105' >ALEXANDER PEREZ</option><option value='1502' >ALVARO GONZALEZ</option><option value='1675' >ANDERSON CASTRILLON</option><option value='2051' >ANDRES CORRAL</option><option value='2174' >ANDRES HERRERA</option><option value='1716' >ANDRES LOPEZ</option><option value='1760' >ANDRES PINEDA</option><option value='2182' >ANDRES DAVID JARAMILLO</option><option value='2175' >ANDRES FELIPE PELAEZ</option><option value='1316' >ANGY (AGENT) ALVAREZ</option><option value='1850' >BERNARD YAACOUB</option><option value='2107' >BRIGITTE ANAYA</option><option value='2035' >CARLOS SALAZAR</option><option value='2121' >CESAR BELTRAN</option><option value='2179' >CHRISTIAN GIRALDO</option><option value='1389' >CONSYS  TEST [TEST]</option><option value='1860' >DANIEL FLOREZ</option><option value='1640' >DANIEL MARTINEZ</option><option value='2168' >DANIEL MAYORGA</option><option value='2130' >DANIELA CASTILLO</option><option value='2029' >DANIELA VASQUEZ</option><option value='2076' >DAVID CALVO</option><option value='2133' >DAVID  NARVAEZ</option><option value='1949' >DAVID TAMAYO</option><option value='2086' >DEYSON  OROZCO</option><option value='1715' >DIEGO JIMENEZ</option><option value='2024' >DIEGO DIAZ</option><option value='2193' >ELIAS BOTELLO</option><option value='2165' >ELIZABETH TREJOS</option><option value='1877' >EMILIANA SANCHEZ</option><option value='1844' >EMMANUEL MORILLO</option><option value='2171' >ENMANUEL ALVAREZ</option><option value='1723' >ERIK SANDOVAL</option><option value='2033' >ESTEBAN PALACIO</option><option value='2157' >ESTEFANIA GIRALDO</option><option value='2169' >EVELYN PEREZ</option><option value='2150' >FELIPE QUINTERO</option><option value='2050' >FRANCISCO RAMIREZ</option><option value='2077' >GABRIEL QUINTERO</option><option value='1981' >GABRIEL LIMA</option><option value='1875' >HAILEY QUINTERO</option><option value='2186' >HAROLD AGUDELO</option><option value='2131' >HILLARY ESCALANTE</option><option value='1940' >HUMBERTO ECHEVERRI</option><option value='2110' >ISABELA BENITEZ</option><option value='1846' >JACOBO GALLEGO</option><option value='1349' >JAMES ORREGO</option><option value='2192' >JENIFER RIVERA</option><option value='1587' >JOHAN GONZALEZ</option><option value='1358' >JOHN ORREGO</option><option value='2173' >JOHN MONTOYA</option><option value='1611' >JORGE TORO</option><option value='2191' >JORGE GARZON</option><option value='2161' >JORGE ALBERTO TORO</option><option value='2060' >JOSE FORERO</option><option value='2078' >JOSE BERMUDEZ</option><option value='2090' >JUAN SERNA</option><option value='1882' >JUAN CANO</option><option value='1895' >JUAN RAMIREZ</option><option value='1907' >JUAN SANCHEZ</option><option value='1733' >JUAN BONILLA</option><option value='2091' >JUAN CAMILO CIFUENTES</option><option value='2185' >JUAN CAMILO PARGA</option><option value='2041' >JUAN CAMILO MONTOYA</option><option value='2079' >JUAN CARLOS MORENO</option><option value='1911' >JUAN DAVID FALLA</option><option value='1662' >JUAN DAVID GRAJALES</option><option value='1912' >JUAN GUILLERMO GRAJALES</option><option value='1937' >JUAN JOSE SILVA</option><option value='2057' >JUAN MANUEL VILLA</option><option value='1959' >JUAN MANUEL PATINO</option><option value='1490' >JUAN PABLO ECHEVERRY</option><option value='2026' >JUAN PABLO RAMIREZ</option><option value='2177' >JUAN SANTIAGO GUZMAN</option><option value='2049' >JUAN SEBASTIAN PIñEROS</option><option value='1872' >JULIANA ARCILA</option><option value='2178' >KARINA ANUEZA</option><option value='1928' >KEVIN CORREA</option><option value='2148' >LAURA IBARRA</option><option value='2025' >LAURA GONZALEZ</option><option value='2172' >LAURYN LORENA</option><option value='2170' >LUCAS ALVAREZ</option><option value='1557' >LUIS BECERRA</option><option value='2093' >MALAK MUHIEDDINE</option><option value='1876' >MARIA UMAñA</option><option value='1739' >MARIA OSPINA</option><option value='2083' >MARIA ALEJANDRA PEREZ</option><option value='2080' >MARIA PAZ SANCHEZ</option><option value='2044' >MARIANA ECHEVERRI</option><option value='2147' >MARIO RODRIGUEZ</option><option value='1946' >MATEO GRISALES</option><option value='1685' >MAURICIO HENAO [JOSHUA MENDEZ]</option><option value='2030' >MAXCIMILIANO RUDAS</option><option value='2149' >MELISSA ARROYAVE</option><option value='2154' >MELISSA GALVEZ</option><option value='2096' >MICHAEL CORRALES</option><option value='2167' >NATALI TORO</option><option value='2184' >NATHALIA  BUITRAGO</option><option value='2115' >NICOLAS ZAPATA</option><option value='2183' >NICOLAS ALARCON</option><option value='1756' >ORIANA CADENAS</option><option value='2137' >PAULA QUINTERO</option><option value='1580' >RAFAEL QUINTERO [ALEX]</option><option value='2139' >RANDY MANEIRO</option><option value='2155' >RICHARD MONTANA</option><option value='1989' >SAMUEL ECHEVERRI</option><option value='1824' >SANTIAGO MONTES</option><option value='2116' >SANTIAGO MURCIA</option><option value='2151' >SANTIAGO ECHEVERRI</option><option value='2163' >SANTIAGO MONTOYA</option><option value='2180' >SANTIAGO MORCILLO</option><option value='1929' >SANTIAGO LOPEZ</option><option value='2188' >SANTIAGO UCHIMA</option><option value='1881' >SARA BLANDON</option><option value='1415' >SCOTT MORSE</option><option value='2166' >SEBASTIAN GIRALDO</option><option value='1918' >SEBASTIAN CALLE</option><option value='1451' >SEBASTIAN TAMAYO</option><option value='2162' >SOFIA PARRA</option><option value='1800' >STEFHANY BARRERO</option><option value='1385' >STEVEN TORO</option><option value='2176' >VALENTINA HOYOS</option><option value='2181' >VALENTINA QUICENO</option><option value='1993' >VALENTINA PALACIO</option><option value='2045' >VALENTINA RESTREPO</option><option value='2012' >WILLIAN TOBON</option><option value='1351' >YESENIA ALVAREZ</option></select></td></tr></tr><tr align=left><td >Approving Manager</td>
+<td><select name=manager_approving id=manager_approving><option value=''>Select Manager</option><option value='Angy'>Angy</option><option value='London'>London</option><option value='Marcus'>Marcus</option><option value='Scott'>Scott</option><option value='Steven'>Steven</option><option value='Rafael'>Rafael</option><option value='Yesenia'>Yesenia</option><option value='No Approval Required'>No Approval Required</option></select> 
+</td></tr><tr align=left><td >qco_demo Manager Approval Notes</td>
+<td><textarea name=manager_notes id=manager_notes rows3 cols=40></textarea></td></tr><tr align=left><td bgcolor=#EAEAEA colspan=2><span style='font-size:16px;font-weight:bold;'>Closer Appointments/Bookings</span></td></tr><tr align=left ><td  valign=top>Closer Appointment Date and Time (EST):</td><td><select name=closer_sch id=closer_sch>
+                    <option value='' selected>Select Date and Time</option><option value='' disabled>App Hour on Tuesday - 11/28/2023</option><option value='' disabled >App Hour on Wednesday - 11/29/2023</option><option value='' disabled >App Hour on Thursday - 11/30/2023</option><option value='' disabled >App Hour on Friday - 12/01/2023</option></select><br><select name=closer_min id=closer_min>
+                    <option value=''>Select Minute of the Hour</option>
+                    <option value='00'>00</option>
+                    <option value='15'>15</option>
+                    <option value='30'>30</option>
+                    <option value='45'>45</option>
+                    </select>
+                    </td></tr></tr>
+<tr align=left style='display:none;'><td bgcolor=#EAEAEA colspan=2><span style='font-size:16px;font-weight:bold;'>Zillow Information</span></td></tr>
+
+<tr align=left  style='display:none;'><td >Zillow Property Link:</td>
+<td><input type=text name=z_link id=z_link  value='' size=30 maxlenght=100></td></tr>
+
+<tr align=left  style='display:none;'><td >Zillow Estimate:</td>
+<td><input type=text name=z_estimate id=z_estimate  value='' size=30 maxlenght=100></td></tr>
+
+<tr align='center' bgcolor=#EAEAEA ><td bgcolor=#EAEAEA colspan=2><br>
+    
+    <input type='submit'  onclick=" buttonIndex='QUALIFIED'; " name=QUALIFIED value='Qualified Lead' style='border-radius:5px;font-size:32px;color:white;padding:10px;background:#33cc33;'>
+    <br><br>
+    <input type='submit'  onclick=" buttonIndex='ABANDON'; " name=ABANDON value='Abandon Lead' style='border-radius:5px;font-size:16px;color:white;background:#E57373;'>
+
+
+    <br><br></td></tr></table><br>
+    <div align=center>Lamassu CRM Lead Form</div></form>

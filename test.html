@@ -1,0 +1,34 @@
+document.querySelectorAll('textarea[id="reason"], textarea[id="note"], textarea[id="conditions"], textarea[id="repairs"], textarea[id="closing_time"], textarea[id="occupied"]').forEach(textarea => {
+    textarea.closest('tr').classList.add(textarea.id);
+    const td = document.createElement('td');
+    td.className = textarea.id;
+    td.rows = 2;
+    td.colSpan = 2;
+    td.innerHTML = '<button>HELLO</button>';
+    td.style.verticalAlign = 'top';
+    const colSpan = textarea.closest('td').getAttribute('colspan');
+    if ( (colSpan === '3') || (colSpan === '2')) textarea.closest('td').setAttribute('colspan', '1');
+    if (textarea.closest('tr').classList.contains('reason') || textarea.closest('tr').classList.contains('closing_time')) {
+        textarea.closest('td').style.width = '33%';
+    }
+    textarea.setAttribute('cols', '70');
+    textarea.closest('tr').appendChild(td);
+});
+
+what's the general purpose of this code
+
+The general purpose of this code is to add a button to the HTML elements with the id's of "reason," "note," "conditions," "repairs," "closing_time," and "occupied" by creating a new td element and appending it to the tr containing the textarea. Additionally, it adjusts the colspan of the textarea's td and sets the width if the textarea is part of the "reason" or "closing_time" classes.
+
+I need that adapt how the buttons are created.
+The code first fetches the json from https://myjson.com/api and console log it.
+the json looks like this:
+{"range":"'mini-templates-webform'!A1:Z994","majorDimension":"ROWS","values":[["text_area","button_title","text_snippet","rules_reminder"],["note","LAND VALUE","Does it have access to water and electricity? \n-Does it have septic tank or well?\n-Is it wooded?\n- Has it ever had a dwelling?"],["reason","PERSONALITY","Nice person\nOld person\nReluctant to answer questions.\nvery talkative"]]}
+
+The buttons should 
+1. get the class name from the button_title converted to lowercase and replacing the spaces with a dash.
+2. get the innerHTML text from the button_title
+3. append the new button to the text areas with certain IDs according to the json column text_area
+4. save the json in a let variable called miniTemplatesJson, and call it from there
+4. be sure to follow the code example so it  Additionally adjusts the colspan of the textarea's td and sets the width if the textarea is part of the "reason" or "closing_time" classes.
+
+

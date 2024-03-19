@@ -1,0 +1,25 @@
+{
+  "name": "lamassu-zillow-webtools",
+  "version": "1.0.0",
+  "description": "Chrome Extension for lamassu webtools",
+  "scripts": {
+    "test": "npx jasmine-browser-runner runSpecs",
+    "test-browser": "npx jasmine-browser-runner serve"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lmsutools/Lamassu-Zillow-Webtools.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lmsutools/Lamassu-Zillow-Webtools/issues"
+  },
+  "homepage": "https://github.com/lmsutools/Lamassu-Zillow-Webtools#readme",
+  "devDependencies": {
+    "jasmine": "^4.2.0",
+    "jasmine-browser-runner": "^1.1.0",
+    "jasmine-core": "^4.3.0",
+    "jsdom": "^21.1.0"
+  }
+}
