@@ -1,0 +1,47 @@
+.toggle-light-listener.unselectable,
+#r_caption {
+    display: block !important;
+}
+
+/*
+.ygSearch {
+    display: none;
+}
+*/
+
+.navbar {
+    display: none;
+}
+
+#ttlr {
+    display: none;
+}
+
+.videowrapper {
+    display: none;
+}
+
+#all_actions > div > div {
+    display: none !important;
+}
+
+#defPanel,
+#nearByPanel,
+#phoneticPanel {
+    display: none;
+}
+
+.card-body {
+    display: none;
+}
+
+.keyword.card-heading {
+    display: none;
+}
+footer {
+    display: none;
+}
+
+.tuning_buttons {
+    display: none;
+}

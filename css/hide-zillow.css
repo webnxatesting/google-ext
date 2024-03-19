@@ -1,0 +1,118 @@
+/*Style for JavaScript Elements" */
+#imgcontainer {
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: -13px;
+} 
+
+.search-img {
+    margin: 0px 10px 10px 0;
+    }
+
+.search-img:hover {
+   cursor:pointer;
+}
+
+img#search-img-realtor {
+    max-width: 111px;
+    margin-bottom: 14px;
+}
+
+.animate { animation: disappear 0.65s linear; }
+
+@keyframes disappear {
+  30%  { opacity: 0; }
+  60%  { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+
+/*//////////*/
+/* Converted CSS Selectors from XPaths */
+/* Note: These selectors are approximate translations and may need adjustment based on actual HTML structure */
+
+/* Hiding the refi payment section */
+html > body > div:nth-of-type(1) > div > div:nth-of-type(2) > div > div:nth-of-type(1) > div:nth-of-type(2) > div > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(2) > div > div:nth-of-type(1) > div:nth-of-type(3),
+
+#search-detail-lightbox > div:first-of-type > div:nth-of-type(2) > div > div:first-of-type > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(2) > div > div > div > ul > li:nth-of-type(5) > div > div:nth-of-type(2),
+
+#search-detail-lightbox > div:first-of-type > div:nth-of-type(2) > div > div:first-of-type > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(3) > div > div > div > ul > li:nth-of-type(5) > div > div:nth-of-type(2),
+
+
+#search-detail-lightbox > div:first-of-type > div:nth-of-type(2) > div > div:first-of-type > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(3) > div > div > div > ul > li:nth-of-type(10) > div > div > div > div > section > div:nth-of-type(3) > div:nth-of-type(2) > div > footer,
+
+#search-detail-lightbox > div:first-of-type > div:nth-of-type(2) > div > div:first-of-type > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(2) > div > div > div > ul > li:nth-of-type(10) > div > div > div > div > section > div:nth-of-type(3) > div:nth-of-type(2),
+
+#search-detail-lightbox > div:first-of-type > div:nth-of-type(2) > div > div:first-of-type > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(2) > div > div > div > ul > li:nth-of-type(7) > div > div:nth-of-type(3) > div > div > div:first-of-type > div:nth-of-type(3),
+
+#search-detail-lightbox > div:first-of-type > div:nth-of-type(2) > div > div:first-of-type > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(2) > div > div > div > ul > li:nth-of-type(8) > div > div > div > div,
+
+#search-detail-lightbox > div:first-of-type > div:nth-of-type(2) > div > div:first-of-type > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(3) > div > div > div > ul > li:nth-of-type(8) > div > div > div > div{
+    display: none;
+}
+
+/* Hiding the prequalified card section */
+html > body > div:nth-of-type(1) > div > div:nth-of-type(2) > div > div:nth-of-type(1) > div:nth-of-type(2) > div > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(3) > div > div > div > ul > li:nth-of-type(1),
+
+#search-detail-lightbox > div:first-of-type > div:nth-of-type(2) > div > div:first-of-type > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(2) > div > div > div > ul > li:first-of-type {
+    display: none;
+}
+
+/* Styling bed info - assuming similar structure for bed, bath, sqft */
+html > body > div:nth-of-type(1) > div > div:nth-of-type(2) > div > div:nth-of-type(1) > div:nth-of-type(2) > div > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(2) > div > div:nth-of-type(1) > div:nth-of-type(1) > span > span:nth-of-type(1) {
+    color: green;
+    font-weight: bold;
+}
+
+/* Bath info */
+html > body > div:nth-of-type(1) > div > div:nth-of-type(2) > div > div:nth-of-type(1) > div:nth-of-type(2) > div > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(2) > div > div:nth-of-type(1) > div:nth-of-type(1) > span > span:nth-of-type(3),
+
+html > body > div:first-of-type > div > div:nth-of-type(2) > div > div:first-of-type > div:nth-of-type(2) > div > div:first-of-type > div:nth-of-type(2) > div:nth-of-type(2) > div:first-of-type > div > div:first-of-type > div:first-of-type > span > span:first-of-type,
+
+html > body > div:first-of-type > div > div:nth-of-type(2) > div > div:first-of-type > div:nth-of-type(2) > div > div:first-of-type > div:nth-of-type(2) > div:nth-of-type(2) > div:first-of-type > div > div:first-of-type > div:first-of-type > span > button > span,
+#search-detail-lightbox > div:first-of-type > div:nth-of-type(2) > div > div:first-of-type > div:nth-of-type(2) > div:nth-of-type(2) > div:first-of-type > div > div:first-of-type > div:first-of-type > span > span:nth-of-type(4),
+
+#search-detail-lightbox > div:first-of-type > div:nth-of-type(2) > div > div:first-of-type > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(2) > div > div:first-of-type > div:first-of-type > span > button > span,
+
+#search-detail-lightbox > div:first-of-type > div:nth-of-type(2) > div > div:first-of-type > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(2) > div > div:first-of-type > div:first-of-type > span > span:nth-of-type(4),
+
+html > body > div:first-of-type > div > div:nth-of-type(2) > div > div:first-of-type > div:nth-of-type(2) > div > div:first-of-type > div:nth-of-type(2) > div:nth-of-type(2) > div:first-of-type > div > div:first-of-type > div:first-of-type > span > span:nth-of-type(3),
+ 
+#search-detail-lightbox > div:first-of-type > div:nth-of-type(2) > div > div:first-of-type > div:nth-of-type(2) > div:nth-of-type(2) > div:first-of-type > div > div:first-of-type > div:first-of-type > span > span:nth-of-type(5),
+
+#search-detail-lightbox > div:first-of-type > div:nth-of-type(2) > div > div:first-of-type > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(2) > div > div:first-of-type > div:first-of-type > span > span:first-of-type,
+
+#search-detail-lightbox > div:first-of-type > div:nth-of-type(2) > div > div:first-of-type > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(2) > div > div:first-of-type > div:first-of-type > span > button > span,
+
+#search-detail-lightbox > div:first-of-type > div:nth-of-type(2) > div > div:first-of-type > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(2) > div > div:first-of-type > div:first-of-type > span > span:nth-of-type(4)
+
+
+{
+    color: green;
+    font-weight: bold;
+}
+
+/* Sqft info */
+html > body > div:nth-of-type(1) > div > div:nth-of-type(2) > div > div:nth-of-type(1) > div:nth-of-type(2) > div > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(2) > div > div:nth-of-type(1) > div:nth-of-type(1) > span > span:nth-of-type(5) {
+    color: green;
+    font-weight: bold;
+}
+
+/* Address info */
+html > body > div:nth-of-type(1) > div > div:nth-of-type(2) > div > div:nth-of-type(1) > div:nth-of-type(2) > div > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(2) > div > div:nth-of-type(1) > div:nth-of-type(2) > h1,
+
+#search-detail-lightbox > div:first-of-type > div:nth-of-type(2) > div > div:first-of-type > div:nth-of-type(2) > div:nth-of-type(2) > div:first-of-type > div > div:first-of-type > div:nth-of-type(2) > h1 {
+    color: red;
+    font-weight: bold;
+}
+
+/* Top info section - text-align center */
+html > body > div:nth-of-type(1) > div > div:nth-of-type(2) > div > div:nth-of-type(1) > div:nth-of-type(2) > div > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(2) > div > div:nth-of-type(1),
+
+#search-detail-lightbox > div:first-of-type > div:nth-of-type(2) > div > div:first-of-type > div:nth-of-type(2) > div:nth-of-type(2) > div:first-of-type > div > div:first-of-type,
+
+#search-detail-lightbox > div:first-of-type > div:nth-of-type(2) > div > div:first-of-type > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(2) > div > div:first-of-type
+ {
+    text-align: center;
+}

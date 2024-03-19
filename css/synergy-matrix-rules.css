@@ -1,0 +1,483 @@
+:root {
+    --greenDark: #1aab4b;
+    --greenLight: #13c24e;
+    --yellowDark:#cfcf0e;
+    --yellowLight: #e4e75b;
+    --redDark: #cf4848;
+    --redLight: #e75b5b;
+    --titleColorMatrix: #125594;
+    --zillowColor : #006AFF;
+    --standard : rgb(239, 238, 225);
+    --affiliateActive : dimgray;
+    --indigo: #6610f2;
+    --purple: #6f42c1;
+    --pink: #e83e8c;
+    --red: #dc3545;
+    --orange: #fd7e14;
+    --yellow: #ffc107;
+    --greenDark2: #28a745;
+    --greenLight2: #20c997;
+    --cyan: #17a2b8;
+    --white: #fff;
+    --gray: #6c757d;
+    --gray-dark: #343a40;
+    --primary: #007bff;
+    --secondary: #6c757d;
+    --success: #28a745;
+    --info: #17a2b8;
+    --warning: #ffc107;
+    --danger: #dc3545;
+    --light: #f8f9fa;
+    --dark: #343a40;
+}
+.matrix-table {
+    border-collapse: separate;
+    margin: 10px 0;
+    font-size: 0.9em;
+     border-radius: 5px;
+  overflow: hidden;
+}
+.matrix-div {
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+  border: 1px solid;
+}
+
+.zestimateSpan { float:left; margin-left: 4%;  }
+.askingPriceSpan { float:right; margin-right: 4%; }
+.zestimateTitle { margin-bottom: -3px !important;  display: inline-block;  vertical-align: middle; color: white;}
+
+.rentValueSpan {  float:left;  margin-left: 7%; }
+.rentInputSpan {  float:right;  margin-right: 7%; }
+
+.multiValueSpan {  float:left;  margin-left: 7%; }
+.multiInputSpan {  float:right;  margin-right: 7%; }
+
+
+
+/* .matrix-csm { line-height: 1px; border: 1px solid; border-radius: 5px;} */
+.matrix-csm:hover { background-color:white  }
+.matrix-tr:hover { background-color: white  }
+.other_costs_table:hover { background-color: white !important  }
+tr#matrixTR, table#other-costs-table { background-color: white;}
+
+
+
+
+/* #termsValue {color:green}; */
+  .matrix-table thead {
+    background-color: var(--titleColorMatrix);
+    color: #ffffff;
+    text-align: center;
+    }
+
+/* th.matrix-csm {
+  border-color: gray;
+  border-width: 2.5px;
+  border-radius: 5px;
+} */
+
+#notesValue {
+  font-weight:bold;
+  white-space: pre-wrap;
+}
+/*Inputs CSS*/
+input#zestimateInput, input#askingPriceInput {
+  border-radius: 15px;
+  color: #16468f;
+  font-weight: bold;
+  text-align: center;
+  font-size: 18px;
+}
+
+span.currency {
+  margin-left: 8;
+  z-index: 100;
+  position: absolute;
+  color: #16468f;
+  margin-top: 7px;
+}
+.currency {
+  border-radius: 15px;
+  color: var(--white);
+  font-weight: bold;
+  text-align: center;
+  font-size: 18px;
+  /* background: var(--white); */
+}
+
+.matrix-table th, .matrix-table td {padding: 10px 15px;}
+
+.matrix-tr {line-height: 13px;}
+
+
+
+.m-h-ir { background-color: var(--greenDark);
+          border: 2px solid  #ffffff; 
+        border-radius: 5px;}
+/* .m-r-ir { background-color: var(--greenLight);
+  border: 2px solid  #ffffff; 
+border-radius: 5px;} */
+
+.m-h-ar { background-color: var(--yellowDark); 
+  border: 2px solid  #ffffff; 
+border-radius: 5px;}
+.m-r-ar { background-color: var(--yellowLight);
+  border: 2px solid  #ffffff; 
+border-radius: 5px;}
+
+.m-h-fr { background-color: var(--redDark);
+  border: 2px solid  #ffffff; 
+border-radius: 5px; }
+.m-r-fr { background-color: var(--redLight);
+  border: 2px solid  #ffffff; 
+border-radius: 5px;}
+
+/* Cells width*/
+td.m-h-rent.m-standard.m-header, .m-h-investor {
+  width: 5%;
+}
+
+/*Widths*/
+.m-h-campaign, .m-h-multifamily {width: 33%; }
+/* headers */
+.m-h-campaign { border-top: 1px solid;
+  background-color: var(--affiliateActive); color: white; font-weight: bold;
+  border-radius: 5px;  text-align: center; line-height: 10px; border: 1px solid;}
+  .m-header { font-weight: bold; text-align: center !important;}
+  .m-standard {
+    background-color: var(--standard); border: 2px solid  #ffffff; border-radius: 5px;
+    text-align: center; margin: 2px;
+  }
+  .matrix-tr {margin: 20px !important;}
+/*bottom notes*/
+.m-notes {
+  background-color: var(--light); text-align: center ; color: rgb(255, 255, 255);
+  line-height: 16px; margin-top: 2px;border: 1px solid; font-size: 16px; 
+}
+.m-p{color:rgb(12, 11, 11); font-weight: 400; font-size: 19px; line-height: 22px;}
+
+/*Animations*/
+@keyframes inrange { from {background-color: var(--greenLight)} to {background-color: #49c80e} }
+.m-r-ir:hover { box-shadow: 4px 4px 4px 4px rgba(65, 66, 65, 0.797),0 4px 4px 0 rgba(0,0,0,0.19); 
+  animation: inrange 1s infinite; }
+ 
+/* @keyframes aboverange{ from {background-color: #f6ff00} to {background-color: var(--greenLight)} }
+.m-r-ar:hover { box-shadow: 1px rgba(65, 66, 65, 0.797),0 1px 1px 0 rgba(0,0,0,0.19); 
+  animation: aboverange 1s infinite; } */
+
+@keyframes fullrange{ from {background-color: #f6ff00} to {background-color: var(--greenLight)} }
+.m-r-ar:hover { box-shadow: 4px 4px 4px 4px rgba(65, 66, 65, 0.797),0 4px 4px 0 rgba(0,0,0,0.19); 
+  animation: fullrange 1s infinite; }
+
+
+  input[type=number]::-webkit-inner-spin-button {opacity: 1;}
+  input#matrixIR_1 {width: 40px; transform: scale(1.3)}
+
+  td.m-r-ir, .m-r-ar, .m-r-fr {
+   text-align: center;
+   vertical-align: middle;
+   font-size: 18px;
+   font-weight: 700;
+}
+
+/*Blink Animation*/
+/* .blink{animation: blink 1s linear infinite;}
+@keyframes blink{
+  0%{opacity: 0;}
+  50%{opacity: .5;}
+  100%{opacity: 1;}
+  } */
+
+
+  /*CALCULATED CELLS*/
+  .calc-zestimate-h1 {background-color: #e7af5c; text-align: center; font-size: 20px; font-weight: 900; border: 2px solid; border-radius: 2px; line-height: 14px; }
+
+.calc-ir-h1 {background-color: #1aab4b; text-align: center; font-size: 20px; font-weight: 900;  line-height: 14px; margin-right: 10px !important; color: white; text-shadow: 2px 2px #0000004b;}
+
+.calc-ar-h1 {background-color: #cfcf0e; text-align: center; font-size: 20px; font-weight: 900; border: 2px; border-radius: 2px; line-height: 14px; color: white; text-shadow: 2px 2px #0000004b;}
+
+.calc-fr-h1 {background-color: #cf4848; text-align: center; font-size: 20px; font-weight: 900; border: 2px; border-radius: 2px; line-height: 14px; color: white; text-shadow: 2px 2px #0000004b;}
+
+.calc-rent-h1 {text-align: center; font-size: 20px; font-weight: 900; border: 2px solid rgba(0,0,0,0) !important; border-radius: 2px; line-height: 14px; }
+
+.calc-zestimate-h2 {
+    text-align: center; font-size: 30px; line-height: 15px; font-weight: bold; color: rgb(38,103,238); position: relative
+}
+
+.calc-ir-h2 { background-color: #13c24e; font-weight: bold; text-align: center; font-size: 20px; border-radius: 2px; position: relative;}
+
+.calc-ar-h2  { background-color: #e3e65b; font-weight: bold; text-align: center; font-size: 20px; border-radius: 2px; position: relative;}
+
+.calc-fr-h2  { background-color: #e65b5b; font-weight: bold; text-align: center; font-size: 20px; border-radius: 2px; position: relative;}
+
+.calc-rent-h2 { font-weight: bold; text-align: center; font-size: 33px; border-radius: 2px; position: relative;}
+.calc-ir-h3 {font-size: 17px; text-align: center; color: rgb(3, 125, 19); font-weight: bold; border: 1px solid #13c24e !important; margin: 10px 100px !important; position: relative; border-radius: 5px;}
+.calc-ar-h3 {font-size: 17px; text-align: center; color: rgb(11, 11, 11); font-weight: bold; border: 1px solid #e7e70b !important; margin: 10px 100px !important; position: relative; border-radius: 5px;}
+.calc-fr-h3 {font-size: 17px;text-align: center; color: red; font-weight: bold; border: 1px solid #a43404 !important; margin: 10px 100px !important; position: relative; border-radius: 5px;}
+  /* INVESTORS | FORECLOSURE ROW*/
+  td.m-notes.m-investors {
+    background-color: yellow;
+    border: 1px rgba(0, 0, 0, 0.512) solid;
+    border-radius: 5px;
+    padding: 5px !important;
+    color: black !important;
+    margin-top: 150px !important
+}
+
+/* ASKING PRICE ROW*/
+.zestimate {
+  border-collapse: collapse !important;
+    background-color: var(--zillowColor) !important;
+    border: 1px rgba(0, 0, 0, 0.512) solid;
+    border-radius: 5px;
+    padding: 5px !important;
+    font-size: 20px;
+    font-weight: 900;
+    line-height: 18px;
+}
+
+tr.calculations { line-height: 7px;}
+
+.m-r-multifamily, .m-r-rent {
+ font-size: 17px;
+ font-weight: 900;
+}
+
+.m-r-rent {
+  color: red;
+}
+  /*Override Mouse over effect*/ 
+  .calc-ir-h3,
+  .calc-ar-h3,
+  .calc-fr-h3,
+  #matrixContainer > table > tbody > tr:nth-child(3) > td:nth-child(1),
+  #matrixContainer > table > tbody > tr:nth-child(3):hover { background-color: white !important; }
+
+  #matrix-responsive-XL {
+    min-width: 100%;
+}
+
+/*Table Widths*/
+    /* media query for tablets */
+    @media only screen and (max-width: 4800px) {
+      #Table_1, #Table_2, #Table_3, #Table_4, #Table_5, #Table_6, #Table_5_1 {width: 1300px;}
+    }
+
+    @media only screen and (max-width: 2400px) {
+      #Table_1, #Table_2, #Table_3, #Table_4, #Table_5, #Table_6, #Table_5_1  {width: 1250px;}
+    }
+
+    @media only screen and (max-width: 1500px) {
+      #Table_1, #Table_2, #Table_3, #Table_4, #Table_5, #Table_6, #Table_5_1  {width: 1150px;}
+    }
+
+    @media only screen and (max-width: 1100px) {
+      #Table_1, #Table_2, #Table_3, #Table_4, #Table_5, #Table_6, #Table_5_1  {width: 1020px;}
+    }
+
+    @media only screen and (max-width: 810px) {
+      #Table_1, #Table_2, #Table_3, #Table_4, #Table_5, #Table_6, #Table_5_1  {width: 775px;}
+    }
+
+    @media only screen and (max-width: 740px) {
+      #Table_1, #Table_2, #Table_3, #Table_4, #Table_5, #Table_6, #Table_5_1  {width: 640px;}
+    }
+
+
+
+
+/*Other Costs Bar Button*/
+
+.otherCosts:hover {
+  background-color: #ffffff;
+}
+
+.otherCostsBtn{
+  font-size:15px;
+  font-family:Arial;
+  font-weight: bold;
+  width:300px;
+  height:30px;
+  border-width:1px;
+  color:#fff;
+  border-color:#ffffff;
+  border-top-left-radius:4px;
+  border-top-right-radius:4px;
+  border-bottom-left-radius:4px;
+  border-bottom-right-radius:4px;
+  box-shadow:inset 0px 39px 0px -24px #e67a73;
+  text-shadow:inset 0px 1px 0px #b23e35;
+  background:#e4685d;
+  text-align: center;
+  line-height: 5px;
+}
+
+.otherCostsBtn:hover {
+  background: #eb675e;
+  cursor: pointer;
+}
+
+/* Other Costs CSS */
+.other_costs_table {
+  border-collapse: collapse;
+  width: 100% !important;
+  border-spacing: 0px;
+  margin-top: 0px;
+}
+
+.costs_header_1, .costs_header_3 {
+  width: 45%;
+}
+
+/* Repairs and Contractors Section */
+.costs_header_1 {
+  background-color: #538ed6; /* Vibrant Coral Red */
+  color: black;
+  font-weight: bold;
+  line-height: 16px;
+  vertical-align: center;
+  padding-top: 10px;
+}
+
+/* Realtor Costs Section */
+.costs_header_2 {
+  background-color: #4ECDC4; /* Soothing Sea Green */
+  color: white;
+  font-weight: 900;
+  line-height: 12px;
+}
+
+/* Taxes Section */
+.costs_header_3 {
+  background-color: #FFE66D; /* Soft Sunflower Yellow */
+  color: black;
+  font-weight: 900;
+  line-height: 16px;
+  vertical-align: center;
+  padding-top: 10px;
+}
+
+td.pink1.taxes_header_1 {
+  background-color: #FF6B6B !important; /* Vibrant Coral Red */
+  color: black;
+  font-weight: bold;
+  line-height: 16px;
+}
+
+/* Hover effect for table rows */
+table.other_costs_table tr:hover {
+  background-color: #ffffff !important;
+}
+
+/* Table cell styling */
+table.other_costs_table td:not(.empty) {
+  background-color: #f0f0f0; /* Light Grey for readability */
+  border: 0.2px solid #dcdcdc;
+}
+
+table.other_costs_table td {
+  text-align: center;
+  border-radius: 5px;
+}
+
+/* Total with All Deductions Section */
+#total_all_deductions {
+  background-color: #7868E6; /* Elegant Lavender */
+  color: white !important;
+  font-size: 28px !important;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  font-weight: bold;
+}
+
+/* Input Field Styling */
+input[type='number'] {
+  width: 45px;
+  text-transform: scale(1.5);
+  font-weight: bold;
+  font-size: 16px;
+  text-align: center;
+}
+
+td.costs_header_2 {
+  color: black;
+}
+
+/* Additional color classes if needed */
+.blue1 { background-color: #1A535C; /* Deep Ocean Blue */ color: black; font-weight: 600; }
+.orange1 { background-color: #FF9F1C; /* Bright Tangerine */ color: black; font-weight: 600; }
+.pink1 { background-color: #FF6B6B; /* Vibrant Coral Red */ color: black;font-weight: 600; }
+
+
+/*Bottom Line Price Row*/
+#Table_4 > tbody > tr:nth-child(8) {
+  background-color: #148af1 !important;
+  color: rgb(241, 240, 240) !important;
+  font-weight: 900;
+  font-size: 20px;
+  line-height: 32px;
+}
+
+#bottom_line {
+  transform: scale(1.5);
+  margin-left: 12%;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-align: center;
+  }
+
+#flooring, #copper, #painting, #roofing, #wood_sidings, #electrical {width: 60px;}
+td.orange2 {width: 75px;}
+
+/*Positioning the inner content of the iframe for Other Costs*/
+    /* media query for tablets */
+    @media only screen and (max-width: 850px) {
+      table.other_costs_table {width: 790px !important; }
+    }
+    @media only screen and (max-width: 800px) {
+      table.other_costs_table {width: 720px !important; }
+    }
+    @media only screen and (max-width: 700px) {
+      table.other_costs_table {width: 630px !important; }
+    }
+
+#remodeling-iframe{
+  position:absolute;
+  top:-350px;
+  left:0px;
+}
+
+
+
+
+/*TOOLTIPS FOR OTHER COSTS ITEMS*/
+.tooltip {
+  position: absolute;
+  width: 320px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 12px;
+  line-height: 15px;
+  color: #000;
+  padding: 8px 10px;
+  background-color: #FFF;
+  border-radius: 3px;
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+span.write {
+  display: none;
+}
+
+input.read {
+  display: none;
+}
+
+#otherCostsTbody.hidden {
+  display: none;
+}
+
+input#electrical, input#wood_sidings, input#roofing, input#painting, input#copper, input#flooring {
+  width: 8ch;
+}

@@ -1,0 +1,517 @@
+/*Quizlet iFrame CSS */
+#ifrm
+{
+position:absolute;
+top:-10px;
+left:-1px;
+bottom: -50px;
+width:901px;
+height:385px;
+}
+
+#iframediv
+{
+/* width:1000px; */
+height:330px;
+overflow:hidden;
+position:relative;
+}
+
+
+#iframediv {
+  margin: auto;
+  width: 900;
+   }
+
+
+/*Slack Channel Link */
+       #slackLink {
+        font-size: 30px;
+        font-weight: bold;
+        }
+    
+  /* Animate Text onClick */
+  
+     .animate { animation: disappear 0.65s linear; }
+  
+  @keyframes disappear {
+    30%  { opacity: 0; }
+    60%  { opacity: 1; }
+    100% { opacity: 0; }
+  }
+  
+  #slackLink:hover,#slackSellersLink{
+    cursor: pointer;
+  }
+  #slackLink{
+    color:blue;
+    text-decoration: underline;
+  }
+
+#slackSellersLink{
+  font-weight: bolder;
+}
+  
+  /*animate*/
+  .animate { animation: disappear 0.65s linear; }
+  
+  @keyframes disappear {
+    30%  { opacity: 0; }
+    60%  { opacity: 1; }
+    100% { opacity: 0; }
+  }
+
+
+  #phonetic-alphabet {
+    display: none;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+  #emailIntDOM, #addressFunctionToDOM {color: red; font-weight: 900;  font-size: 0.8em;}
+
+  .addressButton, .emailButton {margin: 10px 5px  0}
+
+  .formatPhoneButton {margin-left: 10px;}
+
+  .phoneticAlphabetButton {
+    background:linear-gradient(to bottom, #505152 5%, #616165 100%) !important;
+    color: white !important;
+    margin-left: 7px;
+  }
+
+  .formatPhoneButton, .addressButton, .formatPhoneButton, .emailButton, .phoneticAlphabetButton {
+    box-shadow:inset 0px 1px 0px 0px #ffffff;
+    background:linear-gradient(to bottom, #f6f5f5 5%, #f6f6f6 100%);
+    background-color:#ffffff;
+    border-radius:6px;
+    border:1px solid #dcdcdc;
+    display:inline-block;
+    cursor:pointer;
+    color:#666666;
+    font-family:Arial;
+    font-size:12px;
+    font-weight: 100;
+    padding:3px 12px;
+    text-decoration:none;
+      }
+  .formatPhoneButton:hover {
+    background:linear-gradient(to bottom, #f6f6f6 5%, #ffffff 100%);
+    background-color:#f6f6f6;
+  }
+  .formatPhoneButton:active {
+    position:relative;
+    top:1px;
+  }
+
+  .customAddressToggle, .setCustomAddressBtn {
+        font-weight: 700 !important;
+  }
+
+  .setCustomAddressBtn {
+    background:linear-gradient(to bottom, #74ad5a 5%, #68a54b 100%) !important;
+    background-color:#74ad5a !important;
+    border:1px solid #3b6e22 !important;
+    color: white;
+}
+
+
+
+/* media query for tablets */
+@media only screen and (max-width: 1000px) {
+  #addressFunctionToDOM {
+    display: inline;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .customAddressToggle 
+  {
+    margin: 10px 0;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .addressButton, .customAddressText, .setCustomAddressBtn {
+    display: inline;
+  }
+
+}
+
+/*Floating icons*/
+#realtorIcon {
+	position:fixed;
+	width:90px;
+	height:90px;
+	bottom:20px;
+	right:40px;
+	background-color:#0C9;
+	color:#FFF;
+	border-radius:50px;
+	text-align:center;
+	box-shadow: 2px 2px 3px #999;
+  display: none;
+
+}
+
+/*Floating icons*/
+#lamassuSuperCharge {
+	position:fixed;
+	width:90px;
+	height:90px;
+	bottom:130px;
+	right:40px;
+	background-color:#0C9;
+	color:#FFF;
+	border-radius:50px;
+	text-align:center;
+	box-shadow: 2px 2px 3px #999;
+  display: none;
+
+}
+
+
+/*Mini Template Buttons*/
+.miniTemplatesBtn, .miniTemplatesDropDwnbtn {
+  background-color: #363636;
+  color: rgb(255, 255, 255);
+  border: none;
+  padding-left: 12px
+  padding-right 10px;
+  font-size: 14px;
+  cursor: pointer;
+  margin: 5px;
+  text-align: left;
+}
+
+.miniTemplatesBtn::before {
+  content: "| ";
+}
+
+.miniTemplatesBtn::after {
+  content: " |";
+}
+
+/*Dropdown menu in mini-templates.js*/
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 250px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 50000;
+}
+
+.dropdown-content button {
+  color: black;
+  padding: 6px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content button:hover {
+  background-color: #f1f1f1
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/*Mini Template Buttons*/
+.dropbtn {
+  background-color: rgb(239, 237, 237);
+  color: rgb(100, 98, 98);
+  border: none;
+  padding-left: 12px
+  padding-right 10px;
+  font-size: 14px;
+  cursor: pointer;
+  margin: 5px;
+  font-weight: bolder;
+}
+
+
+.dropbtn::after {
+  content: " >>";
+}
+
+.miniTemplatesDropDwnbtn::before {
+  content: ">> "
+}
+
+/* START OF CODE TO PROGRESS BAR*/
+/* Style the header: fixed position (always stay at the top) */
+
+.progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 15px;
+  z-index: 10;
+  margin: auto;
+  width: 100%;
+  
+}
+
+ #js-progress {
+  
+
+  width: 100%;
+  height: 15px;
+  margin-top: -5px;
+}
+
+/* END OF CODE TO PROGRESS BAR*/
+
+
+
+/* NEW CSS 2024 */
+body {
+  background-color: #EAEAEA !important; /* Light blue background */
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  color: #333; /* Darker text for better readability */
+  margin: 20px; /* Added margin for overall spacing */
+}
+
+tbody {
+  border-radius: 15px !important
+}
+
+table {
+ 
+  background-color: #fff; /* White background for the form */
+
+  margin-top: 20px; /* Margin at the top of the table */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.487); /* subtle shadow for depth */
+  border-radius: 15px !important;
+}
+
+td, th {
+  padding: 10px; /* More padding for table cells */
+  background-color: mintcream;
+   border-radius: 4px !important;
+}
+
+h2 {
+  color: #0056b3; /* Dark blue for headings */
+}
+
+input[type=text], select, input[type=password], textarea, .textbox {
+
+  padding: 10px;
+  margin: 5px 0;
+  border: 1px solid #0056b3; /* Blue border */
+  border-radius: 5px; /* Rounded corners */
+  box-sizing: border-box; /* Box sizing for consistent sizing */
+}
+
+.btnm1, input[type=submit] {
+  background-color: #0056b3; /* Blue background for buttons */
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 15px; /* Rounded corners */
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btnm1:hover, input[type=submit]:hover {
+  background-color: #003d66; /* Darker blue on hover */
+}
+
+textarea {
+  resize: vertical; /* Allowing vertical resize only */
+}
+
+form {
+  margin-top: 20px;
+}
+
+/* rounded notes */
+div#titleLabelNoteDragWindow {
+  border-radius: 7px 7px 0 0px;
+}
+#titleLabelNoteDragWindow h1 {
+  padding-left: 10px;
+}
+
+span {
+  text-transform: uppercase;
+}
+
+
+table#other-costs-table {
+  margin-bottom: 38px;
+}
+
+th.costs_header_1 {
+  color: white;
+}
+
+
+table#Table_1 {
+  margin-top: 45px;
+}
+
+
+/* zestimateAverage.js */
+/* Style for the circle symbols to change cursor to hand on hover */
+.circle-symbol {
+  cursor: pointer;
+}
+
+/* Tooltip styles */
+.circle-symbol[title]:hover::after {
+  content: attr(title);
+  position: absolute;
+  top: -35px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: white;
+  color: black;
+  padding: 5px 10px;
+  border-radius: 15px;
+  white-space: nowrap;
+  z-index: 1;
+  box-shadow: 0px 0px 5px rgba(0,0,0,0.2);
+}
+
+/* Style for the input fields to increase font size */
+#zillowAverageInput, #redfinAverageInput, #propstreamAverageInput {
+  font-size: 16px;
+  font-weight: bolder;
+  height: 37px; /* Adjust the height as necessary */
+  width: 12ch;
+  padding: 5px; /* Adjust padding as necessary */
+}
+
+/* Optional: Style the input fields to make them look more uniform and styled */
+#zillowAverageInput, #redfinAverageInput, #propstreamAverageInput {
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+}
+
+.animate {
+  animation: fadeOut 1s forwards;
+}
+
+@keyframes fadeOut {
+  from { opacity: 1; }
+  to { opacity: 0.5; }
+}
+
+
+td.marketing-lead-source {
+  background-color: #26AAB9;
+}
+#abandon_phone{
+  width: 60%;
+  height: 30px;
+}
+.btnm1{
+  width: 60px;
+  border-radius: 10px !important;
+  background-color: #26AAB9 !important;
+  margin-left: 20px;
+}
+table td[bgcolor="#EAEAEA"][colspan="4"], td[bgcolor="#EAEAEA"][colspan="2"] {
+  text-align: center;
+  font-size: 20px;
+  /* CSS rules */
+}
+#Table_2 tbody tr:nth-child(3) {
+  /* CSS properties */
+  /* text-align: center !important; */
+  justify-content: center;
+}
+
+
+/*Sindbad*/
+.spanish.Yes {
+  background-color: rgb(33, 168, 191);
+  border: 1px solid rgb(33, 168, 191);
+  border-radius: 7px;
+  width: 70px;
+  height: 35px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  color: white;
+
+}
+.spanish.No {
+  background-color: black;
+  border: 1px solid black;
+  border-radius: 7px;
+  width: 70px;
+  height: 35px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  color: white;
+
+}
+
+input {
+  Background-color: rgb(209, 209, 209) !important;
+}
+
+#Table_2 tbody tr:nth-child(5) td:nth-child(2) input[type="text"] {
+  /* width: 200px; */
+}
+
+select {
+  Background-color: rgb(209, 209, 209) !important;
+
+}
+
+/* textarea {
+  Background-color: rgb(209, 209, 209) !important;
+
+} */
+
+.addressButton {
+  background-color: rgb(33, 168, 191) !important;
+  border: 1px solid rgb(33, 168, 191);
+  border-radius: 7px;
+  width: 70px;
+  height: 35px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  color: white; 
+}
+
+.miniTemplatesBtn {
+  background-color: rgb(53, 53, 53);
+  border: 1px solid rgb(53, 53, 53);
+  border-radius: 7px;
+  width: 220px;
+  height: 35px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  color: white;
+
+}
+
+.miniTemplatesBtn::before {
+  visibility: hidden;
+}
+
+.miniTemplatesBtn::after {
+  
+  content:  "\25B6";
+  
+}
+
+.dropdown {
+  background-color: rgb(53, 53, 53);
+  border: 1px solid rgb(53, 53, 53);
+  border-radius: 7px;
+  width: 220px;
+  height: 35px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  color: white;
+
+}
+
+

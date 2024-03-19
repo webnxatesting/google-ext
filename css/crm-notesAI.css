@@ -1,0 +1,169 @@
+/* Global Settings */
+.notes-ai-popup,
+.notes-ai-popup * {
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif; /* Consistent font */
+}
+
+/* Popup Container */
+.notes-ai-popup {
+  background: #0080ff;  /* Changed background color */
+  border-radius: 12px;  /* Rounded corners */
+  box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.1);  /* Added shadow for depth */
+  width: 680px;
+  height: 739px;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  overflow: hidden;
+  z-index: 100;
+}
+
+
+/* Text Area Container */
+.text-area-container {
+  display: flex;
+  gap: 0px;  /* Added gap */
+  align-items: flex-start;  /* Align to top */
+  justify-content: center;
+  padding: 16px;  /* Padding */
+  position: relative;
+}
+
+/* Text Area for Original and Rephrased Notes */
+.text-area-for-original-notes, .text-area-for-rephrased-text {
+  color: #333333;  /* Changed text color */
+  font-size: 16px;  /* Changed font size */
+  width: 100%;  /* Full width */
+  height: 100%;  /* Full height */
+  border: none;  /* Remove border */
+  outline: none;  /* Remove outline */
+  resize: none;  /* Disable resize */
+  overflow: auto;
+}
+
+.button-submit-rephrased {
+  background: #33cc33;  /* Changed button color */
+  color: white;  /* Text color */
+  border-radius: 5pxe;  /* Remove border */
+  padding: 4px;  /* Padding */
+  text-align: center;
+  font-size: 24px;
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;  /* Hand cursor */
+  border-radius: 4px;  /* Rounded corners */
+  position: absolute;
+}
+
+
+.overlay {
+  background: rgba(0, 0, 0, 0.8);  /* Semi-transparent black */
+  position: fixed;  /* Fixed position */
+  top: 0;  /* Top position */
+  left: 0;  /* Left position */
+  width: 100%;  /* Full width */
+  height: 100%;  /* Full height */
+  z-index: 99;  /* Below the popup */
+}
+
+/* Footer */
+.footer-div {
+  background: #0263c4;  /* Changed background color */
+  border-top: 1px solid #E0E0E0;  /* Added border */
+  padding: 16px;  /* Changed padding */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;  /* Full width */
+  height: 55px;
+  position: absolute;
+  bottom: 0;  /* Align to bottom */
+  overflow: hidden;
+  
+}
+.original-notes{
+  color: #FFFFFF;
+}
+
+.ai-notes {
+  color:#00FF19;
+  font-weight: bold;
+}
+
+
+
+
+/* Original Notes */
+.div-original, .div-rephrased {
+  background: #FFFFFF;  /* Changed background color */
+  border: 1px solid #E0E0E0;  /* Changed border */
+  flex-grow: 1;  /* Allow growth */
+  padding: 4px;  /* Padding */
+  overflow-y: auto;  /* Scrollable */
+  width: 50% !important;
+  height: 610px;
+}
+
+
+
+/* Headers */
+.div-header {
+  display: flex;
+  gap: 16px;  /* Added gap */
+  align-items: center;
+  justify-content: center;
+  padding: 8x;  /* Padding */
+}
+
+.header-original, .header-rephrased {
+  flex-grow: 1;  /* Allow growth */
+  text-align: center;  /* Center text */
+  font-size: 24px;  /* Font size */
+  font-weight: 600;  /* Font weight */
+  color: #006AFF;  /* Text color */
+}
+
+
+
+/* SUSPENSIVE POINTS ANIMATION */
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-5px);
+  }
+  60% {
+    transform: translateY(-3px);
+  }
+}
+
+.dot {
+  display: inline-block;
+  animation-duration: 1s;
+  animation-fill-mode: both;
+  animation-iteration-count: infinite;
+}
+
+.dot1 {
+  animation-name: bounce;
+  animation-delay: 0.2s;
+}
+
+.dot2 {
+  animation-name: bounce;
+  animation-delay: 0.4s;
+}
+
+.dot3 {
+  animation-name: bounce;
+  animation-delay: 0.6s;
+}
+
+
+.original-notes:hover {
+  cursor: pointer;
+}

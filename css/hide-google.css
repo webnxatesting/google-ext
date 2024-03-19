@@ -1,0 +1,10 @@
+
+/* This only hides a section when NO RESULTS FOUND */
+.mnr-c li {
+    display: none
+}
+
+.mnr-c p {
+    display: none
+}
+

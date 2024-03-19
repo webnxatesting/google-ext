@@ -1,0 +1,48 @@
+/* Alert red boxes*/
+.ui-pnotify.stack-bottomright {
+  scale: 0;
+}
+/*Quizlet iFrame CSS */
+#ifrm
+{
+position:absolute;
+top:-1px;
+left:-2px;
+bottom: -50px;
+width:99%;
+height:605px;
+}
+
+#iframediv
+{
+/* width:1000px; */
+height:525px;
+overflow:hidden;
+position:relative;
+}
+
+
+#iframediv {
+  justify-content: center;
+  width: 900;
+}
+
+/* Position Quizlet iFrame Buttons to top*/
+.od8bl6y {
+  top: -84px !important;
+}
+
+/* Hide "No active interaction*/
+#AgentScreenVoice-details-node > div > div.no-content > div > div > div > div.no-interaction-text {
+  display: none;
+}
+
+.no-interaction-view {
+  margin-top: -40px
+}
+
+/*Hide Message details on Internal Message modules*/
+/* https://app-atl.five9.com/clients/agent/main.html?role=Agent#agent/internalmessage */
+div.message-text {
+  display: none;
+}

@@ -1,0 +1,349 @@
+/*Hide most elements from redfin homepage*/
+#userFeed > div, #content > div:nth-child(15) > div:nth-child(14) > section,
+#content > div:nth-child(15) > div:nth-child(17) > section,
+#content > div:nth-child(15) > div:nth-child(20) > section,
+#content > div:nth-child(15) > div:nth-child(23) > div,
+#content > div:nth-child(15) > div:nth-child(28),
+#content > div:nth-child(15) > div:nth-child(29) > section,
+#content > div:nth-child(15) > div:nth-child(31) > div,
+#content > div:nth-child(15) > div:nth-child(3) > div > section > div > div > div > div > h1,
+small.Disclaimer.text-small.text-left.text-and-disclaimer-flyout{
+  display:none;
+}
+/*Center search box in the homepage*/
+.TabbedContainer.SearchTabs {
+position: absolute;
+top: 50%;  
+left: 50%; 
+transform: translate(-50%, -50%);
+}
+
+/* CSS for Filtered Page*/
+
+
+.schools-section.living-section, .region-content-section, .mls_disclaimer, .homeBuyingResources {  display: none;}
+
+
+/*END of CSS for Filtered Page*/
+.claimHomeButtonSection.padding-bottom-large.primary {
+  display: none;
+}
+
+.SiteFooter.main-content {
+  display: none;
+}
+
+.smart-interlinks-h2 {
+  display: none;
+}
+
+h2.heading-medium.padding-bottom-medium.smart-interlinks-h2 {
+  display: none;
+}
+
+.resources-section {
+  display: none !important;
+}
+
+.SiteFooter {
+  display: none !important;
+}
+
+.FAQSection {
+  display: none !important;
+}
+
+.NearbyHomesSection {
+  display: none !important;
+}
+
+.SimilarSoldsSection {
+  display: none !important;
+}
+.ownerTools .sectionContent {
+  display: none !important;
+}
+.ownerTools .sectionHeaderContainer {
+  display: none !important;
+}
+
+.side-bar-content {
+  display: none;
+}
+
+.MortgageCalculatorSection .sectionContainer {
+  display: none;
+}
+
+.MortgageCalculatorSection {
+  margin-top: -100px;
+}
+
+.schools .sectionHeaderContainer {
+  display: none;
+}
+
+.SchoolsSection {
+  display: none;
+}
+
+.null .sectionHeaderContainer {
+  display: none;
+}
+
+.AroundThisHomeSection {
+  display: none;
+}
+
+.publicRecords .sectionHeaderContainer {
+  margin-top: -130px;
+}
+
+.ClimateRiskDataSection {
+  display: none;
+}
+
+.tertiary-alt.headerMenuButton,
+.tertiary.headerMenuButton {
+  display: none;
+}
+
+.actions {
+  display: none;
+}
+
+.street-address,
+.dp-subtext {
+  font-weight: bold;
+  font-size: 35px !important;
+  color: rgb(27, 147, 17) !important;
+}
+
+.statsValue {
+  font-weight: bold;
+  font-size: 35px !important;
+  color: rgb(255, 20, 20) !important;
+}
+
+.map-img,
+.static-map {
+  display: none;
+}
+
+.MortgageQuoteEntryPoint a {
+  display: none;
+}
+
+.beds-section .font-size-small {
+  font-size: 20px !important;
+}
+
+.bath-flyout .DefinitionFlyoutLink {
+  font-size: 20px !important;
+}
+
+.sqft-section .font-size-small {
+  font-size: 20px !important;
+}
+
+.mainHouseInfoPanelHeader {
+  font-weight: bold;
+  font-size: 25px !important;
+  color: rgb(255, 20, 20) !important;
+}
+
+.text-base span {
+  font-size: 22px !important;
+}
+.keyDetail {
+  font-size: 18px !important;
+}
+
+.publicRecords .heading-medium {
+  font-size: 25px !important;
+  color: rgb(255, 20, 20) !important;
+}
+
+.table-label {
+  color: rgb(10, 98, 12) !important;
+  font-weight: bold;
+  font-size: 21px !important;
+}
+
+.table-value {
+  font-weight: bold;
+  font-size: 21px !important;
+  color: rgb(109, 87, 11) !important;
+}
+
+.propertyHistory .title {
+  color: rgb(255, 20, 20) !important;
+  font-weight: bold;
+  font-size: 25px !important;
+}
+
+#propertyHistory-0 .description-col div {
+  color: rgb(255, 20, 20) !important;
+}
+
+#propertyHistory-1 .description-col div {
+  color: rgb(255, 20, 20) !important;
+}
+
+#propertyHistory-0 .price-col {
+  color: rgb(255, 20, 20) !important;
+}
+
+#propertyHistory-1 .price-col {
+  color: rgb(255, 20, 20) !important;
+}
+
+.propertyHistory .sectionHeaderContainer {
+  margin-top: -120px;
+}
+
+.nearby {
+  display: none;
+}
+
+.HigherSimilarsSection {
+  display: none;
+}
+
+.propertyDetails .sectionHeaderContainer {
+  margin-top: -120px;
+}
+
+.DPRedfinEstimateSection .sectionHeaderContainer {
+  margin-top: -120px;
+}
+
+.miniMap .main-content {
+  display: none;
+}
+
+.MiniMapSection {
+  display: none;
+}
+
+.font-color-gray-light.inline-block {
+  color: rgb(10, 98, 12) !important;
+  font-weight: bold;
+}
+
+.content.text-right {
+  color: rgb(232, 50, 13) !important;
+  font-weight: bold;
+}
+
+.flex-1 {
+  margin-top: -25px;
+}
+
+.keyDetailsList {
+  margin-top: -1px;
+}
+
+.keyDetails--HomeFacts {
+  color: rgb(232, 50, 13) !important;
+  font-weight: bold;
+  font-size: 25px !important;
+}
+
+.propertyDetails .heading-medium {
+  color: rgb(232, 50, 13) !important;
+  font-weight: bold;
+  font-size: 25px !important;
+}
+
+.DPRedfinEstimateSection .heading-medium {
+  color: rgb(232, 50, 13) !important;
+  font-weight: bold;
+  font-size: 25px !important;
+}
+
+.CompHomeCardsCarousel {
+  display: none;
+}
+
+section.Section.UrgencySection {
+  display: none;
+}
+
+.aaq-question-stage {
+  display: none;
+}
+
+li#offerInsights-0 {
+  display: none;
+}
+
+.sectionHeaderContainer.expanded {
+  display: none;
+}
+
+.CalculatorSummary {
+  display: none;
+}
+
+.CostOfOwnership {
+  display: none;
+}
+
+.SaleProceedsSection {
+  display: none;
+}
+
+.MarketInsightsSection {
+  display: none;
+}
+
+.DPRedfinEstimateSection .expanded > .sectionContent {
+  display: none;
+}
+
+.DPRedfinEstimateSection.has-top-rule {
+  display: none;
+}
+
+.OwnerToolsSection {
+  display: none;
+}
+
+.PublicRecordsInfoPanel {
+  margin-top: -75px;
+}
+
+h2.heading-medium.padding-bottom-medium.inline-block.sectionHeaderContainer {
+  display: none;
+}
+.description.homecardV2Description {
+  display: none;
+}
+
+.RecommendedHomeCardReact {
+  display: none;
+}
+
+div#similar-section-scroll {
+  margin-top: -120px;
+}
+section#open-houses {
+  display: none;
+}
+section#mortgage-calculator-scroll {
+  display: none;
+}
+
+section#public-records-scroll {
+  margin-top: -80px;
+}
+
+.header-right {
+  display: none !important;
+}
+
+
+.beds-section .statsValue {
+cursor:pointer !important;
+}
