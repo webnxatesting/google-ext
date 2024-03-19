@@ -1,1 +1,143 @@
 
+{
+  "name": "Lamassu Webtools",
+  "manifest_version": 3,
+  "version": "4.2.1",
+  "description": "five9_buttons: ##Version:2.2",
+  
+  "permissions": ["activeTab", "tabs", "scripting", "storage", "identity", "debugger",  "notifications", "contentSettings"],
+
+  "host_permissions": ["<all_urls>"],
+  "icons": {"128": "zillow-128x128.png"},
+
+  "web_accessible_resources": [
+    {
+      "resources": ["/img/*", "/js/five9/*"],
+      "matches": ["<all_urls>"]
+    }
+  ],
+  "options_ui": {
+    "page": "js/five9/59ButtonsGenerator/index.html",
+    "js": ["js/five9/59ButtonsGenerator/config.js", "js/five9/59ButtonsGenerator/generatedCode.js","js/five9/59ButtonsGenerator/table.js ",
+    "js/five9/59ButtonsGenerator/tour.js ", "js/five9/59ButtonsGenerator/uiModule1.js ","js/five9/59ButtonsGenerator/uiModule2.js", "js/five9/59ButtonsGenerator/main.js"],
+    "css": "js/five9/59ButtonsGenerator/style.css",
+    "open_in_tab": true
+  },
+
+    "action": {
+      // "default_popup": "options.html",
+      "default_popup": "local_webform/webform_local.html",
+      "default_icon": {
+          "128": "zillow-128x128.png",
+          "16": "zillow-16.png"
+      }
+  },
+    
+"background": {
+  "service_worker": "background-wrapper.js",
+  "type": "module"
+},
+
+"content_scripts": [
+  {   "matches": ["file://*/*"],
+      "js": ["js/lib/popper.min.js", "js/lib/bootstrap.min.js", "js/lib/jquery-3.3.1.slim.min.js"]
+  },
+  {
+    "matches": ["https://*.five9.com/*"],
+    "exclude_globs": ["https://app-atl.five9.com/clients/supervisor/*"],
+    "css": ["css/five9.css"],
+    "all_frames": true,
+    "js": [
+      "js/five9/five9-script.js",
+      "js/five9/five9-crm.js",
+      "js/five9/five9-activity.js",
+      "js/five9/five9-flashcards.js",
+      "js/five9/five9-dispo-buttons.js",
+      "js/five9/push-notifications.js",
+      "js/lib/interact.min.js",
+      "js/five9/five9-call-history.js",
+      "js/five9/customizations/five9-coastal.js",
+      "js/five9/_main.js"
+    ]
+  },
+  {
+    "matches": ["https://*.synergycrm.io/*", "https://*.lamassucrm.com/*", "file://*/*"],
+    "exclude_globs": ["https://webtools.lamassucrm.com:3000/rs/*", "https://webtools.lamassucrm.com/five9-dispo-builder/",
+    "https://*.lamassucrm.com/erc/", "https://*.lamassucrm.com/nurture/", "*://*.lamassucrm.com/calibration_form*", "https://master.lamassucrm.com/*", "https://metrics.lamassucrm.com/*",
+  "https://aitools.lamassucrm.com/"],
+    "js": [
+      
+      "js/synergycrm/loadTestWebform.js",
+      "js/synergycrm/common.js",
+      
+      "js/synergycrm/synergycrm.js",
+      "js/synergycrm/weather.js",
+      "js/synergycrm/persistent-form.js",
+      
+      "js/synergycrm/slack-links-new.js",
+      "js/synergycrm/slack-links.js",
+      "js/synergycrm/templates/events.js",
+      "js/synergycrm/templates/matrix.html.js",
+      "js/synergycrm/templates/other.costs.html.js",
+      
+      "js/synergycrm/realtorzips.js",
+      "js/synergycrm/nurture.js",
+      "js/synergycrm/customAffiliates.js",
+      "js/lib/draggabilly.min.js",
+      "js/lib/js.cookie.min.js",
+      "js/synergycrm/notes-taking.js",
+    
+      "js/synergycrm/notesAI.js",
+      "js/synergycrm/zestimateAverage.js",
+      "js/synergycrm/customAffiliates/vacantland.js",
+      
+      "js/synergycrm/customAffiliates/firsthandproperties.js",
+      "js/synergycrm/customAffiliates/allLANDS.js",
+      "js/synergycrm/customAffiliates/heplerland.js",
+
+      "js/synergycrm/topInfoBar.js",
+      "js/synergycrm/_main.js",
+      "js/synergycrm/customAffiliates/uncommonhome.js",
+      "js/synergycrm/customAffiliates/sellers.js",
+      
+      "js/synergycrm/mini-templates.js"
+    ],
+    "css": [
+      "css/synergycrm.css",
+      "css/synergy-matrix-rules.css",
+      "css/synergy-calculator.css",
+      "css/crm-notesAI.css",
+      "css/bootstrap.min.css"
+
+    ]
+  },
+  {
+    "matches": ["https://*.zillow.com/*"],
+    "js": ["js/zillow/zillow-script.js", "js/zillow/county-links.js", "js/zillow/zillow-captchax.js"],
+    "css": ["css/hide-zillow.css"]
+  },
+  {
+    "matches": ["https://*.redfin.com/*"],
+    "js": ["js/redfin-script.js", "js/redfin-filter-page.js"],
+    "css": ["css/hide-redfin.css"]
+  },
+  {
+    "matches": ["https://*.realtor.com/*"],
+    "js": ["js/realtor-script.js"],
+    "css": ["css/hide-realtor.css"]
+  },
+  {
+    "matches": ["https://www.google.com/search?*"],
+    "all_frames": true,
+
+    "js": [
+      "js/google-search.js"
+  ]
+  }
+],
+"oauth2": {
+  "client_id": "334762684898-vk4muq9nb29au8lvol5attqd2t0tusr4.apps.googleusercontent.com",
+  "scopes": ["https://www.googleapis.com/auth/contacts.readonly", "https://www.googleapis.com/auth/drive"]
+},
+"key": "MIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQCnivP88v6k49VQPLs6Z13HeLYYjYkatZhMYRyxxM2EBjCzvoRHCk8UB3zkOxbttpQoJmWMiuIDUx2PHClqYELm/ohiHVqZ0GWBrEDJIzD5dLk8PqeBo0WCs8telnooxM4h2dKWgs33OOMI4OOAKv/8PLbJDHiScDjaJtBcZ/EelsynKfQasqnwvhAsiDNV62N91C/H7TSExcLg4jQDed4e75Wdu2oHZ0smS0+U7LjkQ+UBcOaMp6dl5ZOH1tg09UOwsZqWra/VuCY7Sm26wshNs31BdgGUK/vEVZEXE7MlxEWXWvP0CPZAqXQtKSIqDFj7R5kaVp6c6kJbGXUwcFabAgMBAAECggEAANqIE23jPF9TFpja51s/LxpXD7+mWXCTI2s66ByfpUUadiK7MaJEhuDTsEaTinHkeT30CnH9kGkAQkTHSvTNScbPT0DlJg1AJGgrGbTakRyj6IPJUqTT5CciMOdFQfQ0dripQNkuKrqOIQG1eGdVoFUCLLjrvoTc8aKS/fHhhInF3+GBUTj8CMxWmkbOgIBw+VnVim/chWfSUnq7+N5v+Wd6da87paBm/C2am09PRdzjJcY4S2PWr9atFeywyBeZTkV/+/7P6ENWTHm0EXGSQkfSX/ZioJriSeOfeXfpRBiZOgLUWxfREWIcL55uCsX3ilbQhR0rcmbe6HmjBCMY0QKBgQDV1hXumepFjxXn1C5D2oPDnOQ1qTotfztfqTdRHMh7gTbObSRvtUXcBH/v3y68++DcgjxekiDO+lWy+mf5Y9VqGvLyFnPZuGpZZ+d6RusHnDFNX25TpOrI1rMksUXFwDoryYCZy5Fm01Q3HXZm3MuHMWjXcqJSPmEnM6GIAusrgwKBgQDIlBbZPssm+ViIj5wVB/0cFYvTAmWVLOzh8jrvj0OWefR2kLO/VGSQIq3WChhxEzgXkFwPaF1BVAVdwlRIyHcTcm4YAqCObbQwosGqkot3u6Hiaw1tIEeWylkdS6lD77r8UCSL/CGSDkL4wFNKP9GWhVI27AACTzi9ungejJDFCQKBgQDSinKXteXrTQGle819s5XOsRglGZUVnNNJ0eOMMonWyJe80ctxTYsWITwSYq2zF1ED7BsihkBVajec/F4JN9m2GgiggajZcnELzHkmdNMOcCQ+6TpIkvU0f+hstTpchXMBD+pWAxALrQGbLqAYkUa3utdeYhkeXxrrLTPbJfyEnwKBgFH8ViqOhDN2ED4hlUbzcP4dwH2LqUIEjv78KCLriFDloIsmMpKuSDyyMCQhFESD+pWHKFoT6qpdUaQ1XoYxipqkV2PxDveo19JZdJfoNqHGTDFkWKSWYSy9oRdcad+fCetARvABKyesNKvA0Uq0M1M3Q5e3d3l6MFM8+QRjqHkhAoGBAJkjeSrtmYmxEzu1MOhJprTgDufJc1HJFTzXNiIfnusLWLIU/Nd+hiyOndw8zIJPAiKzJ3NIeOb1HMr6PcIpIlpaOujiWKfJe+lGVFegz0yCw1BuGIF6inU98BZWtaLTaj9BtgXWgCk07dMLqOCTzQRZ2ZsqJLGYhzCwpcGXdN9n"
+}
